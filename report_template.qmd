@@ -1,47 +1,44 @@
 ---
-title: "Beispieltitel"
-subtitle: "Untertitel des Dokuments"
-author: "Iris Muster"
+title: "Quarto-Report"
+subtitle: "Elemente, Konventionen und Beispielinhalte"
+description: "Was ist in Quarto-Berichten möglich? Wie sehen Quarto-Berichte aus?"
+author: 
+  - name: "Mia Meier"
+    email: "mia.meier@bi.zh.ch"
+    affiliation: "Bildungsplanung des Kantons Zürich"
+  - name: "Noah Schmid"
+    email: "noah.schmid@bi.zh.ch"
+    affiliation: "Bildungsplanung des Kantons Zürich"
 date: last-modified
-date-format: "DD.MM.YYYY"
-lang: de    
-
+abstract: "Abstract folgt hier"
+lang: de
 format: 
     html:
         theme: style.scss
 
         toc: true
         toc-location: left
-        toc-title: "Inhaltsverzeichnis"
-        
-        code-fold: true
+        toc-title: "Inhalt"
+
         embed-resources: true
         standalone: true
-        
+
+number-sections: true
+number-depth: 3
+code-fold: false
+
 title-block-banner: "#0076BD"
 css: logo.css
     
+engine: knitr
 execute:
   warning: false
+params:
+    classification: "Vertraulich"
 ---
 
-## Quarto
+{{< include samplecontent/_markdown.qmd >}}
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+{{< include samplecontent/_titles.qmd >}}
 
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this 
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+{{< include samplecontent/_variables.qmd >}}

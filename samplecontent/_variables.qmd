@@ -1,0 +1,17 @@
+# Meta-Informationen und Parameter
+
+Die Informationen aus dem YAML-Header können im Dokument selbst wieder aufgerufen werden (vgl. <https://quarto.org/docs/authoring/variables.html>).
+
+```{markdown}
+{{{< meta title >}}}, 
+{{{< meta date >}}}, 
+{{{< meta params.classification >}}}
+```
+
+{{< meta title >}}, {{< meta date >}}, {{< meta params.classification >}}
+
+Innerhalb von `r`-Chunks können zudem die Parameter aus dem YAML-Header abgerufen werden.
+
+```{r}
+params$classification
+```

@@ -1,0 +1,35 @@
+# Inhalt
+
+Quarto-Dokumente sind grundsätzlich in Markdown verfasst.
+
+::: {.callout-note}
+## Empfehlung
+
+Elemente und Syntax gemäss <https://www.markdownguide.org/basic-syntax> verwenden.
+:::
+
+## Absätze
+
+Um Absätze zu erstellen, verwende eine Leerzeile zwischen zwei Absätzen.
+
+```{markdown}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Nulla consequat massa quis enim.
+```
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+Nulla consequat massa quis enim.
+
+## Zeilenumbrüche
+
+Um einen Zeilenumbruch bzw. eine neue Zeile zu erzeugen, beende eine Zeile mit zwei oder mehr Leerzeichen.
+
+```{markdown}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+Nulla consequat massa quis enim.
+```
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.   
+Nulla consequat massa quis enim.
