@@ -11,19 +11,19 @@ Im YAML-Header kann angegeben werden, ob die Überschriften nummeriert werden so
 ::: {.callout-note}
 ## Empfehlung
 
-```{yml}
+```yml
 number-sections: true
 number-depth: 3
 ``` 
 :::
 
-## Querverweise
+## Querverweise {#sec-references-internal}
 
 ### Anker setzen {#sec-anchor}
 
 Um ein Objekt mit Querverweisen zu referenzieren, ist empfohlen einen entsprechenden Anker zu setzen.
 
-```{markdown}
+```md
 ### Anker setzen {#sec-anchor}
 ```
 
@@ -31,8 +31,9 @@ Um ein Objekt mit Querverweisen zu referenzieren, ist empfohlen einen entspreche
 
 Ein solcher Anker (@sec-anchor) kann dann einfach referenziert werden.
 
-```{markdown}
+```md
 @sec-anchor
+[eigener Text](#sec-anchor)
 ```
 
 ## Beispielinhalte

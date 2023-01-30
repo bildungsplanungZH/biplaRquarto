@@ -15,13 +15,12 @@ lang: de
 format: 
     html:
         theme: style.scss
-
-        toc: true
-        toc-location: left
-        toc-title: "Inhalt"
-
         embed-resources: true
         standalone: true
+
+toc: true
+toc-location: left
+toc-title: "Inhalt"
 
 number-sections: true
 number-depth: 3
@@ -29,7 +28,10 @@ code-fold: false
 
 title-block-banner: "#0076BD"
 css: logo.css
-    
+
+fig-cap-location: top
+fig-align: "left"
+
 engine: knitr
 execute:
   warning: false
@@ -40,5 +42,7 @@ params:
 {{< include samplecontent/_markdown.qmd >}}
 
 {{< include samplecontent/_titles.qmd >}}
+
+{{< include samplecontent/_figures.qmd >}}
 
 {{< include samplecontent/_variables.qmd >}}
