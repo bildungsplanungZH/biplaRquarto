@@ -1,0 +1,34 @@
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Arial", Arial, serif !default;
+
+// colors
+//$body-bg: #f0f1eb !default;
+//$body-color: #000 !default;
+$link-color: #0076BD !default;
+//$selection-bg: #26351c !default;
+
+// headings
+$headings-font-family: "Arial Black", Arial, serif !default;
+$headings-color: #0076BD !default;
+
+$presentation-heading-font: "Arial Black", Arial, serif !default;
+$presentation-heading-color: #0076BD !default;
+
+
+/*-- scss:rules --*/
+
+.reveal .slide-logo {
+  top: 0px;
+  left: 1500px
+}
+
+.reveal .title {
+  color: white !important;
+}
+
+.reveal .subtitle {
+  color: white !important;
+  font-family: "Arial Black" !important;
+}

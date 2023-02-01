@@ -1,0 +1,110 @@
+---
+title: "Quarto-Präsentation"
+author: 
+  - name: "Mia Meier"
+    email: "mia.meier@bi.zh.ch"
+    # affiliation: "Bildungsplanung des Kantons Zürich"
+  - name: "Noah Schmid"
+    email: "noah.schmid@bi.zh.ch"
+    # affiliation: "Bildungsplanung des Kantons Zürich"
+
+format:
+   revealjs:
+       footer: "Was kann man mit Quarto-Präsentationen tun?"
+       theme: pres.scss
+       # slide-number: c/t
+
+       # chalkboard:
+       #     theme: whiteboard
+       #     boardmarker-width: 5
+       #     buttons: false
+           
+title-slide-attributes:
+    data-background-image: images/title_16to9.PNG
+
+standalone: true
+embed-resources: true
+
+execute: 
+  echo: false
+  warning: false
+---
+
+## Quarto-Präsentationen mit reveal js
+
+Es gibt eine ausführliche Dokumentation der Möglichkeiten unter <https://quarto.org/docs/presentations/revealjs/>.
+
+## Listen
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+
+
+## Präsentationen mit revealjs
+
+-   Optionen für Logo, Fusszeile, Foliennummer etc.
+-   Optionen für inkrementelles Einblenden und Übergänge
+-   Präsentationsansicht und Notizen, eingebautes Whiteboard und Markierstifte
+-   Integration von Code und Output
+-   Integration von interaktiven Elementen
+-   Integration von Webseiten in die Präsentation
+
+
+## Notizen und Präsentationsmodus
+
+Notizen zur Folien können wie folgt eingefügt werden:
+
+```markdown
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+```
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+
+## Beispielplot
+
+```{r cars}
+#| echo: true
+
+ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+    geom_point() +
+    biplaR::getTheme() +
+    theme(legend.direction = "horizontal")
+
+```
+
+
+## Beispiel mit Leaflet
+
+```{r}
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=8.54288, lat=47.37981, popup="Bildungsplanung")
+
+```
+
+## {data-background-iframe="http://www.quarto.org/docs/guide" menu="false" background-interactive="false"}
+::: footer
+:::
+
+
+## Links
+
+-    Quarto-Dokumentation zu reveal js: <http://quarto.org/docs/presentations/revealjs/>
+-    RStudio::conf(2022): [These are a few of my favorite things (about Quarto presentations)](https://www.rstudio.com/conference/2022/talks/my-favorite-things-quarto-presentations/) (Tracy Teal, 15 min)
+
