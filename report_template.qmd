@@ -42,3 +42,5 @@ params:
 {{< include samplecontent/_titles.qmd >}}
 
 {{< include samplecontent/_variables.qmd >}}
+
+{{< include samplecontent/_tabset.qmd >}}
