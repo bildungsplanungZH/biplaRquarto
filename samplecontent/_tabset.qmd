@@ -1,0 +1,39 @@
+# Tabset einfügen
+
+Ein Tabset kann wie folgt eingefügt werden:
+
+```{markdown}
+::: {.panel-tabset .nav-pills}
+
+## Irgendwas
+
+Hier folgt irgendein Inhalt.
+
+## Etwas anderes
+
+Das ist ein anderer Inhalt.
+
+## Definitionen
+
+Hier finden sich Definitionen.
+
+:::
+```
+
+Die Option `.nav-pills` bewirkt, dass der aktive Tab farbig hinterlegt wird.
+
+::: {.panel-tabset .nav-pills}
+
+## Irgendwas
+
+Hier folgt irgendein Inhalt.
+
+## Etwas anderes
+
+Das ist ein anderer Inhalt.
+
+## Definitionen
+
+Hier finden sich Definitionen.
+
+:::

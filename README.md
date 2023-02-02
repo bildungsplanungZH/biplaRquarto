@@ -2,7 +2,7 @@
 
 21.11.2022  
 Kontakt: 
-Flavian Imlig <flavian.imlig@bi.zh>
+Flavian Imlig <flavian.imlig@bi.zh>  
 Sarah Gerhard <sarah.gerhard@bi.zh>
 
 
