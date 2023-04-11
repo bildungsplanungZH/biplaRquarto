@@ -29,7 +29,7 @@ plot_2 <- ggplot(data = mpg %>% mutate_at('cyl', factor),
     biplaR::getTheme()
 ```
 
-## Standardabbildung BM {#sec-abb-bm}
+## Standard-Abbildung BM {#sec-abb-bm}
 
 ### komplett
 
@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
 plot_1
 ```
 
-[Daten: Bildungsplanung des Kantons Zürich]{.figure-source}
+[Daten: Bildungsplanung des Kantons Zürich, 2023]{.figure-source}
 
 Titel einer Standard-Abbildung Bildungsmonitoring
 :::

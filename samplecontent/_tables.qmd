@@ -1,0 +1,36 @@
+# Tabellen
+
+Grundsätzlich müssen Tabellen in der Markdown-Syntax vorliegen (vgl. https://www.markdownguide.org/extended-syntax/#tables). Allerdings gibt es verschiedene Möglichkeiten, eine Tabelle in diesem Format zu generieren. Ausserdem fehlen bei einer einfachen Tabelle meistens die Metadaten (vgl. @sec-abb-bm).
+
+## Standard-Tabelle BM
+
+generiert mit `pander::pandoc.table()`
+
+```{r}
+tbl <- tibble('Kanton' := sample(biplaR::getCanton(1:26), 10),
+              'Wert' := as.integer(runif(10, 1,99), 0),
+              'Kategorie' := sample(factor(LETTERS), 10, replace = T))
+text <- c('Titel einer Standard-Tabelle Bildungsmonitoring',
+          'Tabellenbeschriftung zweite Ebene',
+          'Daten: Bildungsplanung des Kantons Zürich, 2023')
+
+tbl_print <- pander::pandoc.table.return(tbl, caption = text[1])
+
+```
+
+
+## einfache Tabelle
+
+```{r}
+#| echo: true
+#| results: asis
+pander::pandoc.table(tbl)
+```
+
+### Markdown-Syntax
+
+```{r}
+#| echo: false
+pander::pandoc.table(tbl)
+```
+

@@ -14,7 +14,7 @@ abstract: "Abstract folgt hier"
 lang: de
 format: 
     html:
-        theme: style.scss
+        theme: bipla-report.scss
         embed-resources: true
         standalone: true
 
@@ -45,6 +45,8 @@ params:
 
 {{< include samplecontent/_figures.qmd >}}
 
-{{< include samplecontent/_variables.qmd >}}
-
 {{< include samplecontent/_tabset.qmd >}}
+
+{{< include samplecontent/_tables.qmd >}}
+
+{{< include samplecontent/_variables.qmd >}}
