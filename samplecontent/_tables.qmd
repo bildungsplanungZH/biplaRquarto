@@ -7,7 +7,7 @@ Grundsätzlich müssen Tabellen in der Markdown-Syntax vorliegen (vgl. https://w
 generiert mit `pander::pandoc.table()`
 
 ```{r}
-tbl <- tibble('Kanton' := sample(biplaR::getCanton(1:26), 10),
+tbl <- tibble('Kanton' := c("ZH", "BE", "AG", "LU", "GR", "GL", "SG", "TG", "SZ", "ZG"),
               'Wert' := as.integer(runif(10, 1,99), 0),
               'Kategorie' := sample(factor(LETTERS), 10, replace = T))
 text <- c('Titel einer Standard-Tabelle Bildungsmonitoring',
@@ -34,3 +34,21 @@ pander::pandoc.table(tbl)
 pander::pandoc.table(tbl)
 ```
 
+
+## Tabelle mit Filter- und Sortier-Funktionen
+
+Das package `DT` ermöglicht es, R-Datenobjekte als Tabellen in HTML-Seiten darzustellen. Diese Tabellen können gefiltert, sortiert, durchsucht und auf mehrere Seiten verteilt werden.
+
+```{r}
+
+data_table <- mtcars %>% 
+    mutate(Modell = rownames(.),
+           across(c(cyl, am, gear), as.factor)) %>% 
+    select(Modell, Zylinder = cyl, Hubraum = disp, PS = hp, Gewicht = wt, 
+           manuell = am, `Gänge` = gear) %>% 
+    arrange(Modell)
+
+DT::datatable(data_table, rownames = F, filter = "top",
+              caption = "Motor Trend Car Road Tests, Motor Trend magazine 1974")
+
+```
