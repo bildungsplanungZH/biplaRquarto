@@ -1,6 +1,6 @@
 # Vorlagen für halbwegs CD-konforme Dokumente mit Quarto
 
-21.11.2022  
+15.05.2023  
 Kontakt: 
 Flavian Imlig <flavian.imlig@bi.zh>  
 Sarah Gerhard <sarah.gerhard@bi.zh>
@@ -10,3 +10,14 @@ Sarah Gerhard <sarah.gerhard@bi.zh>
 Ziel sind Vorlagen für das Erstellen von Reports und Präsenationen mit Quarte, welche die Corporate Design-Vorgaben halbwegs respektieren. Priorität haben dabei:  
 -    Vorlage für HTML-Report  
 -    Vorlage für reveal js-Präsentation
+
+## Quarto-Report Bildungsplanung
+
+### Dateien
+
+- [report_template.qmd](report_template.qmd)
+- [bipla-report.scss](bipla-report.scss)
+
+## Online-Ressourcen
+
+- https://quarto.org/docs/output-formats/html-themes-more.html
