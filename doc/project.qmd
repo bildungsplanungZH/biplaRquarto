@@ -63,6 +63,8 @@ Wir möchten mit Quarto einen Grossteil unserer Produkte erstellen.
 ## aktueller Stand
 
 * Beispielinhalte unter <https://github.com/bildungsplanungZH/quarto_templates>
+    * [Inhalte zeigen]
+    * fehlen Inhalte bzw. Formate, die ihr häufig in Dokumenten brauchen werdet?
 * Customization (Res)
 
 pendent: Präsentation und Übergabe konkreter Aufgaben ans Stat. Amt
