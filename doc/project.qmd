@@ -1,0 +1,90 @@
+---
+title: "Quarto-Vorlagen"
+subtitle: "Pipeline für Produkte der Bildungsplanung"
+authors: 
+    - "Flavian Imlig"
+lang: de
+format: 
+    revealjs:
+        theme: default
+        transition: slide
+        number-sections: true
+        number-depth: 1
+        toc: true
+        toc-depth: 1
+        embed-resources: true
+        footer: "Quarto-Vorlagen, Bildungsplanung"
+---
+
+# Zielsetzungen 
+
+## Motiv
+
+::: {.callout-note}
+Quarto v1.0 wurde 2022 publiziert.
+
+Die Entwicklung von Quarto wird von Posit - der Organisation hinter RStudio - gesponsert. Bei Posit arbeitet ein Kernteam an Quarto und R Markdown.
+
+Quarto verfolgt die gleichen Ziele wie R Markdown, richtet sich aber nicht mehr exklusiv an Benutzer der Sprache R.
+:::
+
+Quarto funktionert sehr ähnlich wie R markdown.
+
+Eine Produktionspipeline mit Quarto bietet vielfältige Möglichkeiten, ist flexibel und aus heutiger Sicht zukunftssicher.
+
+&rarr; Wir möchten Quarto intensiv nutzen.
+
+## Zielsetzungen
+
+Wir möchten mit Quarto einen Grossteil unserer Produkte erstellen.
+
+1. "offizielle" HTML-Dokumente erstellen
+2. "offizielle" Präsentationen erstellen
+
+::: aside
+"halbwegs CD-konforme Dokumente"
+:::
+
+# Vorgehen
+
+## Pilotversuche (Sarah)
+
+* Report (HTML, bootstrap)
+* Presentation (HTML, reveal.js)
+
+## Vereinbarung mit dem Statistischen Amt
+(primär bezogen auf HTML-Reports)
+
+* Wir machen einen ersten Schritt.
+    * Beispielinhalte
+    * evtl. Customization
+* Sie unterstützen uns bei der Umsetzung der Customization
+
+## aktueller Stand
+
+* Beispielinhalte unter <https://github.com/bildungsplanungZH/quarto_templates>
+* Customization (Res)
+
+pendent: Präsentation und Übergabe konkreter Aufgaben ans Stat. Amt
+
+# Technik
+
+## Technik
+
+* [Pandoc](https://pandoc.org/)
+* html
+    * [Bootstrap](https://getbootstrap.com/)
+    * [25 Themes](https://bootswatch.com/) & [Custom Themes](https://quarto.org/docs/output-formats/html-themes.html#custom-themes)
+
+# Ausblick
+
+## Aufbruch in die Cloud
+
+[Posit Products](https://posit.co/products/)
+
+* Posit Cloud (do, share, teach and learn data science)
+* shinyapps.io (deploy Shiny applications)
+* Posit Team
+    * Workbench (code in R and Python, collaborate) [RStudio Server]
+    * Connect (deploy products, automate code execution)
+    * Package Manager (organize packages, publish internal packages)
