@@ -3,6 +3,8 @@ title: "Quarto-Vorlagen"
 subtitle: "Pipeline für Produkte der Bildungsplanung"
 authors: 
     - "Flavian Imlig"
+    - "Sarah Gerhard"
+    - "Res Marti"
 lang: de
 format: 
     revealjs:
