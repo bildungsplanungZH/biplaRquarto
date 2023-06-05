@@ -88,7 +88,7 @@ pendent: Präsentation und Übergabe konkreter Aufgaben ans Stat. Amt
 
 * Posit Cloud (do, share, teach and learn data science)
 * shinyapps.io (deploy Shiny applications)
-* Posit Team
+* Posit Team [Prez](https://colorado.posit.co/rsc/rstudio-team-prez)
     * Workbench (code in R and Python, collaborate) [RStudio Server]
     * Connect (deploy products, automate code execution)
     * Package Manager (organize packages, publish internal packages)
