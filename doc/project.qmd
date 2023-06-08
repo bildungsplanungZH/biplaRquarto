@@ -51,12 +51,13 @@ Wir möchten mit Quarto einen Grossteil unserer Produkte erstellen.
 
 # Vorgehen
 
-## Pilotversuche (Sarah)
+## Pilotversuche
 
 * Report (HTML, bootstrap)
 * Presentation (HTML, reveal.js)
 
 ## Vereinbarung mit dem Statistischen Amt
+
 (primär bezogen auf HTML-Reports)
 
 * Wir machen einen ersten Schritt.
@@ -69,7 +70,7 @@ Wir möchten mit Quarto einen Grossteil unserer Produkte erstellen.
 * Beispielinhalte unter <https://github.com/bildungsplanungZH/quarto_templates>
     * [Inhalte zeigen]
     * fehlen Inhalte bzw. Formate, die ihr häufig in Dokumenten brauchen werdet?
-* Customization (Res)
+* Customization
 
 pendent: Präsentation und Übergabe konkreter Aufgaben ans Stat. Amt
 
@@ -84,7 +85,7 @@ pendent: Präsentation und Übergabe konkreter Aufgaben ans Stat. Amt
 
 # Ausblick
 
-## Aufbruch in die Cloud
+## Aufbruch in die Cloud?
 
 [Posit Products](https://posit.co/products/)
 
