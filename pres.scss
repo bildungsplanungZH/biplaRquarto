@@ -11,11 +11,10 @@ $link-color: #0076BD !default;
 
 // headings
 $headings-font-family: "Arial Black", Arial, serif !default;
-$headings-color: #0076BD !default;
+$headings-color: #696969 !default;
 
 $presentation-heading-font: "Arial Black", Arial, serif !default;
-$presentation-heading-color: #0076BD !default;
-
+$presentation-heading-color: #696969 !default;
 
 /*-- scss:rules --*/
 
@@ -24,11 +23,6 @@ $presentation-heading-color: #0076BD !default;
   left: 1500px
 }
 
-.reveal .title {
-  color: white !important;
-}
-
 .reveal .subtitle {
-  color: white !important;
   font-family: "Arial Black" !important;
 }
