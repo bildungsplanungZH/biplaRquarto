@@ -1,7 +1,7 @@
 ---
 title: "Quarto-Vorlagen"
 subtitle: "Pipeline für Produkte der Bildungsplanung"
-authors: 
+author: 
     - "Flavian Imlig"
     - "Sarah Gerhard"
     - "Res Marti"
@@ -30,9 +30,11 @@ Die Entwicklung von Quarto wird von Posit - der Organisation hinter RStudio - ge
 Quarto verfolgt die gleichen Ziele wie R Markdown, richtet sich aber nicht mehr exklusiv an Benutzer der Sprache R.
 :::
 
-Quarto funktionert sehr ähnlich wie R markdown.
+--- 
 
-Eine Produktionspipeline mit Quarto bietet vielfältige Möglichkeiten, ist flexibel und aus heutiger Sicht zukunftssicher.
+* Quarto funktionert sehr ähnlich wie R markdown.
+
+* Eine Produktionspipeline mit Quarto bietet vielfältige Möglichkeiten, ist flexibel und aus heutiger Sicht zukunftssicher.
 
 &rarr; Wir möchten Quarto intensiv nutzen.
 
