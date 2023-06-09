@@ -14,7 +14,7 @@ abstract: "Abstract folgt hier"
 lang: de
 format: 
     html:
-        theme: bipla-report.scss
+        theme: style/bipla-report.scss
         embed-resources: true
         standalone: true
 
@@ -27,7 +27,7 @@ number-depth: 3
 code-fold: false
 
 title-block-banner: "#0076BD"
-css: logo.css
+css: style/logo.css
 
 fig-cap-location: top
 fig-align: "left"
