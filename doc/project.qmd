@@ -8,14 +8,18 @@ author:
 lang: de
 format: 
     revealjs:
-        theme: default
+        theme: [default, ../style/bipla-presentation.scss]
         transition: slide
         number-sections: true
         number-depth: 1
         toc: true
         toc-depth: 1
+        standalone: true
         embed-resources: true
         footer: "Quarto-Vorlagen, Bildungsplanung"
+
+logo: ../images/logo.png
+css: ../style/logo.css
 ---
 
 # Zielsetzungen 

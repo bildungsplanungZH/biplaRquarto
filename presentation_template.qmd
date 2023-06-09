@@ -11,7 +11,8 @@ author:
 format:
    revealjs:
        footer: "Was kann man mit Quarto-Präsentationen tun?"
-       theme: pres.scss
+       theme: [default, style/bipla-presentation.scss]
+
        # slide-number: c/t
 
        # chalkboard:
@@ -19,11 +20,14 @@ format:
        #     boardmarker-width: 5
        #     buttons: false
            
-title-slide-attributes:
-    data-background-image: images/title_16to9.PNG
+#title-slide-attributes:
+#    data-background-image: images/title_16to9.PNG
 
 standalone: true
 embed-resources: true
+
+logo: images/logo.png
+css: style/logo.css
 
 execute: 
   echo: false
@@ -79,6 +83,7 @@ Hier können Notizen für die Präsentation eingefügt werden.
 ```{r cars}
 #| echo: true
 
+library(ggplot2)
 ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
     geom_point() +
     biplaR::getTheme() +
