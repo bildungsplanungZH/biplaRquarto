@@ -1,0 +1,21 @@
+.quarto-title-block .quarto-title-banner {
+  background-image: url(images/zhweb.png);
+  background-size: 150px;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  background-origin: content-box;
+}
+
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: unset !important;
+  right: unset !important;
+  top: 5px;
+  left: 12px;
+  height: 150px !important;
+  width: 150x !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
