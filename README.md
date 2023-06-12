@@ -16,7 +16,7 @@ Ziel sind Vorlagen für das Erstellen von Reports und Präsenationen mit Quarte,
 ### Dateien
 
 - [report_template.qmd](report_template.qmd)
-- [bipla-report.scss](bipla-report.scss)
+- [presentation_template.qmd](presentation_template.qmd)
 
 ## Online-Ressourcen
 
