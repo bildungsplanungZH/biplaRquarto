@@ -7,7 +7,7 @@ Sarah Gerhard <sarah.gerhard@bi.zh>
 
 
 ### Kurzbeschreibung
-Ziel sind Vorlagen für das Erstellen von Reports und Präsenationen mit Quarte, welche die Corporate Design-Vorgaben halbwegs respektieren. Priorität haben dabei:  
+Ziel sind Vorlagen für das Erstellen von Reports und Präsentationen mit Quarto, welche die Corporate Design-Vorgaben halbwegs respektieren. Priorität haben dabei:  
 -    Vorlage für HTML-Report  
 -    Vorlage für reveal js-Präsentation
 

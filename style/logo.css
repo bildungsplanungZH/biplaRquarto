@@ -19,3 +19,8 @@
   max-width: unset !important;
   max-height: unset !important;
 }
+
+caption, .table-caption {
+    text-align: left;
+    text-format: bold;
+}

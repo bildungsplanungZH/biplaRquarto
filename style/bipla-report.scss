@@ -5,7 +5,7 @@ $font-family-sans-serif: HelveticaNowRegular,Helvetica,sans-serif !default;
 
 // colors
 $link-color: #0076BD !default;
-
+$callout-color-note: #0076BD !default;
 
 // headings
 $headings-font-family: HelveticaNowBlack,"Arial Black",Helvetica,sans-serif !default;
@@ -34,6 +34,14 @@ $nav-pills-link-active-bg: #000000 !default;
 
     }
 
+}
+
+
+
+// left-aligned title for tables (wip)
+
+.table-caption {
+    text-align: left;
 }
 
 //font-faces as base64 object
