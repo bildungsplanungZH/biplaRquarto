@@ -22,10 +22,14 @@ tbl_print <- pander::pandoc.table.return(tbl, caption = text[1])
 ## einfache Tabelle
 
 ```{r}
-#| echo: true
-#| results: asis
-pander::pandoc.table(tbl)
+#| label: tbl-simple
+#| tbl-cap: "Titel der einfachen Tabelle (linksbündig)"
+#| echo: fenced
+
+knitr::kable(tbl)
 ```
+
+Ein Verweise auf die Tabelle (@tbl-simple) kann mit `@tbl-simple` eingefügt werden.
 
 ### Markdown-Syntax
 
@@ -57,6 +61,7 @@ DT::datatable(data_table, rownames = F, filter = "top",
 Das Package [`gt`](https://gt.rstudio.com/) ermöglicht gut formatierte Tabellen mit komplexerer Struktur. Die gt-Philosophie: Tabellen werden mit einem zusammenhängenden Satz von Tabellenteilen konstruiert. Dazu gehören der Tabellenkopf, der Stub, die Spaltenbeschriftungen und Schlüsselspaltenbeschriftungen, der Tabellenkörper und die Tabellenfußzeile.
 
 ```{r}
+#| echo: false
 n = 10
 nm_cols <- c('Mittelwert' = 'mean', 'Minimum' = 'min', 'Median' = 'median', 'Maximum' = 'max')
 data_table <- tibble('Jahr' := sample(1990:2021L, n, replace = T) %>% 
@@ -71,11 +76,19 @@ data_table <- tibble('Jahr' := sample(1990:2021L, n, replace = T) %>%
 text <- list('sus' = "Anzahl Sch\u00FClerinnen und Sch\u00FCler",
              'title' = 'Kennwerte zur Gr\u00F6sse der Schuleinheiten nach Sekundarschulvariante',
              'source' = 'Bildungsplanung des Kantons Z\u00FCrich, 2023')
+```
+
+
+```{r}
+#| label: tbl-gt
+#| tbl-cap: "Kennwerte zur Grösse der Schuleinheiten nach Sekundarschulvariante"
+#| echo: fenced
 
 data_table %>%
     gt::gt() %>%
     gt:: tab_spanner(label = text$sus, columns = names(nm_cols)) %>%
-    gt::tab_header(title = text$title) %>%
+    # gt::tab_header(title = text$title) %>%
     gt::tab_source_note(text$source)
 ```
 
+Verweise auf die Tabelle (@tbl-gt) mit `@tbl-gt` einfügen.

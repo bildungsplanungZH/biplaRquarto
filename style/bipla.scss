@@ -30,6 +30,7 @@ $body-bg: $white;
 $body-color: rgba(0,0,0,.6) !default;
 $link-color: $blue;
 $selection-bg: $blue;
+$callout-color-note: $blue;
 
 // headings
 $headings-font-family: HelveticaNowBlack,"Arial Black",Helvetica,sans-serif !default;
@@ -86,6 +87,12 @@ $nav-pills-link-active-bg: $black;
 .scrollable {
     overflow-y: auto;
     height: 100%;
+}
+
+// left-aligned title for tables (wip)
+
+.table-caption {
+    text-align: left;
 }
 
 //font-faces as base64 object
