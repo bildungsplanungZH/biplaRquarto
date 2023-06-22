@@ -4,16 +4,59 @@
 $font-family-sans-serif: HelveticaNowRegular,Helvetica,sans-serif !default;
 
 // colors
-$link-color: #0076BD !default;
+$blue:    #0070B4 !default;
+$indigo:  #54268E !default;
+$purple:  #7F3DA7 !default;
+$pink:    #D40053 !default;
+$red:     #D93C1A !default;
+$orange:  #DC7700 !default;
+$yellow:  #FFCC00 !default;
+$green:   #8A8C00 !default;
+$teal:    #0FA693 !default;
+$cyan:    #009EE0 !default;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
 
+$body-bg: $white;
+$body-color: rgba(0,0,0,.6) !default;
+$link-color: $blue;
+$selection-bg: $blue;
 
 // headings
 $headings-font-family: HelveticaNowBlack,"Arial Black",Helvetica,sans-serif !default;
-$h2-color: #0076BD !default;
+$presentation-heading-font: HelveticaNowBlack,"Arial Black",Helvetica,sans-serif !default;
+$h2-color: $blue;
+$presentation-heading-color: $black;
 
+/*-- scss:rules --*/
+
+h1, h2, h3, h4, h5, h6 {
+    color: $black;
+}
+
+h1.title {
+    color: $white;
+}
+
+#title-slide h1.title {
+    color: $black;
+}
+
+.reveal a {
+    line-height: 1.3em;
+}
 
 // tabset
-$nav-pills-link-active-bg: #000000 !default;
+$nav-pills-link-active-bg: $black;
 
 // imitating tabsets according to the zhweb design standards
 
@@ -26,14 +69,23 @@ $nav-pills-link-active-bg: #000000 !default;
         color: #333333;
 
         &.active {
-            background-color: #000000;
+            background-color: $black;
             font-family: HelveticaNowBlack,"Arial Black",Helvetica,sans-serif;
-            color: #FFFFFF;
+            color: $white;
 
         }
 
     }
 
+}
+
+.observablehq {
+    font-size: 14px;
+}
+
+.scrollable {
+    overflow-y: auto;
+    height: 100%;
 }
 
 //font-faces as base64 object

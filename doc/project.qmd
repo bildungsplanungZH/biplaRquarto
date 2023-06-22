@@ -8,7 +8,7 @@ author:
 lang: de
 format: 
     revealjs:
-        theme: [default, ../style/bipla-presentation.scss]
+        theme: [default, ../style/bipla.scss]
         transition: slide
         number-sections: true
         number-depth: 1

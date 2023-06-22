@@ -14,7 +14,7 @@ abstract: "Abstract folgt hier"
 lang: de
 format: 
     html:
-        theme: style/bipla-report.scss
+        theme: style/bipla.scss
         embed-resources: true
         standalone: true
 

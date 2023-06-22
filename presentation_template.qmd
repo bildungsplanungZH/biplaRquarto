@@ -11,7 +11,7 @@ author:
 format:
    revealjs:
        footer: "Was kann man mit Quarto-Präsentationen tun?"
-       theme: [default, style/bipla-presentation.scss]
+       theme: [default, style/bipla.scss]
 
        # slide-number: c/t
 
@@ -35,6 +35,14 @@ execute:
 ---
 
 ## Quarto-Präsentationen mit reveal js
+
+::: {.callout-note}
+Quarto v1.0 wurde 2022 publiziert.
+
+Die Entwicklung von Quarto wird von Posit - der Organisation hinter RStudio - gesponsert. Bei Posit arbeitet ein Kernteam an Quarto und R Markdown.
+
+Quarto verfolgt die gleichen Ziele wie R Markdown, richtet sich aber nicht mehr exklusiv an Benutzer der Sprache R.
+:::
 
 Es gibt eine ausführliche Dokumentation der Möglichkeiten unter <https://quarto.org/docs/presentations/revealjs/>.
 
