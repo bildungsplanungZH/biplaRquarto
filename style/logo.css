@@ -20,6 +20,20 @@
   max-height: unset !important;
 }
 
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 15/9) {
+  .reveal.has-logo .slides {
+    inset: 50% auto auto 54.7% !important;
+  }
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 5/4) {
+  .reveal.has-logo .slides {
+    inset: 50% auto auto 50% !important;
+  }
+}
+
 caption, .table-caption {
     text-align: left;
     text-format: bold;
