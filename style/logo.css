@@ -33,8 +33,3 @@
     inset: 50% auto auto 50% !important;
   }
 }
-
-caption, .table-caption {
-    text-align: left;
-    text-format: bold;
-}
