@@ -1,5 +1,5 @@
 .quarto-title-block .quarto-title-banner {
-  background-image: url(images/zhweb.png);
+  background-image: url(../images/zhweb.png);
   background-size: 150px;
   background-position: left;
   background-repeat: no-repeat;
@@ -14,8 +14,22 @@
   right: unset !important;
   top: 5px;
   left: 12px;
-  height: 150px !important;
-  width: 150x !important;
+  height: 9vw !important;
+  width: 9vw !important;
   max-width: unset !important;
   max-height: unset !important;
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 15/9) {
+  .reveal.has-logo .slides {
+    inset: 50% auto auto 54.7% !important;
+  }
+}
+
+/* Maximum aspect ratio */
+@media (max-aspect-ratio: 5/4) {
+  .reveal.has-logo .slides {
+    inset: 50% auto auto 50% !important;
+  }
 }
