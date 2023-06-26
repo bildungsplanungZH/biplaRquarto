@@ -4,20 +4,33 @@ Grundsätzlich müssen Tabellen in der Markdown-Syntax vorliegen (vgl. https://w
 
 ## Standard-Tabelle BM
 
-generiert mit `pander::pandoc.table()`
+### komplett
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+
+::: {.table_bm}
 
 ```{r}
+#| label: tbl-bm1
+#| tbl-cap: 'Titel einer Standard-Tabelle Bildungsmonitoring'
+#| tbl-subcap: 'Tabellenbeschriftung zweite Ebene'
+#| results: asis
+#| echo: false
+
 tbl <- tibble('Kanton' := c("ZH", "BE", "AG", "LU", "GR", "GL", "SG", "TG", "SZ", "ZG"),
               'Wert' := as.integer(runif(10, 1,99), 0),
               'Kategorie' := sample(factor(LETTERS), 10, replace = T))
-text <- c('Titel einer Standard-Tabelle Bildungsmonitoring',
-          'Tabellenbeschriftung zweite Ebene',
-          'Daten: Bildungsplanung des Kantons Zürich, 2023')
+# text <- c('Titel einer Standard-Tabelle Bildungsmonitoring',
+#           'Tabellenbeschriftung zweite Ebene',
+#           'Daten: Bildungsplanung des Kantons Zürich, 2023')
 
-tbl_print <- pander::pandoc.table.return(tbl, caption = text[1])
+pander::pandoc.table(tbl)
 ```
 
-`r tbl_print`
+[Daten: Bildungsplanung des Kantons Zürich]{.table-source}
+:::
+
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
 
 ## einfache Tabelle
 
