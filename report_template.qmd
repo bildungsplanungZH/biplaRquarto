@@ -45,8 +45,8 @@ params:
 
 {{< include samplecontent/_figures.qmd >}}
 
-{{< include samplecontent/_tabset.qmd >}}
-
 {{< include samplecontent/_tables.qmd >}}
+
+{{< include samplecontent/_tabset.qmd >}}
 
 {{< include samplecontent/_variables.qmd >}}
