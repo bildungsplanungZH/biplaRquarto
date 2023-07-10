@@ -58,6 +58,11 @@ h1.title {
     line-height: 1.3em;
 }
 
+//dispay content outside of the div in observable cell (for example tiptools)
+.cell-output-display:not(.no-overflow-x), .knitsql-table:not(.no-overflow-x) {
+    overflow-x: visible;
+}
+
 // tabset
 $nav-pills-link-active-bg: $black;
 
