@@ -41,6 +41,8 @@ $presentation-heading-color: $black;
 $headings-font-weight: 400 !important;
 $presentation-heading-font-weight: 400 !default;
 $headings-color: $black;
+$figure-caption-color: $black !important;
+$table-caption-color: $black !important;
 
 /*-- scss:rules --*/
 
@@ -48,6 +50,20 @@ $headings-color: $black;
 h1.title {
     color: $white;
 }
+
+h2 {
+    border-bottom: 0px;
+}
+
+// make standard buttons black without a box shadow
+.btn-quarto,
+.btn-quarto:focus {
+    color: #fefefe;
+    background-color: $black !important;
+    border-color: $black !important;
+    box-shadow: none !important;
+}
+
 
 // keep the main title on presentations black (white background)
 #title-slide h1.title {
@@ -89,6 +105,7 @@ $nav-pills-link-active-bg: $black;
 
 .observablehq {
     font-size: 14px;
+    margin-bottom: 20px;
 }
 
 .scrollable {
@@ -101,6 +118,35 @@ $nav-pills-link-active-bg: $black;
 caption, .table-caption, .figure-caption {
     text-align: left;
     font-weight: bold;
+}
+
+:not(.fullscreen) > .title.figure-caption {
+    font-size: 1.2rem !important;
+    margin-bottom: 0rem;
+    padding-top: 0.5rem;
+    line-height: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0px;
+}
+
+:not(.fullscreen) > .subtitle.figure-caption {
+    font-size: 1rem !important;
+    font-weight: normal !important;
+    padding-top: 0rem;
+}
+
+//custom layout for integrating girafe charts in zhweb
+.page-layout-custom {
+    max-width: 816px;
+    margin:auto;
+}
+
+.page-layout-custom .quarto-figure {
+    margin-bottom: 0rem;
+}
+
+.page-layout-custom .figure .figure-caption {
+    margin-top: 0rem;
 }
 
 //font-faces as base64 object
