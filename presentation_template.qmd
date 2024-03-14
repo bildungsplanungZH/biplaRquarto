@@ -1,38 +1,33 @@
 ---
 title: "Quarto-Präsentation"
-author: 
-  - name: "Mia Meier"
-    email: "mia.meier@bi.zh.ch"
-    # affiliation: "Bildungsplanung des Kantons Zürich"
-  - name: "Noah Schmid"
-    email: "noah.schmid@bi.zh.ch"
-    # affiliation: "Bildungsplanung des Kantons Zürich"
-
+subtitle: "Anwendungsbeispiele und Erklärungen"
+author:
+    - name: "Mia Meier"
+      email: "mia.meier@bi.zh.ch"
+      affiliation: "Bildungsplanung des Kantons Zürich"
+    - name: "Noah Schmid"
+      email: "noah.schmid@bi.zh.ch"
+      affiliation: "Bildungsplanung des Kantons Zürich"
+lang: de
 format:
-   revealjs:
-       footer: "Was kann man mit Quarto-Präsentationen tun?"
-       theme: [default, style/bipla.scss]
-
-       # slide-number: c/t
-
-       # chalkboard:
-       #     theme: whiteboard
-       #     boardmarker-width: 5
-       #     buttons: false
-           
-#title-slide-attributes:
-#    data-background-image: images/title_16to9.PNG
+    revealjs:
+        theme:
+            - "style/bipla.scss"
+            - "style/pres.css"
+            - default
+        title-slide-attributes:
+            data-background-image: images/nbw_pfingstweid_logo.png
+            data-background-position: left
 
 standalone: true
 embed-resources: true
-
-logo: images/logo.png
-css: style/logo.css
+fig-cap-location: top
 
 execute: 
   echo: false
   warning: false
 ---
+
 
 ## Quarto-Präsentationen mit reveal js
 
@@ -45,22 +40,6 @@ Quarto verfolgt die gleichen Ziele wie R Markdown, richtet sich aber nicht mehr 
 :::
 
 Es gibt eine ausführliche Dokumentation der Möglichkeiten unter <https://quarto.org/docs/presentations/revealjs/>.
-
-## Listen
-
-When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
 
 
 ## Präsentationen mit revealjs
@@ -86,19 +65,31 @@ Hier können Notizen für die Präsentation eingefügt werden.
 Hier können Notizen für die Präsentation eingefügt werden.
 :::
 
-## Beispielplot
+## Code und Ausgabe
 
-```{r cars}
+```{r plot}
 #| echo: true
 
-library(ggplot2)
-ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
     geom_point() +
     biplaR::getTheme() +
     theme(legend.direction = "horizontal")
 
+plot
 ```
 
+## Abbildungen
+
+---
+
+```{r}
+#| label: fig-ex
+#| fig-cap: Titel der Beispielabbildung
+
+plot
+```
+
+[Daten: Bildungsplanung des Kantons Zürich, 2023]{.figure-source}
 
 ## Beispiel mit Leaflet
 
@@ -112,8 +103,6 @@ leaflet() %>%
 ```
 
 ## {data-background-iframe="http://www.quarto.org/docs/guide" menu="false" background-interactive="false"}
-::: footer
-:::
 
 
 ## Links
