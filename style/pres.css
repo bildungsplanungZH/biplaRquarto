@@ -1,4 +1,7 @@
 /*-- scss:rules --*/
+.reveal section figcaption {
+    color: black;
+}
 
 .figure-source {
   font-size: 50%;
