@@ -10,6 +10,7 @@
 
 .quarto-title  {
   margin-left: 55px;
+  hyphens: auto;
 }
 
 @media(min-width: 768px) {
