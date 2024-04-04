@@ -11,6 +11,10 @@ Ziel sind Vorlagen für das Erstellen von Reports und Präsentationen mit Quarto
 -    Vorlage für HTML-Report  
 -    Vorlage für reveal js-Präsentation
 
+Längerfristig sollte auch Folgendes erstellt werden:
+-    Vorlage für PDF-Bericht
+
+
 ## Quarto-Report Bildungsplanung
 
 ### Dateien

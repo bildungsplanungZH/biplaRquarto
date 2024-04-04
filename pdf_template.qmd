@@ -1,0 +1,86 @@
+---
+title: "PDF-Berichte mit Quarto"
+subtitle: "Anpassungen im Vergleich zu RMarkdown"
+author: 
+  - name: "Sarah Gerhard"
+    email: "sarah.gerhard@bi.zh.ch"
+    affiliation: "Bildungsplanung des Kantons Zürich"
+date: last-modified
+date-format: long
+lang: de
+format:
+    pdf:
+        include-in-header:
+        - preamble.tex
+        template: "../biplaRtemplates/inst/pandoc/templates/biplaRartcl/tmplt.tex"
+        documentclass: biplaRartcl
+        fig-pos: "H"
+        cap-location: top
+        # fig-align: "left"
+        # fig-height: 3
+        
+    # html:
+    #     cap-location: top
+
+execute:
+    warning: false
+    echo: false
+
+---
+
+```{r setup, include=FALSE}
+if (knitr::is_latex_output())
+    knitr::opts_chunk$set(dev = "cairo_pdf")
+
+source <- "Bildungsplanung Kanton Zürich 2024"
+```
+
+
+# YAML-Header
+
+## Template und Präambel
+
+Template und Präambel können wie bei RMarkdown im YAML-Header spezifiziert werden.
+Der Pfad für das Template ist relativ und muss ggf. angepasst werden, je nachdem wo innerhalb eines Repositories das Quarto-Dokument liegt.
+
+## Inhaltsverzeichnis
+
+Das Inhaltsverzeichnis wird über das Template gesteuert. Optionen im Header sind deshalb wirkungslos.
+
+## Position der Abbildungen
+
+Mit `fig-pos: "H"` werden allfällige Abbildungen möglichst dort positioniert, wo sie im Quarto-Dokument in den Fliesstext eingefügt werden.
+
+
+# Abbildungen
+
+Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die Chunk-Optionen mitgegeben werden. Wird mit der Chunk-Option ein Label gesetzt, wird die Abbildung automatisch nummeriert (`label: fig-xyz`). 
+
+```{r}
+#| label: fig-ex
+#| fig-cap: "Irgendeine Beispielgrafik"
+
+plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+    geom_point() +
+    biplaR::getTheme() +
+    theme(legend.position = "right")
+
+plot
+```
+
+`r source`
+
+
+## Schriftart
+
+Die Schrift Arial Narrow wird in Abbildungen aus irgendwelchen Gründen als Times New Roman ausgegeben (zumindest wenn das PDF mit Acrobat geöffnet wird). Um dies zu beheben, können die Abbildungen mit Cairo-PDF generiert werden. Am einfachsten wird dafür im Setup-Chunk die entsprechende knitr-Option `knitr::opts_chunk$set(dev = "cairo_pdf")` verwendet. Falls das Dokument auch in andere Formate gerendert werden soll, kann diese Option auch nur unter der Bedingung eines PDF-Outputs zum Einsatz kommen:
+
+## Untertitel
+
+Gemäss bisheriger Praxis verfügen Abbildungen der Abteilung Bildungsmonitoring neben einem Titel und einer Angabe zur Datenquelle auch über einen Untertitel.
+
+Die Chunk-Option `fig-subcap` kann eventuell dafür genutzt werden. Wenn die 
+
+## Datenquelle
+
+Die Datenquelle wird direkt unter der Abbildung eingefügt. Bei einer wiederkehrenden Angabe empfiehlt es sich, einen String im Setup-Chunk zu definieren und diesen immer wieder einzusetzen. Falls etwas angepasst werden soll, kann die Anpassung bequem für alle Abbildungen im Setup-Chunk vorgenommen werden.
