@@ -1,0 +1,98 @@
+---
+title: "Experimente mit Typst"
+subtitle: "Erste Gehversuche auf dem Weg zu LaTeX-freien PDF-Berichten"
+author: "Sarah Gerhard"
+date: last-modified
+date-format: long
+lang: de
+
+format: 
+    typst:
+        # toc: true
+        # toc-title: Inhalt
+        # toc-depth: 1
+        papersize: a4
+        mainfont: Arial
+        fontsize: 10.5pt
+        cap-location: top
+        keep-typ: true
+
+---
+
+```{=typst} 
+
+#set page(
+    margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
+    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)]
+)
+
+```
+
+# Ausgangslage
+
+Das Rendern von PDF-Dokumenten mit Quarto und der aktuellen LaTeX-Vorlage der Bildungsplanung birgt ein paar Tücken (cf. pdf_template.qmd in diesem Repo). Möglicherweise funktioniert das Rendern via MikTex zudem mit dem digitalen Arbeitsplatz (DAP) ab Oktober nicht mehr. Ab der Version 1.4 unterstützt Quarto auch typst, eine relativ neue Alternative zu LaTeX. Diese Unterlage unternimmt erste Gehversuche mit dieser Variante.
+
+# Dokumentation
+
+Dokumentation zu Quarto und typst findet sich hier:  
+https://quarto.org/docs/output-formats/typst.html
+
+Das Tutorial zu typst selbst ist hier zu finden:  
+https://typst.app/docs/tutorial/
+
+Tipps zum Seitenlayout gibt es hier  
+https://typst.app/docs/guides/page-setup-guide/
+
+
+
+# YAML-Header
+
+## Template und Seitenlayout
+
+[TODO!] Hier kommt ein Text mit Erklärungen hin.
+
+
+## Titelseite
+
+
+## Inhaltsverzeichnis
+
+Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktiviert werden. Mit `toc-title: Inhalt` kann der Titel angepasst werden. `tod-depth` steuert, wie viele Ebenen im Verzeichnis angezeigt werden. 
+
+
+## Position der Abbildungen
+
+[TODO!] Hier kommt ein Text mit Erklärungen hin.
+
+
+# Abbildungen
+
+Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die Chunk-Optionen mitgegeben werden. Wird mit der Chunk-Option ein Label gesetzt (`label: fig-ex`), wird die Abbildung automatisch nummeriert und kann mit `@fig-ex` referenziert werden (@fig-ex). 
+
+```{r}
+#| label: fig-ex
+#| fig-cap: "Irgendeine Beispielgrafik"
+
+plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+    geom_point() +
+    biplaR::getTheme() +
+    theme(legend.position = "right")
+
+plot
+```
+
+Datenquelle: Beispiel-Dataset aus dem ggplot-Package
+
+## Schriftart
+
+Im Unterschied zur LaTeX-Template gibt es keine Probleme mit Arial Narrow in Abbildungen.
+
+## Untertitel
+
+Gemäss bisheriger Praxis verfügen Abbildungen der Abteilung Bildungsmonitoring neben einem Titel und einer Angabe zur Datenquelle auch über einen Untertitel.
+
+Die Chunk-Option `fig-subcap` kann eventuell dafür genutzt werden. Allerdings ist diese für die Beschriftung von mehreren Abbildungen unter einem gemeinsamen übergeordneten Titel gedacht. Aktuell wurde noch kein Weg gefunden, die automatische Nummerierung von `fig-subcap` zu entfernen. 
+
+## Datenquelle
+
+Die Datenquelle wird direkt unter der Abbildung eingefügt. Bei einer wiederkehrenden Angabe empfiehlt es sich, einen String im Setup-Chunk zu definieren und diesen immer wieder einzusetzen. Falls etwas angepasst werden soll, kann die Anpassung bequem für alle Abbildungen im Setup-Chunk vorgenommen werden.
