@@ -11,17 +11,38 @@ author:
 lang: de
 format:
     revealjs:
+        template-partials: 
+            - partials/title-slide.html
         theme:
             - "style/bipla.scss"
             - "style/pres.css"
             - default
+        #Wenn kein Hintergrundbild für die Titelseite gewünscht ist kann data-background-image und data-background-positon auskommentiert werden. Bedingt dass title_logo_white und title_font_color_white auf false gesetzt werden.
         title-slide-attributes:
-            data-background-image: images/nbw_pfingstweid_logo.png
+            data-background-image: images/panorama.png
             data-background-position: left
+            #ohne Hintergrundbild zwingend notwendig
+            data-background-color: white
 
 standalone: true
 embed-resources: true
 fig-cap-location: top
+
+logo: images/logo.svg
+css: style/logo.css
+
+#Definiert ob die Logo und Schrift dazu in weiss oder in schwarz dargestellt wird. Es hängt vom Hintergrundbild ab, was sinnvoll ist.
+title_logo_white: true
+
+#Definiert ob die Schriftfarbe auf der Titelseite weiss ist. Wenn false ist der Haupttitel blau und der rest schwarz.
+title_font_color_white: true
+
+#Definiert ob der blaue Spikel angezeigt werden soll. Wenn der Spikel angezeigt wird, wird im Logo die kleine Flage ausgeblendet.
+show_spikel: true
+
+#Text der Neben dem Logo auf der Titelseite unterhalb von "Kanton Zürich" dargestellt wird.
+direktion: "Bildungsdirektion"
+abteilung: "Bildungsplanung"
 
 execute: 
   echo: false

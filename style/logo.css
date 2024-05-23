@@ -1,5 +1,5 @@
 .quarto-title-block .quarto-title-banner {
-  background-image: url(../images/zhweb.png);
+  background-image: url(../images/logo_negativ.svg);
   background-size: 75px;
   background-position: left;
   background-repeat: no-repeat;
@@ -34,9 +34,45 @@
   top: 5px;
   left: 12px;
   height: 9vw !important;
-  width: 9vw !important;
   max-width: unset !important;
   max-height: unset !important;
+}
+
+.reveal .title-slide-logo {
+  display:block;
+  position: fixed;
+  bottom: unset !important;
+  right: unset !important;
+  top: 5px;
+  left: 12px;
+  max-width: unset !important;
+  max-height: unset !important;
+  transform: none;
+}
+
+.reveal .title-slide-spikel {
+  display:block;
+  position: fixed;
+  bottom: 0px;
+  top: unset !important;
+  right: unset !important;
+  left: 0px;
+  max-width: unset !important;
+  max-height: unset !important;
+  transform: none;
+  height: 50vh;
+  margin: 0px;
+}
+
+.reveal .title-slide-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reveal .title-slide-logo img {
+  height: 9vw !important;
+  
 }
 
 /* Maximum aspect ratio */
