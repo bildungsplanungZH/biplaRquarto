@@ -28,31 +28,43 @@
 
 .reveal .slide-logo {
   display: block;
-  position: fixed;
+  position: absolute;
   bottom: unset !important;
   right: unset !important;
-  top: 5px;
+  top: 12px;
   left: 12px;
   height: 9vw !important;
   max-width: unset !important;
   max-height: unset !important;
+  z-index: -2 !important;
+}
+
+.print-pdf .reveal .slide-logo {
+  display: none;
 }
 
 .reveal .title-slide-logo {
   display:block;
-  position: fixed;
+  position: absolute;
   bottom: unset !important;
   right: unset !important;
-  top: 5px;
+  top: 12px;
   left: 12px;
+  height: 9vw !important;
   max-width: unset !important;
   max-height: unset !important;
   transform: none;
 }
 
+.print-pdf .reveal .title-slide-logo {
+  top: 20px;
+  /*left: -30px;*/
+  height: 100px !important;
+}
+
 .reveal .title-slide-spikel {
   display:block;
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   top: unset !important;
   right: unset !important;
@@ -70,9 +82,25 @@
   gap: 20px;
 }
 
-.reveal .title-slide-logo img {
+.print-pdf .reveal .title-slide-logo-container {
+  /*gap: -10px;*/
+}
+
+.print-pdf #title-logo-text {
+  /*margin-left:-50px; */
+  font-size:25px;
+}
+
+.reveal .title-slide-logo img,
+.reveal .title-slide-logo svg {
   height: 9vw !important;
   
+}
+
+.print-pdf .reveal .title-slide-logo img,
+.print-pdf .reveal .title-slide-logo svg {
+  height: 100px !important;
+  width: auto;
 }
 
 /* Maximum aspect ratio */
