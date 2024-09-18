@@ -17,7 +17,7 @@ format:
         theme: style/bipla.scss
         embed-resources: true
         standalone: true
-
+        include-in-header: partials/include-header.html
 toc: true
 toc-location: left
 toc-title: "Inhalt"
@@ -50,3 +50,4 @@ params:
 {{< include samplecontent/_tabset.qmd >}}
 
 {{< include samplecontent/_variables.qmd >}}
+

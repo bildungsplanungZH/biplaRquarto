@@ -23,7 +23,7 @@ format:
             data-background-position: left
             #ohne Hintergrundbild zwingend notwendig
             data-background-color: white
-
+        include-in-header: partials/include-header.html
 standalone: true
 embed-resources: true
 fig-cap-location: top
