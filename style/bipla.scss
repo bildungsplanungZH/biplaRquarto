@@ -117,11 +117,14 @@ $nav-pills-link-active-bg: $black;
 
 // left-aligned title for tables (wip)
 
-figcaption, caption, .table-caption, .figure-caption {
+figcaption, caption, .table-caption, .figure-caption,
+figure.quarto-float-tbl figcaption.quarto-float-caption-top, 
+figure.quarto-float-tbl figcaption.quarto-float-caption-bottom  {
     text-align: left;
     font-weight: bold;
     color: $black;
     font-family: InterBlack,"Arial Black",Helvetica,sans-serif;
+    font-size: 1.2rem !important;
 }
 
 :not(.fullscreen) > .title.figure-caption {
