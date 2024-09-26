@@ -1,0 +1,316 @@
+---
+title: "Quarto"
+subtitle: "Anwendungsbeispiele aus der Bildungsplanung"
+author:
+    - name: "Res Marti"
+      email: "res.marti@bi.zh.ch"
+      affiliation: "Bildungsplanung Kantos Zürich"
+lang: de
+format:
+    revealjs:
+        theme:
+            - "style/bipla.scss"
+            - "style/pres.css"
+            - default
+        title-slide-attributes:
+            data-background-image: images/nbw_hardau_logo.png
+            data-background-position: left
+    html:
+        theme: style/bipla.scss
+        embed-resources: true
+        standalone: true
+        toc: true
+        toc-location: left
+        toc-title: "Inhalt"
+
+title-block-banner: "#0076BD"
+logo: images/logo.png
+css: style/logo.css
+
+standalone: true
+embed-resources: true
+fig-cap-location: top
+
+execute: 
+  echo: false
+  warning: false
+---
+
+## Disclaimer
+
+Andere haben mehr Erfahrung als ich
+
+Das Quarto-Template ist Work in Progress
+
+Es arbeiten daran:
+
+- Sarah Gerhard
+- Flavian Imlig
+- Res Marti
+- weitere Contributer sind willkommen
+
+[https://github.com/bildungsplanungZH/quarto_templates](https://github.com/bildungsplanungZH/quarto_templates)
+
+# Überblick
+
+## Was ist Quarto
+
+Quarto v1.0 wurde 2022 publiziert. Aktuell ist Version 1.4
+
+Quarto wird von Posit - der Organisation hinter RStudio - gesponsert. Bei Posit arbeitet ein Kernteam an Quarto und R Markdown.
+
+Quarto ist R Markdown, aber auf Steroiden 
+
+Nicht nur R, sondern auch Python, javascript, usw. Und beliebige Kombinationen davon.
+
+Bei R-Studio ist Quarto jeweils dabei, es kann aber auch separat installiert werden.
+
+::: footer
+Überblick
+:::
+
+---
+
+<img src="https://i.imgflip.com/8pcvi8.jpg" title="made at imgflip.com"/>
+
+::: footer
+Überblick
+:::
+
+## Was kann Quarto
+
+- Dokumente
+  - HTML (standalone)
+  - PDF
+  - Word
+  - ePub
+- Präsentationen mit revealjs
+- Dashboards (erst ab Version 1.4, von uns noch nicht getestet)
+
+::: footer
+Überblick
+:::
+
+## Warum wir Quarto verwenden
+
+- Reproduzierbarkeit
+- Aktualisierbarkeit
+- Once only für multimodale Produkte
+- Massenproduktion
+- Versionskontrolle
+- Lösen vom Printformat
+  - Keine Einschränkung auf A4
+  - Interaktivität
+
+::: footer
+Überblick
+:::
+
+---
+
+## Produktionsprozess im Fluss
+  
+```{mermaid}
+flowchart LR
+  A[Redaktion] --> B(Präsentation Amt)
+  B --> A
+  A --> C(Präsentation Direktion)
+  C --> A
+  A --> F[Kommunikation] 
+  F --> A 
+  A --> D[Umsetzung Print]
+  A --> E[Umsetzung Web]
+```  
+
+::: footer
+Überblick
+:::
+  
+## Was geht sehr gut
+
+- Interne Berichte
+- Präsentationen
+- Dokumentation
+
+Alles ist Code. Es ist
+
+- reproduzierbar
+- aktualisierbar
+- kollaborationsfähig (mit anderen R-Nutzenden)
+- automatisierbar
+
+::: footer
+Überblick
+:::
+
+## Was ist/bleibt schwieriger
+
+- vollkommen CD-konforme Produkte für die Öffentlichkeit
+- Multimodale Produkte
+  - Printprodukte
+- Inhaltliche Texte automatisiert erstellen
+- Zusammenarbeit mit technisch nicht versierten Personen
+- Publikation ins zhweb
+
+::: footer
+Überblick
+:::
+
+# Was kann Quarto im Detail
+
+## Code und Ausgabe
+
+```{r plot}
+#| echo: true
+
+plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+    geom_point() +
+    biplaR::getTheme() +
+    theme(legend.direction = "horizontal")
+
+plot
+```
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Nur Ausgabe
+
+```{r}
+#| label: fig-ex
+#| fig-cap: Titel der Beispielabbildung
+
+plot
+```
+
+[Daten: Bildungsplanung des Kantons Zürich, 2023]{.figure-source}
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+---
+
+## Beispiel mit Leaflet
+
+```{r}
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=8.54288, lat=47.37981, popup="Bildungsplanung") %>%
+  addMarkers(lng=8.528050886953935, lat=47.36977592087725, popup="Statistisches Amt")
+
+```
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Beispiel mit Observable
+
+<div id="observablehq-container-41bb9074"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/@bildungsplanungzh/prototyp-stacked-bar-chart@3911.js?v=4";
+new Runtime().module(define, name => {
+  if (name === "container") return new Inspector(document.querySelector("#observablehq-container-41bb9074"));
+});
+</script>
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## {data-background-iframe="http://www.quarto.org/docs/guide" menu="false" background-interactive="false"}
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Tabs
+
+::: {.panel-tabset .nav-pills}
+## Irgendwas
+
+```{r}
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=8.54288, lat=47.37981, popup="Bildungsplanung") %>%
+  addMarkers(lng=8.528050886953935, lat=47.36977592087725, popup="Statistisches Amt")
+
+```
+
+## Etwas anderes
+
+Das ist nur ein Erläuterungstext
+
+:::
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Tabellen {.scrollable}
+
+```{r}
+#| label: tbl-bm1
+#| tbl-cap: 'Titel einer Standard-Tabelle Bildungsmonitoring'
+#| tbl-subcap: 'Tabellenbeschriftung zweite Ebene'
+#| results: asis
+#| echo: false
+
+tbl <- tibble('Kanton' := c("ZH", "BE", "AG", "LU", "GR", "GL", "SG", "TG", "SZ", "ZG"),
+              'Wert' := as.integer(runif(10, 1,99), 0),
+              'Kategorie' := sample(factor(LETTERS), 10, replace = T))
+# text <- c('Titel einer Standard-Tabelle Bildungsmonitoring',
+#           'Tabellenbeschriftung zweite Ebene',
+#           'Daten: Bildungsplanung des Kantons Zürich, 2023')
+
+pander::pandoc.table(tbl)
+```
+
+[Daten: Bildungsplanung des Kantons Zürich]{.table-source}
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Quarto-Präsentationen mit reveal js
+
+-   Vollwertige Präsentationen mit Präsentationsansicht und Notizen, eingebautes Whiteboard und Markierstifte usw.
+-   Integration von Code und Output
+-   Integration von interaktiven Elementen
+-   Integration von Webseiten in die Präsentation
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Notizen und Präsentationsmodus
+
+Notizen zur Folien können wie folgt eingefügt werden:
+
+```markdown
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+```
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+
+::: footer
+Was kann Quarto im Detail
+:::
+
+## Links
+
+-    Quarto-Dokumentation: <https://quarto.org/docs/guide/>
+-    Quarto-Template von der Bildungsplanung: <https://github.com/bildungsplanungZH/quarto_templates>
+
