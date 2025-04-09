@@ -1,18 +1,21 @@
 # Vorlagen für halbwegs CD-konforme Dokumente mit Quarto
 
-15.05.2023  
+09.04.2025  
 Kontakt: 
-Flavian Imlig <flavian.imlig@bi.zh>  
 Sarah Gerhard <sarah.gerhard@bi.zh>
+Res Marti <res.marti@bi.zh.ch>
+Flavian Imlig <flavian.imlig@bi.zh>  
 
 
 ### Kurzbeschreibung
-Ziel sind Vorlagen für das Erstellen von Reports und Präsentationen mit Quarto, welche die Corporate Design-Vorgaben halbwegs respektieren. Priorität haben dabei:  
--    Vorlage für HTML-Report  
+Das Package beinhaltet Vorlagen für das Erstellen von Berichten und Präsentationen mit Quarto, welche die Corporate Design-Vorgaben halbwegs respektieren. Bereits vorhanden sind:  
+-    Vorlage für HTML-Bericht  
+-    Vorlage für PDF-Bericht mit LaTeX
 -    Vorlage für reveal js-Präsentation
 
 Längerfristig sollte auch Folgendes erstellt werden:
--    Vorlage für PDF-Bericht
+-    Vorlage für PDF-Bericht mit LaTeX
+-    Vorlage für Word-Dokumente
 
 
 ## Quarto-Report Bildungsplanung

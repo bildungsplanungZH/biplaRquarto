@@ -1,0 +1,116 @@
+---
+title: "Titel anpassen"
+subtitle: "Untertitel hinzufügen"
+author: 
+  - name: "Vorname Nachname"
+    email: "vorname.nachname@bi.zh.ch"
+    affiliation: "Bildungsplanung des Kantons Zürich"
+lang: de
+format:
+    revealjs:
+        template-partials: 
+            - partials/title-slide.html
+        theme:
+            - "style/bipla.scss"
+            - "style/pres.css"
+            - default
+        #Wenn kein Hintergrundbild für die Titelseite gewünscht ist kann data-background-image und data-background-positon auskommentiert werden. Bedingt dass title_logo_white und title_font_color_white auf false gesetzt werden.
+        title-slide-attributes:
+            data-background-image: images/panorama.png
+            data-background-position: left
+            #ohne Hintergrundbild zwingend notwendig
+            data-background-color: white
+        # include-in-header: partials/include-header.html
+embed-resources: true
+fig-cap-location: top
+
+logo: images/logo.svg
+css: style/logo.css
+
+#Definiert ob die Logo und Schrift dazu in weiss oder in schwarz dargestellt wird. Es hängt vom Hintergrundbild ab, was sinnvoll ist.
+title_logo_white: true
+
+#Definiert ob die Schriftfarbe auf der Titelseite weiss ist. Wenn false ist der Haupttitel blau und der rest schwarz.
+title_font_color_white: true
+
+#Definiert ob der blaue Spikel angezeigt werden soll. Wenn der Spikel angezeigt wird, wird im Logo die kleine Flage ausgeblendet.
+show_spikel: true
+
+#Text der Neben dem Logo auf der Titelseite unterhalb von "Kanton Zürich" dargestellt wird.
+direktion: "Bildungsdirektion"
+abteilung: "Bildungsplanung"
+
+execute: 
+  echo: false
+  warning: false
+---
+
+
+## Quarto-Präsentationen mit reveal js
+
+::: {.callout-note}
+Quarto v1.0 wurde 2022 publiziert.
+
+Die Entwicklung von Quarto wird von Posit - der Organisation hinter RStudio - gesponsert. Bei Posit arbeitet ein Kernteam an Quarto und R Markdown.
+
+Quarto verfolgt die gleichen Ziele wie R Markdown, richtet sich aber nicht mehr exklusiv an Benutzer der Sprache R.
+:::
+
+Es gibt eine ausführliche Dokumentation der Möglichkeiten unter <https://quarto.org/docs/presentations/revealjs/>.
+
+
+## Präsentationen mit revealjs
+
+-   Optionen für Logo, Fusszeile, Foliennummer etc.
+-   Optionen für inkrementelles Einblenden und Übergänge
+-   Präsentationsansicht und Notizen, eingebautes Whiteboard und Markierstifte
+-   Integration von Code und Output
+-   Integration von interaktiven Elementen
+-   Integration von Webseiten in die Präsentation
+
+
+## Notizen und Präsentationsmodus
+
+Notizen zur Folien können wie folgt eingefügt werden:
+
+```markdown
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+```
+::: notes
+Hier können Notizen für die Präsentation eingefügt werden.
+:::
+
+## Code und Ausgabe
+
+```{r plot}
+#| echo: true
+
+plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
+    geom_point() +
+    biplaR::getTheme() +
+    theme(legend.direction = "horizontal")
+
+plot
+```
+
+## Abbildungen
+
+---
+
+```{r}
+#| label: fig-ex
+#| fig-cap: Titel der Beispielabbildung
+
+plot
+```
+
+[Daten: Bildungsplanung des Kantons Zürich, 2023]{.figure-source}
+
+
+## Links
+
+-    Quarto-Dokumentation zu reveal js: <http://quarto.org/docs/presentations/revealjs/>
+-    RStudio::conf(2022): [These are a few of my favorite things (about Quarto presentations)](https://www.rstudio.com/conference/2022/talks/my-favorite-things-quarto-presentations/) (Tracy Teal, 15 min)
+
