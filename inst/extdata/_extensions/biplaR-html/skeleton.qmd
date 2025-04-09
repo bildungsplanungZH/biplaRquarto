@@ -1,7 +1,6 @@
 ---
 title: "Titel anpassen"
 subtitle: "Untertitel hinzufügen"
-
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"

@@ -13,7 +13,7 @@
 % Document information
 %%%%%
 
-\subject{PDF-Bericht mit Quarto} % shows in every header of standard page
+\subject{Titel in Kopfzeile anpassen} % shows in every header of standard page
 
 %%%%%
 % Titlepage and Impressum settings
@@ -23,10 +23,10 @@
 \csdef{cl_tp_fontsize}{Large} % font size for title and subtitle, values: large, Large, LARGE (default), huge, Huge
 %\csdef{cl_tp_headtext}{abk} % content of titlepage header, defaults to Kanton Zürich\\Bildungsdirektion\\Bildungsplanung
 %\csdef{cl_tp_titleprefix}{\hspace*{-1em}%} % code to be entered before the title, defaults to \@empty
-%\csdef{cl_tp_comment}{Details} % content of titlepage comment, defaults to \@empty
+\csdef{Internes Dokument}{Details} % content of titlepage comment, defaults to \@empty
 \toggletrue{cl_tp_date} % print date on titlepage, defaults to false
 
-% \togglefalse{cl_tp_impressum} % use impressum page, defaults to true
+\togglefalse{cl_tp_impressum} % use impressum page, defaults to true
 
 %\publishers{Bildungsdirektion Kanton Zürich, Bildungsplanung} % defaults to Bildungsdirektion Kanton Zürich, Bildungsplanung
 

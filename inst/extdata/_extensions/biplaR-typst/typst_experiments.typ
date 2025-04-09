@@ -61,6 +61,54 @@
 
 }
 
+// Subfloats
+// This is a technique that we adapted from https://github.com/tingerrr/subpar/
+#let quartosubfloatcounter = counter("quartosubfloatcounter")
+
+#let quarto_super(
+  kind: str,
+  caption: none,
+  label: none,
+  supplement: str,
+  position: none,
+  subrefnumbering: "1a",
+  subcapnumbering: "(a)",
+  body,
+) = {
+  context {
+    let figcounter = counter(figure.where(kind: kind))
+    let n-super = figcounter.get().first() + 1
+    set figure.caption(position: position)
+    [#figure(
+      kind: kind,
+      supplement: supplement,
+      caption: caption,
+      {
+        show figure.where(kind: kind): set figure(numbering: _ => numbering(subrefnumbering, n-super, quartosubfloatcounter.get().first() + 1))
+        show figure.where(kind: kind): set figure.caption(position: position)
+
+        show figure: it => {
+          let num = numbering(subcapnumbering, n-super, quartosubfloatcounter.get().first() + 1)
+          show figure.caption: it => {
+            num.slice(2) // I don't understand why the numbering contains output that it really shouldn't, but this fixes it shrug?
+            [ ]
+            it.body
+          }
+
+          quartosubfloatcounter.step()
+          it
+          counter(figure.where(kind: it.kind)).update(n => n - 1)
+        }
+
+        quartosubfloatcounter.update(0)
+        body
+      }
+    )#label]
+  }
+}
+
+// callout rendering
+// this is a figure show rule because callouts are crossreferenceable
 #show figure: it => {
   if type(it.kind) != "string" {
     return it
@@ -98,34 +146,6 @@
     old_callout.body.children.at(1))
 }
 
-#show ref: it => locate(loc => {
-  let target = query(it.target, loc).first()
-  if it.at("supplement", default: none) == none {
-    it
-    return
-  }
-
-  let sup = it.supplement.text.matches(regex("^45127368-afa1-446a-820f-fc64c546b2c5%(.*)")).at(0, default: none)
-  if sup != none {
-    let parent_id = sup.captures.first()
-    let parent_figure = query(label(parent_id), loc).first()
-    let parent_location = parent_figure.location()
-
-    let counters = numbering(
-      parent_figure.at("numbering"), 
-      ..parent_figure.at("counter").at(parent_location))
-      
-    let subcounter = numbering(
-      target.at("numbering"),
-      ..target.at("counter").at(target.location()))
-    
-    // NOTE there's a nonbreaking space in the block below
-    link(target.location(), [#parent_figure.at("supplement") #counters#subcounter])
-  } else {
-    it
-  }
-})
-
 // 2023-10-09: #fa-icon("fa-info") is not working, so we'll eval "#fa-info()" instead
 #let callout(body: [], title: "Callout", background_color: rgb("#dddddd"), icon: none, icon_color: black) = {
   block(
@@ -142,10 +162,13 @@
         fill: background_color, 
         width: 100%, 
         inset: 8pt)[#text(icon_color, weight: 900)[#icon] #title]) +
-      block(
-        inset: 1pt, 
-        width: 100%, 
-        block(fill: white, width: 100%, inset: 8pt, body)))
+      if(body != []){
+        block(
+          inset: 1pt, 
+          width: 100%, 
+          block(fill: white, width: 100%, inset: 8pt, body))
+      }
+    )
 }
 
 
@@ -155,6 +178,7 @@
   authors: none,
   date: none,
   abstract: none,
+  abstract-title: none,
   cols: 1,
   margin: (x: 1.25in, y: 1.25in),
   paper: "us-letter",
@@ -166,6 +190,7 @@
   toc: false,
   toc_title: none,
   toc_depth: none,
+  toc_indent: 1.5em,
   doc,
 ) = {
   set page(
@@ -210,7 +235,7 @@
 
   if abstract != none {
     block(inset: 2em)[
-    #text(weight: "semibold")[Abstract] #h(1em) #abstract
+    #text(weight: "semibold")[#abstract-title] #h(1em) #abstract
     ]
   }
 
@@ -223,7 +248,8 @@
     block(above: 0em, below: 2em)[
     #outline(
       title: toc_title,
-      depth: toc_depth
+      depth: toc_depth,
+      indent: toc_indent
     );
     ]
   }
@@ -234,6 +260,11 @@
     columns(cols, doc)
   }
 }
+
+#set table(
+  inset: 6pt,
+  stroke: none
+)
 #show: doc => article(
   title: [Experimente mit Typst],
   authors: (
@@ -241,7 +272,7 @@
       affiliation: [],
       email: [] ),
     ),
-  date: [23. Mai 2024],
+  date: [9. April 2025],
   lang: "de",
   paper: "a4",
   font: ("Arial",),
@@ -256,11 +287,12 @@
 
 #set page(
     margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
-    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)]
+    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)
+                        #text("Kanton Zürich")]
 )
 = Ausgangslage
 <ausgangslage>
-Das Rendern von PDF-Dokumenten mit Quarto und der aktuellen LaTeX-Vorlage der Bildungsplanung birgt ein paar Tücken \(cf.~pdf\_template.qmd in diesem Repo). Möglicherweise funktioniert das Rendern via MikTex zudem mit dem digitalen Arbeitsplatz \(DAP) ab Oktober nicht mehr. Ab der Version 1.4 unterstützt Quarto auch typst, eine relativ neue Alternative zu LaTeX. Diese Unterlage unternimmt erste Gehversuche mit dieser Variante.
+Das Rendern von PDF-Dokumenten mit Quarto und der aktuellen LaTeX-Vorlage der Bildungsplanung birgt ein paar Tücken (cf.~pdf\_template.qmd in diesem Repo). Möglicherweise funktioniert das Rendern via MikTex zudem mit dem digitalen Arbeitsplatz (DAP) ab Oktober nicht mehr. Ab der Version 1.4 unterstützt Quarto auch typst, eine relativ neue Alternative zu LaTeX. Diese Unterlage unternimmt erste Gehversuche mit dieser Variante.
 
 = Dokumentation
 <dokumentation>
@@ -291,9 +323,8 @@ Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktivier
 
 = Abbildungen
 <abbildungen>
-Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die Chunk-Optionen mitgegeben werden. Wird mit der Chunk-Option ein Label gesetzt \(`label: fig-ex`), wird die Abbildung automatisch nummeriert und kann mit `@fig-ex` referenziert werden \(@fig-ex).
+Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die Chunk-Optionen mitgegeben werden. Wird mit der Chunk-Option ein Label gesetzt (`label: fig-ex`), wird die Abbildung automatisch nummeriert und kann mit `@fig-ex` referenziert werden (@fig-ex).
 
-#block[
 ```r
 plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
     geom_point() +
@@ -303,23 +334,19 @@ plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
 plot
 ```
 
-#block[
 #figure([
-#box(width: 396.0pt, image("typst_experiments_files/figure-typst/fig-ex-1.svg"))
+#box(image("typst_experiments_files/figure-typst/fig-ex-1.svg"))
 ], caption: figure.caption(
 position: top, 
 [
 Irgendeine Beispielgrafik
 ]), 
 kind: "quarto-float-fig", 
-supplement: "Figure", 
-numbering: "1", 
+supplement: "Abbildung", 
 )
 <fig-ex>
 
 
-]
-]
 Datenquelle: Beispiel-Dataset aus dem ggplot-Package
 
 == Schriftart

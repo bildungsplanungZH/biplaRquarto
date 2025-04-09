@@ -17,13 +17,16 @@ format:
         cap-location: top
         keep-typ: true
 
+embed-resources: true
+
 ---
 
 ```{=typst} 
 
 #set page(
     margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
-    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)]
+    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)
+                        #text("Kanton Zürich")]
 )
 
 ```
