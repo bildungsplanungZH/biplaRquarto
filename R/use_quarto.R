@@ -1,3 +1,12 @@
+#' Quarto-Vorlage in diesem Repository verwenden
+#'
+#' @param file_name Dateiname (ohne Erweiterung) der neuen Unterlage, default ist report
+#' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs, biplaR-latex, biplaR-docx oder biplaR-typst)
+#'
+#' @returns NULL
+#' @export
+#'
+#' @examples use_quarto("bericht", "biplaR-pdf")
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
 
     if (is.null(file_name)) {
@@ -6,7 +15,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
 
     # check for available extensions
     stopifnot("Extension not in package" = ext_name %in%
-                  c("biplaR-html", "biplaR-revealjs", "biplaR-latex", "biplaR-docx", "biplaR-typst"))
+                  get_names())
 
     # check for existing _extensions directory
     if(!file.exists("_extensions")) dir.create("_extensions")
@@ -34,10 +43,10 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
     }
 
     # create new qmd report based on skeleton
-    file.copy(file.path("_extensions", ext_name, "skeleton.qmd"),
+    file.copy(file.path("_extensions", ext_name, "template.qmd"),
               paste0(file_name, ".qmd", collapse = ""))
 
     # open the new file in the editor
-    file.edit(paste0(file_name, ".qmd", collapse = ""))
+    utils::file.edit(paste0(file_name, ".qmd", collapse = ""))
 
 }

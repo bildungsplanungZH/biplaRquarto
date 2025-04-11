@@ -1,10 +1,11 @@
 Package: quarto_templates
-Title: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente zur Verfügung.
+Title: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente zur Verfügung
 Version: 0.0.0.9000
 Authors@R: 
-    person("Sarah", "Gerhard", , "sarah.gerhard@bi.zh.ch", role = c("aut", "cre"))
-    person("Res", "Marti", , "res.marti@bi.zh.ch", role = c("aut"))
-    person("Flavian", "Imlig", , "flavian.imlig@bi.zh.ch", role = c("aut"))
+    c(
+    person(given = "Sarah", family = "Gerhard", email = "sarah.gerhard@bi.zh.ch", role = c("aut", "cre")),
+    person(given = "Res", family = "Marti", email = "res.marti@bi.zh.ch", role = c("aut")),
+    person(given = "Flavian", family = "Imlig", email = "flavian.imlig@bi.zh.ch", role = c("aut")))
 Description: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente zur Verfügung. Aktuell bestehen Vorlagen für die Output-Formate HTML, PDF mit Latex und revealJS. 
 License: MIT + file LICENSE
 Encoding: UTF-8

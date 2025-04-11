@@ -9,22 +9,22 @@ lang: de
 format:
     revealjs:
         template-partials: 
-            - partials/title-slide.html
+            - _extensions/biplaR-revealjs/partials/title-slide.html
         theme:
-            - "style/bipla.scss"
-            - "style/pres.css"
+            - _extensions/biplaR-revealjs/style/bipla.scss
+            - _extensions/biplaR-revealjs/style/pres.css
             - default
         #Wenn kein Hintergrundbild für die Titelseite gewünscht ist kann data-background-image und data-background-positon auskommentiert werden. Bedingt dass title_logo_white und title_font_color_white auf false gesetzt werden.
         title-slide-attributes:
-            data-background-image: images/panorama.png
+            data-background-image: _extensions/biplaR-revealjs/images/panorama.png
             data-background-position: left
             #ohne Hintergrundbild zwingend notwendig
             data-background-color: white
-        include-in-header: partials/include-header.html
+        include-in-header: _extensions/biplaR-revealjs/partials/include-header.html
         embed-resources: true
         fig-cap-location: top
-        logo: images/logo.svg
-        css: style/logo.css
+        logo: _extensions/biplaR-revealjs/images/logo.svg
+        css: _extensions/biplaR-revealjs/style/logo.css
 
 #Definiert ob die Logo und Schrift dazu in weiss oder in schwarz dargestellt wird. Es hängt vom Hintergrundbild ab, was sinnvoll ist.
 title_logo_white: true

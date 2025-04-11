@@ -1,7 +1,7 @@
 ---
-title: "Experimente mit Typst"
-subtitle: "Erste Gehversuche auf dem Weg zu LaTeX-freien PDF-Berichten"
-author: "Sarah Gerhard"
+title: "Titel hinzufügen"
+subtitle: "Möglicherweise auch einen Untertitel"
+author: "Vorname Nachname"
 date: last-modified
 date-format: long
 lang: de
@@ -15,7 +15,6 @@ format:
         mainfont: Arial
         fontsize: 10.5pt
         cap-location: top
-        keep-typ: true
 
 embed-resources: true
 
