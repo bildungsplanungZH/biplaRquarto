@@ -16,8 +16,8 @@ abstract-title: "Klassifikation"
 format:
     pdf:
         include-in-header:
-        - _extensions/biplaR-latex/preamble.tex
-        template: _extensions/biplaR-latex/tmplt.tex
+        - _extensions/biplaR-pdf/preamble.tex
+        template: _extensions/biplaR-pdf/tmplt.tex
         documentclass: biplaRartcl
         fig-pos: "H"
         # fig-align: "left"

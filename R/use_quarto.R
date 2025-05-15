@@ -1,7 +1,7 @@
 #' Quarto-Vorlage in diesem Repository verwenden
 #'
 #' @param file_name Dateiname (ohne Erweiterung) der neuen Unterlage, default ist report
-#' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs, biplaR-latex, biplaR-docx oder biplaR-typst)
+#' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs, biplaR-pdf, biplaR-docx oder biplaR-typst)
 #'
 #' @returns NULL
 #' @export
