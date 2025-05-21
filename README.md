@@ -24,6 +24,17 @@ Mittelfristig sollte auch Folgendes erstellt werden:
 
 ### Nutzung der Templates
 
-* Package installieren oder mit `devtools::load_all("../quarto_templates")` temporär laden,  
+* Package installieren oder mit `devtools::load_all("../biplaRquarto")` temporär laden,  
 * mit der Funktion `get_names()` die Namen der verfügbaren Vorlagen abfragen,  
 * mit der Funktion `use_quarto(filename = "Bericht", ext_name = "biplaR-html")` ein Quarto-Dokument mit dem entsprechenden Beigemüse erstellen.
+
+### biplaR-pdf mit MikTeX nutzen
+
+Die Vorlage biplaR-pdf funktioniert mit MikTeX. Mit TinyTeX wurde sie nicht getestet. MikTeX kann über das AFI-ServicePortal bestellt werden.
+
+Nach der Installation muss der Pfad zum Verzeichnis `biplaR-pdf` in MikTeX zu den TEXMF-Wurzelverzeichnissen hinzugefügt werden:  
+*Einstellungen -> Verzeichnisse -> hinzufügen via Plus-Zeichen*
+
+Der Warnhinweis (kein TDS-konformes Wurzelverzeichnis) kann ignoriert werden
+
+
