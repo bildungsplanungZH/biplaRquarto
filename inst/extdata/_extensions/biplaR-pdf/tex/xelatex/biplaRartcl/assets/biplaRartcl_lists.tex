@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_lists.tex
+% list definitions, including toc, lot, lof, boxes
+%
+% use with documentclass biplaRartcl >= 1.7
+% see also statR::zhpal$zh
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 19.03.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\csdef{def_toc}{%
+    \DeclareTOCStyleEntry[beforeskip=-7bp plus -1bp minus -1bp]{tocline}{section}%
+    \DeclareTOCStyleEntries[beforeskip=-14bp plus -1bp minus -1bp, linefill=\hfill]{tocline}{subsection, subsubsection}%
+    \renewcommand\tableofcontents{%
+        \subsection*{\contentsname}%
+        \@mkboth{\MakeUppercase\contentsname}%
+        {\MakeUppercase\contentsname}%
+        \@starttoc{toc}}%
+}
+
+\csdef{def_lists}{%
+    \providecolor{zhorange}{rgb}{1,0,0}%
+    \setlist{nolistsep}%
+    \setlist{\labelindent=\parindent, labelwidth=1em} % horizontale Abstände
+    \setlist{itemsep=0ex, parsep=0ex} % vertikaler Abstand zwischen Items
+    %
+    \setlist[itemize]{noitemsep,topsep=0ex,partopsep=0ex}%
+    \setlist[itemize,1]{font=\usekomafont{labelinglabel}, label=\raisebox{0.4ex}{$\centerdot$}}%
+    %
+    \setlist[enumerate]{font=\usekomafont{labelinglabel}, label=\arabic*.}%
+    \newlist{inumerate}{enumerate*}{1}%
+    \setlist[inumerate]{font=\usekomafont{labelinglabel}, label=(\arabic*)}%
+    %
+    \newlist{taskitemize}{itemize}{1}%
+    \setlist[taskitemize]{font=\usekomafont{zhbold}\color{zhorange}}%
+    %
+    \newenvironment{inumeratepar}%
+        {\begin{minipage}{\textwidth}}%
+        {\end{minipage}}%
+}
+
+% boxes
+\providecolor{zhblue}{rgb}{0,0,1}%
+
+\setlength\fboxsep{1em}
+\DeclareTColorBox{zhbox}{ o O{zhblue} }{%
+    enhanced,%
+    colframe=#2,colback=white,colbacktitle=#2!5!white,%
+    fonttitle=\usekomafont{small_col},%
+    IfValueTF={#1}{title = #1}{notitle},%
+    sharp corners,%
+    width=\textwidth,%
+    boxsep=\fboxsep, oversize,%
+    attach boxed title to top left={xshift=\fboxsep*2, yshift =-\tcboxedtitleheight/2},
+    boxed title style={sharp corners}}

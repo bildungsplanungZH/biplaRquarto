@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_titlepage_setup.tex
+% setup for KTZH titlepages
+%
+% use with documentclass biplaRartcl >= 1.7
+% see also https://en.wikibooks.org/wiki/TeX/penalty
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 23.04.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% generate all toggles and parameters
+\cslet{cl_tp_type}{\@empty}
+\cslet{cl_tp_fontsize}{\@empty}
+\cslet{cl_tp_headtext}{\@empty}
+\cslet{cl_tp_titleprefix}{\@empty}
+\cslet{cl_tp_comment}{\@empty}
+\newtoggle{cl_tp_date}
+
+\newtoggle{cl_tp_impressum}
+\toggletrue{cl_tp_impressum}
+
+\cslet{cl_tp_imp_author_appendix}{\@empty}
+\cslet{cl_tp_imp_addition}{\@empty}
+
+\newtoggle{cl_tp_imp_address}
+\toggletrue{cl_tp_imp_address}
+\cslet{cl_tp_imp_email}{\@empty}
+\cslet{cl_tp_imp_url}{\@empty}
+
+\cslet{cl_tp_imp_citation}{\@empty}
+
+\newtoggle{cl_tp_imp_copyright}
+\toggletrue{cl_tp_imp_copyright}
+\cslet{cl_tp_imp_copyright_date}{\@empty}
+
+\cslet{cl_tp_imp_foot}{\@empty}
+
+\cslet{pdftitle}{\@empty}
+\cslet{pdfauthor}{\@empty}
+
+% set toggles and parameters
+%\newcommand\refreshmetadata{%
+\csdef{cl_tp_refreshmeta}{%
+    \ifcsempty{cl_tp_type}{\csdef{cl_tp_type}{flag}}{}%
+    \ifcsempty{cl_tp_headtext}{\csdef{cl_tp_headtext}{Bildungsdirektion\\Bildungsplanung}}{}%
+    \ifcsempty{cl_tp_fontsize}{\csdef{cl_tp_fontsize}{LARGE}}{}%
+    
+    \ifcsstring{cl_tp_fontsize}{Huge}{\addtokomafont{title}{\fontsize{72bp}{58bp}\selectfont}%
+                                      \addtokomafont{subtitle}{\Huge}}{}%
+    \ifcsstring{cl_tp_fontsize}{huge}{\addtokomafont{title}{\fontsize{60bp}{48bp}\selectfont}%
+                                      \addtokomafont{subtitle}{\Huge}}{}%
+    \ifcsstring{cl_tp_fontsize}{LARGE}{\addtokomafont{title}{\fontsize{48bp}{38.5bp}\selectfont}%
+                                      \addtokomafont{subtitle}{\huge}}{}%
+    \ifcsstring{cl_tp_fontsize}{Large}{\addtokomafont{title}{\fontsize{36bp}{29bp}\selectfont}%
+                                      \addtokomafont{subtitle}{\LARGE}}{}%
+    \ifcsstring{cl_tp_fontsize}{large}{\addtokomafont{title}{\fontsize{24bp}{19.5bp}\selectfont}%
+                                      \addtokomafont{subtitle}{\Large}}{}%
+    \ifcsstring{cl_tp_type}{flag}{\addtokomafont{title}{\color{zhblue}}}{}
+
+    \ifx\@publishers\@empty%
+        \publishers{Bildungsdirektion Kanton Zürich, Bildungsplanung}%
+    \fi%
+    \ifcsempty{cl_tp_imp_email}{\csdef{cl_tp_imp_email}{bildungsplanung@bi.zh.ch}}{}%
+    \ifcsempty{cl_tp_imp_url}{\csdef{cl_tp_imp_url}{\href{https://www.zh.ch/studien-bildung}{www.zh.ch/studien-bildung}\newline%
+                                        \href{https://www.zh.ch/bildungsplanung}{www.zh.ch/bildungsplanung}}}{}%
+    \ifcsempty{cl_tp_imp_copyright_date}{\csdef{cl_tp_imp_copyright_date}{\@date}}{}%
+
+    \ifcsempty{pdftitle}{\csdef{pdftitle}{\@title}}{}%
+    \ifcsempty{pdfauthor}{\csdef{pdfauthor}{\@publishers}}{}%
+    \ifcsstring{pdfauthor}{$author$}{\csdef{pdfauthor}{\@author}}{}%
+    \hypersetup{%
+        pdftitle=\csuse{pdftitle},
+        pdfauthor=\csuse{pdfauthor}%
+    }}
+
+% set titlehead
+\csdef{cl_tp_head}#1{%
+    \ifcsstring{cl_tp_type}{flag}{%
+        \hspace*{-33.5mm}%
+        \parbox{24.9mm}{\includegraphics[height=30mm]{logo_ktzh_loi_264x354_xcf.png}}%
+        \parbox{8.4mm}{\includegraphics[width=6mm]{logo_ktzh_flag_71x71.png}}%
+        \parbox{100mm}{\vspace*{.52mm}\usekomafont{titlehead}#1}%
+        \par\vspace{32mm}}{}%
+    \ifcsstring{cl_tp_type}{spike}{%
+        \csuse{cl_tp_loi}%
+        \csuse{cl_tp_spike}%
+        \parbox{100mm}{\usekomafont{titlehead}#1}%
+        \medskip\\}{}%
+    }
+
+% set title
+\csdef{cl_tp_title}{%
+    \ifcsempty{cl_tp_titleprefix}{}{\csuse{cl_tp_titleprefix}}%
+    \parbox{\textwidth}{\hyphenrules{nohyphenation}\usekomafont{title}\@title}%
+}
+
+% set subtitle
+\csdef{cl_tp_subtitle}{%
+	\ifx\@subtitle\@empty \else%
+		\par\bigskip%
+		\parbox{\textwidth}{\hyphenrules{nohyphenation}\usekomafont{subtitle}\@subtitle}%
+	\fi%
+}
+
+% set loi for spike type
+\csdef{cl_tp_loi}{%
+    \begin{tikzpicture}[remember picture, overlay]%
+        \node[shift={(10mm, -7.5mm)}] at (current page.north west)%
+            {%
+            \begin{tikzpicture}[remember picture, overlay]
+            \node[inner sep=0pt, anchor=north west] (loi) at (0,0)
+                {\includegraphics[height=30mm]{logo_ktzh_loi_264x354_xcf.png}};%
+            \end{tikzpicture}};%
+    \end{tikzpicture}}
+
+% set spike
+\csdef{cl_tp_spike}{%
+    \begin{tikzpicture}[remember picture, overlay]%
+        \node (r0) at (current page.south west) {};%
+        \node[shift={(210mm, 0)}] (r1) at (current page.south west) {};%
+        \node[shift={(0, 210mm)}] (r2) at (current page.south west) {};%
+        \fill[fill=zhblue] (r0.center)--(r1.center)--(r2.center);
+    \end{tikzpicture}}
+
+% toggles, macros
+\newtoggle{in titlepage}
+\AtBeginEnvironment{titlepage}{\toggletrue{in titlepage}}
+\AtEndEnvironment{titlepage}{\togglefalse{in titlepage}}
+
+\def\aand{%
+    \iftoggle{in titlepage}{\newline}{, }}

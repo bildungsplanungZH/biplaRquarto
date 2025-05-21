@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_penalties.tex
+% definitions and output of given penalties
+%
+% use with documentclass biplaRartcl >= 1.7
+% see also https://en.wikibooks.org/wiki/TeX/penalty
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 18.03.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% set penalties
+\csdef{set_penalties}{%
+    \brokenpenalty=9999 % for a page break, where the last line of the previous page contains a hyphenation
+    \clubpenalty=9999 % for a broken page, with a single line of a paragraph remaining on the bottom of the preceding page
+    \widowpenalty=9999 % for a broken page, with a single line of a paragraph (called "widow") remaining on the top of the succeeding page
+    \predisplaypenalty=10000 % for a break before a display
+    \postdisplaypenalty=1549 % for a break after a display
+    \displaywidowpenalty=9999 % break before last line of a paragraph. 
+    \interfootnotelinepenalty = 10000 % Umbruch von Fußnoten über Seitengrenzen
+    }
+
+% document penalties in log file
+\csdef{log_penalties}{%
+	\typeout{Used Penalies:^^J% Ausgabe in Terminal und Log-Datei
+		\string\binoppenalty=\the\binoppenalty^^J%
+		\string\brokenpenalty=\the\brokenpenalty^^J%
+		\string\clubpenalty=\the\clubpenalty^^J%
+		\string\displaywidowpenalty=\the\displaywidowpenalty^^J%
+		\string\exhyphenpenalty=\the\exhyphenpenalty^^J%
+		\string\floatingpenalty=\the\floatingpenalty^^J%
+		\string\hyphenpenalty=\the\hyphenpenalty^^J%
+		\string\interlinepenalty=\the\interlinepenalty^^J%
+		\string\linepenalty=\the\linepenalty^^J%
+		\string\postdisplaypenalty=\the\postdisplaypenalty^^J%
+		\string\predisplaypenalty=\the\predisplaypenalty^^J%
+		\string\relpenalty=\the\relpenalty^^J%
+		\string\widowpenalty=\the\widowpenalty^^J%
+	}}
