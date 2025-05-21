@@ -5,6 +5,6 @@
 #'
 #' @examples get_names()
 get_names <- function() {
-    path <- system.file("extdata/_extensions", package = "quarto_templates")
+    path <- system.file("extdata/_extensions", package = "biplaRquarto")
     list.files(path)
 }

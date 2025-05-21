@@ -6,7 +6,7 @@
 #' @returns NULL
 #' @export
 #'
-#' @examples use_quarto("bericht", "biplaR-pdf")
+#' @examples \dontrun{use_quarto("bericht", "biplaR-html")}
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
 
     if (is.null(file_name)) {
@@ -26,7 +26,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
 
     # copy from internals
     file.copy(
-        from = system.file(paste0("extdata/_extensions/", ext_name), package = "quarto_templates"),
+        from = system.file(paste0("extdata/_extensions/", ext_name), package = "biplaRquarto"),
         to = paste0("_extensions/"),
         overwrite = TRUE,
         recursive = TRUE,

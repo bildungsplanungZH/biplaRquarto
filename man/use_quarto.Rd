@@ -15,5 +15,5 @@ use_quarto(file_name = "report", ext_name = "biplaR-html")
 Quarto-Vorlage in diesem Repository verwenden
 }
 \examples{
-use_quarto("bericht", "biplaR-pdf")
+\dontrun{use_quarto("bericht", "biplaR-html")}
 }
