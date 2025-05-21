@@ -45,7 +45,7 @@ Der Warnhinweis (kein TDS-konformes Wurzelverzeichnis) kann ignoriert werden
 | Einstellungen | Allgemein     | Pakete werden bezogen von                   | `https://mirrors.rit.edu`           |                                                   |
 |               |               | Pakete automatisch (on-the-fly) installiert | `Immer`                             |                                                   |
 |               |               | Proxy                                       | `proxy.kt.ktzh.ch:8080` - [DAP deprecated]            | Authentifizierung nicht aktivieren                |
-|               | Verzeichnisse | TEXMF-Wurzelverzeichnisse                   | `Pfad zu biplaRquarto` [hinzufügen] |  |
+|               | Verzeichnisse | TEXMF-Wurzelverzeichnisse                   | `<Pfad zu biplaRquarto/inst/extdata/_extensions/biplaR-pdf>` [hinzufügen] |  |
 
 Troubleshooting:
 
