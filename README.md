@@ -38,3 +38,25 @@ Nach der Installation muss der Pfad zum Verzeichnis `biplaR-pdf` in MikTeX zu de
 Der Warnhinweis (kein TDS-konformes Wurzelverzeichnis) kann ignoriert werden
 
 
+**Empfohlene Einstellungen in der *MiKTeX Console*:**
+
+|               |               | Option                                      | Wert                                | Bemerkung                                         |
+|---------------|---------------|---------------|---------------|---------------|
+| Einstellungen | Allgemein     | Pakete werden bezogen von                   | `https://mirrors.rit.edu`           |                                                   |
+|               |               | Pakete automatisch (on-the-fly) installiert | `Immer`                             |                                                   |
+|               |               | Proxy                                       | `proxy.kt.ktzh.ch:8080` - [DAP deprecated]            | Authentifizierung nicht aktivieren                |
+|               | Verzeichnisse | TEXMF-Wurzelverzeichnisse                   | `Pfad zu biplaRquarto` [hinzufügen] |  |
+
+Troubleshooting:
+
+-   *MiKTeX Console*, **Aufgaben**, **Dateinamendatenbank aktualisieren**
+    -   nach jeder Änderung an den Directories-Einstellungen
+    -   bei Änderungen innerhalb der aufgeführten Directories (va. bei neuen Files)
+    -   bei allen Fehlermeldungen mit `not found`
+-   *MiKTeX Console*, **Pakete**
+    -   zur Installation neuer Packages
+-   *MiKTeX Console*, **Aufgaben**, **Nach Updates suchen** und **Jetzt updaten**
+    -   bei Fehlermeldungen aus einzelnen Packages
+-   *MiKTeX Console*, **Pakete**, Package **dehyph-exptl** installieren, anschliessend **Aufgaben**, **Dateinamendatenbank aktualisieren**
+    -   behebt Fehler `Unknown pattern 'ngerman-x-latest'.`, verursacht durch `\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}` in Dokumentenklasse `biplaRartcl`
+
