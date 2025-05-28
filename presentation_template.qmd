@@ -24,11 +24,12 @@ format:
             #ohne Hintergrundbild zwingend notwendig
             data-background-color: white
         include-in-header: partials/include-header.html
+        
 standalone: true
 embed-resources: true
 fig-cap-location: top
 
-logo: images/logo.svg
+logo: images/logo.png
 css: style/logo.css
 
 #Definiert ob die Logo und Schrift dazu in weiss oder in schwarz dargestellt wird. Es hängt vom Hintergrundbild ab, was sinnvoll ist.

@@ -37,6 +37,7 @@
   max-width: unset !important;
   max-height: unset !important;
   z-index: -2 !important;
+  margin: 0px;
 }
 
 .print-pdf .reveal .slide-logo {
@@ -94,7 +95,7 @@
 .reveal .title-slide-logo img,
 .reveal .title-slide-logo svg {
   height: 9vw !important;
-  
+
 }
 
 .print-pdf .reveal .title-slide-logo img,
