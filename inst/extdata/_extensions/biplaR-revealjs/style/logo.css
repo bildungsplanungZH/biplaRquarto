@@ -37,6 +37,7 @@
   max-width: unset !important;
   max-height: unset !important;
   z-index: -2 !important;
+  margin: 0px;
 }
 
 .print-pdf .reveal .slide-logo {
