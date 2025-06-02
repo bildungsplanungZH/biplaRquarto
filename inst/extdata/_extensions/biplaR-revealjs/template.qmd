@@ -23,7 +23,7 @@ format:
         include-in-header: _extensions/biplaR-revealjs/partials/include-header.html
         embed-resources: true
         fig-cap-location: top
-        logo: _extensions/biplaR-revealjs/images/logo.svg
+        logo: _extensions/biplaR-revealjs/images/logo.png
         css: _extensions/biplaR-revealjs/style/logo.css
 
 #Definiert ob die Logo und Schrift dazu in weiss oder in schwarz dargestellt wird. Es hängt vom Hintergrundbild ab, was sinnvoll ist.
