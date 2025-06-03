@@ -1,0 +1,55 @@
+---
+title: "Titel anpassen"
+subtitle: "Untertitel hinzufügen"
+
+author: 
+  - name: "Vorname Nachname"
+    email: "vorname.nachname@bi.zh.ch"
+    affiliation: "Bildungsplanung Kanton Zürich"
+lang: de
+date: last-modified
+date-format: "DD.MM.YYYY"
+published-title: "Datum"
+abstract-title: "Klassifikation"
+abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+affiliation-title: "Organisationseinheit"
+
+format: 
+    docx:
+        reference-doc: _extensions/biplaR-docx/docx_berichtsvorlage.docx
+        highlight-style: github
+        # Figures
+        fig-cap-location: top
+        fig-align: "left"
+        # TOC and numbering
+        toc: true
+        toc-location: left
+        toc-title: ""
+
+engine: knitr
+execute:
+  warning: false
+  echo: false
+  
+---
+
+{{< pagebreak >}}
+
+```{r setup}
+
+# grab your data
+
+```
+
+# Ausgangslage
+
+```{r}
+
+# transform, analyse and present your data
+
+```
+
+# Fazit
+
+# Anhang
+

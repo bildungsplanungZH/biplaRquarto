@@ -3,15 +3,15 @@
     <div>
       $if(title_logo_white)$
       $if(show_spikel)$
-      <img class="r-stretch" src="images/logo_leu_negativ.svg" style="width:7vw;">
+      <img class="r-stretch" src="_extensions/biplaR-revealjs/images/logo_leu_negativ.svg">
       $else$
-      <img class="r-stretch" src="images/logo_negativ.svg" style="width:10vw;">
+      <img class="r-stretch" src="_extensions/biplaR-revealjs/images/logo_negativ.svg">
       $endif$
       $else$
       $if(show_spikel)$
-      <img class="r-stretch" src="images/logo_leu.svg" style="width:7vw;">
+      <img class="r-stretch" src="_extensions/biplaR-revealjs/images/logo_leu.svg">
       $else$
-      <img class="r-stretch" src="images/logo.svg" style="width:10vw;">
+      <img class="r-stretch" src="_extensions/biplaR-revealjs/images/logo.svg">
       $endif$
       $endif$
     </div>
@@ -28,7 +28,7 @@
 </div>
 $if(show_spikel)$
 <div id="spikel" class="title-slide-spikel">
-  <img class="r-stretch title-slide-spikel" src="images/spikel.png">
+  <img class="r-stretch title-slide-spikel" src="_extensions/biplaR-revealjs/images/spikel.png">
 </div>
 $endif$
 <section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$ class="quarto-title-block $if(title_font_color_white)$white$else$black$endif$">
@@ -67,6 +67,9 @@ $endfor$
 
 $if(date)$
   <p class="date">$date$</p>
+$endif$
+$if(abstract)$
+  <p class="abstract">Klassifikation: $abstract$</p>
 $endif$
 </section>
 

@@ -1,0 +1,53 @@
+---
+title: "Titel anpassen"
+subtitle: "Untertitel hinzufügen"
+author: 
+  - name: "Vorname Nachname"
+    email: "vorname.nachname@bi.zh.ch"
+    affiliation: "Bildungsplanung Kanton Zürich"
+date: last-modified
+date-format: "DD.MM.YYYY"
+lang: de
+# Klassifikation in Präambel definieren
+
+format:
+    pdf:
+        include-in-header:
+        - _extensions/biplaR-pdf/preamble.tex
+        template: _extensions/biplaR-pdf/tmplt.tex
+        documentclass: biplaRartcl
+        fig-pos: "H"
+        # fig-align: "left"
+        # fig-height: 3
+
+cap-location: top
+# crossref: 
+#     subref-labels: none
+
+execute:
+    warning: false
+    echo: false
+
+---
+
+```{r setup, include=FALSE}
+if (knitr::is_latex_output())
+    knitr::opts_chunk$set(dev = "cairo_pdf")
+
+# grab your data
+
+source <- "Bildungsplanung Kanton Zürich 2025"
+```
+
+
+# Ausgangslage
+
+```{r}
+
+# transform, analyse and present your data
+
+```
+
+# Fazit
+
+# Anhang

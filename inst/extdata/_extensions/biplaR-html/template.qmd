@@ -1,0 +1,59 @@
+---
+title: "Titel anpassen"
+subtitle: "Untertitel hinzufügen"
+author: 
+  - name: "Vorname Nachname"
+    email: "vorname.nachname@bi.zh.ch"
+    affiliation: "Bildungsplanung Kanton Zürich"
+date: last-modified
+date-format: "DD.MM.YYYY"
+lang: de
+published-title: "Datum"
+affiliation-title: "Organisationseinheit"
+abstract-title: "Klassifikation"
+abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+
+format: 
+    html:
+        # Themeing
+        theme: _extensions/biplaR-html/style/bipla.scss
+        include-in-header: _extensions/biplaR-html/partials/include-header.html
+        title-block-banner: "#0076BD"
+        css: _extensions/biplaR-html/style/logo.css
+        # Figures
+        fig-cap-location: top
+        fig-align: "left"
+        # TOC and numbering
+        toc: true
+        toc-location: left
+        toc-title: "Inhalt"
+        number-sections: true
+        number-depth: 3
+        # no dependencies
+        embed-resources: true
+        standalone: true
+
+engine: knitr
+execute:
+  warning: false
+  echo: false
+
+---
+
+```{r setup}
+
+# grab your data
+
+```
+
+# Ausgangslage
+
+```{r}
+
+# transform, analyse and present your data
+
+```
+
+# Fazit
+
+# Anhang

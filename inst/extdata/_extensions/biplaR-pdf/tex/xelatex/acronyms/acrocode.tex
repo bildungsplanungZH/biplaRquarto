@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% acrocode.tex
+% acronym definitions for german cases
+% 
+% use with documentclass biplaRartcl >= 1.6.4
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 24.09.2020
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%
+%% Setup
+%%%%%
+
+\acsetup{%
+	make-links = true,
+	list/heading = none,
+	}
+	
+\AddAcroTranslations{German}{%
+	list-name = {Abkürzungsverzeichnis}
+	}
+
+%%%%%
+%% Cases
+%%%%%
+\DeclareAcroEnding{genitive}{}{}
+\DeclareAcroEnding{dative}{}{}
+\DeclareAcroEnding{accusative}{}{}
+
+\NewAcroCommand\acGen{m}{\acrogenitive\UseAcroTemplate{first}{#1}}
+\NewAcroCommand\acsGen{m}{\acrogenitive\UseAcroTemplate{short}{#1}}
+\NewAcroCommand\aclGen{m}{\acrogenitive\UseAcroTemplate{long}{#1}}
+\NewAcroCommand\acfGen{m}{\acrofull\acrogenitive\UseAcroTemplate{first}{#1}}
+
+\NewAcroCommand\acDat{m}{\acrodative\UseAcroTemplate{first}{#1}}
+\NewAcroCommand\acsDat{m}{\acrodative\UseAcroTemplate{short}{#1}}
+\NewAcroCommand\aclDat{m}{\acrodative\UseAcroTemplate{long}{#1}}
+\NewAcroCommand\acfDat{m}{\acrofull\acrodative\UseAcroTemplate{first}{#1}}
+
+\NewAcroCommand\acAcc{m}{\acroaccusative\UseAcroTemplate{first}{#1}}
+\NewAcroCommand\acsAcc{m}{\acroaccusative\UseAcroTemplate{short}{#1}}
+\NewAcroCommand\aclAcc{m}{\acroaccusative\UseAcroTemplate{long}{#1}}
+\NewAcroCommand\acfAcc{m}{\acrofull\acroaccusative\UseAcroTemplate{first}{#1}}

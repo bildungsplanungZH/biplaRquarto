@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_header.tex
+% color definitions
+%
+% use with documentclass biplaRartcl >= 1.7
+% see also statR::zhpal$zh
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 19.03.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\csdef{cl_header_text}{%
+    Bildungsdirektion\\%
+    Bildungsplanung\\%
+    \ifx\@subject\@empty\@title\else\@subject\fi\\%
+    \thepage/\pageref{LastPage}}
+
+\csdef{cl_header_content}{%
+    \parbox{8.5mm}{\includegraphics[width=6mm]{logo_ktzh_flag_71x71.png}}%
+	\parbox{55mm}{\raggedright\hyphenrules{nohyphenation}\csuse{cl_header_text}}}
+
+\csdef{def_header}{%
+    \KOMAoptions{headwidth=head:15mm:8.5mm}%
+    \clearpairofpagestyles
+    \lehead[\csuse{cl_header_content}]{\csuse{cl_header_content}}
+    \rohead[\csuse{cl_header_content}]{\csuse{cl_header_content}}}

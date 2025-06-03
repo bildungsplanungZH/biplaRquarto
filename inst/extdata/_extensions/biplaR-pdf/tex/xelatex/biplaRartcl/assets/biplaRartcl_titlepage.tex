@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_titlepage.tex
+% KTZH titlepages
+%
+% use with documentclass biplaRartcl >= 1.7
+% see also https://en.wikibooks.org/wiki/TeX/penalty
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 23.04.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand*\maketitle[1][1]{%
+  \if@titlepage
+    \begin{titlepage}
+    \ifcsstring{cl_tp_type}{flag}%
+        {\newgeometry{top=7.5mm, bottom=10mm, inner=43.5mm, outer=16.5mm}}%
+        {\newgeometry{top=10mm, bottom=10mm, inner=34.8mm, outer=16.5mm}}%
+    \setcounter{page}{#1}%
+	\csuse{cl_tp_head}{Kanton Zürich\\\csuse{cl_tp_headtext}}
+	\csuse{cl_tp_title}
+	\csuse{cl_tp_subtitle}
+	\ifcsempty{cl_tp_comment}%
+		{}{\par\bigskip\begin{zhbox}\raggedright\hyphenrules{nohyphenation}\usekomafont{date}\csuse{cl_tp_comment}\end{zhbox}}%
+	\iftoggle{cl_tp_impressum}{}%
+		{\par\bigskip\usekomafont{author}\@author}%
+	\iftoggle{cl_tp_date}%
+		{\par\bigskip{\usekomafont{date}\@date}}{}%
+	\restoregeometry
+	\iftoggle{cl_tp_impressum}%
+	{	\newpage
+		\thispagestyle{empty}
+		\subsection*{Impressum}
+		\subsubsection*{Herausgeberin} \@publishers%
+		\ifx\@author\@empty \else%
+			\subsubsection*{Redaktion}%
+			\@author%
+			\ifcsempty{cl_tp_imp_author_appendix}%
+				{}{\par \csuse{cl_tp_imp_author_appendix}}%
+		\fi
+		\ifcsempty{cl_tp_imp_addition}%
+			{}{\csuse{cl_tp_imp_addition}}%
+		\iftoggle{cl_tp_imp_address}%
+			{\subsubsection*{Bezugsadresse} Bildungsdirektion Kanton Zürich, Bildungsplanung\newline%
+				Walcheplatz 2, 8090 Zürich\par %
+				\csuse{cl_tp_imp_email}\newline %
+				\csuse{cl_tp_imp_url}}{}%
+		\ifcsempty{cl_tp_imp_citation}%
+			{}{\subsubsection*{Empfohlene Zitation}\csuse{cl_tp_imp_citation}}
+		\iftoggle{cl_tp_imp_copyright}%
+			{\subsubsection*{Copyright} %
+				Bildungsdirektion Kanton Zürich, %
+				\csuse{cl_tp_imp_copyright_date}}{}%
+		\ifcsempty{cl_tp_imp_foot}%
+			{}{\par\vspace*{\fill}\usekomafont{small} \csuse{cl_tp_imp_foot}}%
+	}{}%
+	\end{titlepage}
+  \fi
+  }

@@ -1,0 +1,13 @@
+Package: biplaRquarto
+Title: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente zur Verfügung
+Version: 1.0
+Authors@R: 
+    c(
+    person(given = "Sarah", family = "Gerhard", email = "sarah.gerhard@bi.zh.ch", role = c("aut", "cre")),
+    person(given = "Res", family = "Marti", email = "res.marti@bi.zh.ch", role = c("aut")),
+    person(given = "Flavian", family = "Imlig", email = "flavian.imlig@bi.zh.ch", role = c("aut")))
+Description: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente zur Verfügung. Aktuell bestehen Vorlagen für die Output-Formate HTML, PDF mit Latex und revealJS. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
