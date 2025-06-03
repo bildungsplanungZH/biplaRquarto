@@ -4,14 +4,11 @@ subtitle: "Untertitel hinzufügen"
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Bildungsplanung des Kantons Zürich"
+    affiliation: "Bildungsplanung Kanton Zürich"
 date: last-modified
 date-format: "DD.MM.YYYY"
-# Klassifikation in Präambel definieren
 lang: de
-published-title: "Datum"
-affiliation-title:  "Abteilung"
-abstract-title: "Klassifikation"
+# Klassifikation in Präambel definieren
 
 format:
     pdf:

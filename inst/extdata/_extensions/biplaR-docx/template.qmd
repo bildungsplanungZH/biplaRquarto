@@ -5,14 +5,14 @@ subtitle: "Untertitel hinzufügen"
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Bildungsplanung des Kantons Zürich"
+    affiliation: "Bildungsplanung Kanton Zürich"
+lang: de
 date: last-modified
 date-format: "DD.MM.YYYY"
-abstract: "Klassifikation: Internes Dokument"
-lang: de
 published-title: "Datum"
-affiliation-title:  "Abteilung"
-abstract-title: ""
+abstract-title: "Klassifikation"
+abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+affiliation-title: "Organisationseinheit"
 
 format: 
     docx:

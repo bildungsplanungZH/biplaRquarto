@@ -4,8 +4,12 @@ subtitle: "Untertitel hinzufügen"
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Bildungsplanung des Kantons Zürich"
+    affiliation: "Bildungsplanung Kanton Zürich"
 lang: de
+affiliation-title: "Organisationseinheit"
+abstract-title: "Klassifikation"
+abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+
 format:
     revealjs:
         template-partials: 
@@ -17,6 +21,7 @@ format:
         #Wenn kein Hintergrundbild für die Titelseite gewünscht ist kann data-background-image und data-background-positon auskommentiert werden. Bedingt dass title_logo_white und title_font_color_white auf false gesetzt werden.
         title-slide-attributes:
             data-background-image: _extensions/biplaR-revealjs/images/panorama.png
+            data-background-opacity: 80%
             data-background-position: left
             #ohne Hintergrundbild zwingend notwendig
             data-background-color: white
