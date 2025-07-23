@@ -5,7 +5,7 @@ subtitle: "Untertitel hinzufügen"
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Bildungsplanung Kanton Zürich"
+    affiliation: "Organisationsname"
 lang: de
 date: last-modified
 date-format: "DD.MM.YYYY"

@@ -46,6 +46,15 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html") {
     file.copy(file.path("_extensions", ext_name, "template.qmd"),
               paste0(file_name, ".qmd", collapse = ""))
 
+    # insert author and organisation information into skeleton
+    author_info <- get_author()
+    readLines(paste0(file_name, ".qmd", collapse = "")) |>
+        gsub(pattern = "Vorname Nachname", replacement = paste(author_info$user$given, author_info$user$family), x = _) |>
+        gsub(pattern = "vorname.nachname@bi.zh.ch", replacement = author_info$user$email, x = _) |>
+        gsub(pattern = "Organisationsname", replacement = paste0(author_info$org$org1), x = _) |>
+        gsub(pattern = "Direktion", replacement = author_info$org$dir, x = _) |>
+        writeLines(con=paste0(file_name, ".qmd"))
+
     # open the new file in the editor
     utils::file.edit(paste0(file_name, ".qmd", collapse = ""))
 

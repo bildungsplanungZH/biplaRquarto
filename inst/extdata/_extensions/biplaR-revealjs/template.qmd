@@ -4,7 +4,7 @@ subtitle: "Untertitel hinzufügen"
 author: 
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Bildungsplanung Kanton Zürich"
+    affiliation: "Organisationsname"
 lang: de
 affiliation-title: "Organisationseinheit"
 abstract-title: "Klassifikation"
@@ -41,8 +41,8 @@ title_font_color_white: true
 show_spikel: true
 
 #Text der Neben dem Logo auf der Titelseite unterhalb von "Kanton Zürich" dargestellt wird.
-direktion: "Bildungsdirektion"
-abteilung: "Bildungsplanung"
+direktion: "Direktion"
+abteilung: "Organisationsname"
 
 execute: 
   echo: false

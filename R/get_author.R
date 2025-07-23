@@ -5,7 +5,7 @@ get_author <- function(path = Sys.getenv("R_USER")) {
     }
 
     yml <- yaml::read_yaml(file.path(Sys.getenv("R_USER"), ".profile.yml"))
-    author <-  list("user" = yml$r_user, "org1" = yml$r_organisation, "org2" = yml$r_organisation_2)
+    author <-  list("user" = yml$r_user, "org" = yml$r_organisation)
 
     return(author)
 }
