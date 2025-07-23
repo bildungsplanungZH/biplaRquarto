@@ -1,4 +1,17 @@
-set_author <- function(vorname, nachname, email, dir, org1, org2) {
+#' Informationen zu Autor:in und Organisation in .profile.yml schreiben
+#'
+#' @param vorname Vorname
+#' @param nachname Nachname
+#' @param email Emailadresse
+#' @param dir Direktion
+#' @param org1 Organisationseinheit 1
+#' @param org2 Organisationseinheit 2, default ist NA
+#'
+#' @returns list Liste mit Angaben zu Autor:in und Organisation
+#' @export
+#'
+#' @examples \dontrun{set_author("Firstname", "Lastname", "first.last@zh.ch", "Lieblingsdirektion", "Bestes Amt")}
+set_author <- function(vorname, nachname, email, dir, org1, org2 = NA) {
 
     # Liste mit relevanter Information zusammenstellen
     user_info <- list("r_user" = list(
