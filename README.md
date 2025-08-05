@@ -26,7 +26,7 @@ Mittelfristig sollte auch Folgendes erstellt werden:
 
 * Package installieren oder mit `devtools::load_all("../biplaRquarto")` temporär laden,  
 * mit der Funktion `get_names()` die Namen der verfügbaren Vorlagen abfragen,  
-* (nur BP-Externe) mit `set_author()` die Angaben zu Autor:in und Organisation hinterlegen
+* (nur BP-Externe) mit `set_author()` eigenen Namen und Organisation hinterlegen
 * mit der Funktion `use_quarto(file_name = "Bericht", ext_name = "biplaR-html")` ein Quarto-Dokument mit dem entsprechenden Beigemüse erstellen.
 
 ### biplaR-pdf mit MikTeX nutzen
