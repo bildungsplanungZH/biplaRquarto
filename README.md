@@ -7,6 +7,11 @@ Sarah Gerhard <sarah.gerhard@bi.zh>
 Res Marti <res.marti@bi.zh.ch>  
 Flavian Imlig <flavian.imlig@bi.zh>  
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/bildungsplanungZH/quarto_templates/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bildungsplanungZH/quarto_templates/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+
 ## Quarto-Vorlagen der Bildungsplanung
 
 ### Kurzbeschreibung

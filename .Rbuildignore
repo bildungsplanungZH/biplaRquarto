@@ -1,3 +1,4 @@
 ^quarto_templates\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^\.github$
