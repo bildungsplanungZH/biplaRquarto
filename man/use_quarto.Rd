@@ -4,12 +4,18 @@
 \alias{use_quarto}
 \title{Quarto-Vorlage in diesem Repository verwenden}
 \usage{
-use_quarto(file_name = "report", ext_name = "biplaR-html")
+use_quarto(
+  file_name = "report",
+  ext_name = "biplaR-html",
+  author_path = Sys.getenv("R_USER")
+)
 }
 \arguments{
 \item{file_name}{Dateiname (ohne Erweiterung) der neuen Unterlage, default ist report}
 
 \item{ext_name}{gewünschte Vorlage (biplaR-html, biplaR-revealjs, biplaR-pdf, biplaR-docx oder biplaR-typst)}
+
+\item{author_path}{Dateipfad zu .profile.yml mit Name und Organisation}
 }
 \description{
 Quarto-Vorlage in diesem Repository verwenden
