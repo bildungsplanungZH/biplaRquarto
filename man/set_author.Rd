@@ -4,7 +4,15 @@
 \alias{set_author}
 \title{Informationen zu Autor:in und Organisation in .profile.yml schreiben}
 \usage{
-set_author(vorname, nachname, email, dir, org1, org2 = NA)
+set_author(
+  vorname,
+  nachname,
+  email,
+  dir,
+  org1,
+  org2 = NA,
+  path = Sys.getenv("R_USER")
+)
 }
 \arguments{
 \item{vorname}{Vorname}
@@ -18,6 +26,8 @@ set_author(vorname, nachname, email, dir, org1, org2 = NA)
 \item{org1}{Organisationseinheit 1}
 
 \item{org2}{Organisationseinheit 2, default ist NA}
+
+\item{path}{Pfad zum Schreiben der YAML-Datei, default ist Sys.getenv("R_USER")}
 }
 \value{
 list Liste mit Angaben zu Autor:in und Organisation
