@@ -16,5 +16,5 @@ Liste mit Angaben zu Autor:in und Organisation
 Informationen zu Autor:in und Organisation aus .profile.yml lesen
 }
 \examples{
-get_author()
+\dontrun{get_author()}
 }

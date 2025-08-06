@@ -5,7 +5,7 @@
 #' @returns Liste mit Angaben zu Autor:in und Organisation
 #' @export
 #'
-#' @examples get_author()
+#' @examples \dontrun{get_author()}
 get_author <- function(path = Sys.getenv("R_USER")) {
 
     if (!file.exists(file.path(path, ".profile.yml"))){
