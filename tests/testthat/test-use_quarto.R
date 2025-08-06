@@ -5,14 +5,11 @@ test_that("error if filename is NULL", {
 
 test_that("dir _extensions and file report.qmd created in working directory", {
 
-    use_quarto()
-
-    expect_true(dir.exists("_extensions"))
-    expect_true(dir.exists(file.path("_extensions", "biplaR-html")))
+    expect_true(dir.exists(file.path(test_path(), "_extensions")))
+    expect_true(dir.exists(file.path(test_path(), "_extensions", "biplaR-html")))
     expect_true(file.exists("report.qmd"))
 
-    unlink("_extensions", recursive = T)
-    unlink("report.qmd")
+    unlink(file.path(test_path(), "_extensions"), recursive = T)
+    unlink(file.path(test_path(), "report.qmd"))
 
 })
-

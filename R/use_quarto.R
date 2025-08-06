@@ -48,7 +48,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html", author_pa
               paste0(file_name, ".qmd", collapse = ""))
 
     # insert author and organisation information into skeleton
-    author_info <- get_author(author_path)
+    author_info <- get_author(path = author_path)
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
         gsub(pattern = "Vorname Nachname", replacement = paste(author_info$user$given, author_info$user$family), x = _) |>
         gsub(pattern = "vorname.nachname@bi.zh.ch", replacement = author_info$user$email, x = _) |>
