@@ -12,7 +12,7 @@ get_author <- function(path = Sys.getenv("R_USER")) {
         stop("Keine Profilinformationen gefunden unter ", path, ".\nBitte mit set_author() einrichten.")
     }
 
-    yml <- yaml::read_yaml(file.path(Sys.getenv("R_USER"), ".profile.yml"))
+    yml <- yaml::read_yaml(file.path(path, ".profile.yml"))
     author <-  list("user" = yml$r_user, "org" = yml$r_organisation)
 
     return(author)
