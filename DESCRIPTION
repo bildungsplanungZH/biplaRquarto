@@ -18,3 +18,5 @@ Config/testthat/edition: 3
 Imports: 
     assertthat,
     vctrs
+URL: https://github.com/bildungsplanungZH/quarto_templates
+BugReports: https://github.com/bildungsplanungZH/quarto_templates/issues
