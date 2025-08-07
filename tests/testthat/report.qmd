@@ -2,9 +2,9 @@
 title: "Titel anpassen"
 subtitle: "Untertitel hinzufügen"
 author: 
-  - name: "Vorname Nachname"
-    email: "vorname.nachname@bi.zh.ch"
-    affiliation: "Organisationsname"
+  - name: "Testlauf Autorin"
+    email: "testlauf.autorin@dir.zh.ch"
+    affiliation: "Amt"
 date: last-modified
 date-format: "DD.MM.YYYY"
 lang: de

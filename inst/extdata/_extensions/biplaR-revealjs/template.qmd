@@ -50,7 +50,6 @@ execute:
 ---
 
 ```{r}
-
 ```
 
 ## Ausgangslage

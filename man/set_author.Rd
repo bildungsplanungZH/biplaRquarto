@@ -27,7 +27,8 @@ set_author(
 
 \item{org2}{Organisationseinheit 2, default ist NA}
 
-\item{path}{Pfad zum Schreiben der YAML-Datei, default ist Sys.getenv("R_USER")}
+\item{path}{Pfad zum Schreiben der YAML-Datei,
+default ist Sys.getenv("R_USER")}
 }
 \value{
 list Liste mit Angaben zu Autor:in und Organisation
@@ -36,5 +37,8 @@ list Liste mit Angaben zu Autor:in und Organisation
 Informationen zu Autor:in und Organisation in .profile.yml schreiben
 }
 \examples{
-\dontrun{set_author("Firstname", "Lastname", "first.last@zh.ch", "Lieblingsdirektion", "Bestes Amt")}
+\dontrun{
+set_author("Firstname", "Lastname", "first.last@zh.ch",
+  "Lieblingsdirektion", "Bestes Amt")
+}
 }

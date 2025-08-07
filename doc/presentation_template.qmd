@@ -93,9 +93,9 @@ Hier können Notizen für die Präsentation eingefügt werden.
 #| echo: true
 
 plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
-    geom_point() +
-    biplaR::getTheme() +
-    theme(legend.direction = "horizontal")
+  geom_point() +
+  biplaR::getTheme() +
+  theme(legend.direction = "horizontal")
 
 plot
 ```
@@ -116,12 +116,10 @@ plot
 ## Beispiel mit Leaflet
 
 ```{r}
-
 library(leaflet)
 leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
-  addMarkers(lng=8.54288, lat=47.37981, popup="Bildungsplanung")
-
+  addTiles() %>% # Add default OpenStreetMap map tiles
+  addMarkers(lng = 8.54288, lat = 47.37981, popup = "Bildungsplanung")
 ```
 
 ## {data-background-iframe="http://www.quarto.org/docs/guide" menu="false" background-interactive="false"}

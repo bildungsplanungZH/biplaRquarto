@@ -31,8 +31,9 @@ execute:
 ---
 
 ```{r setup, include=FALSE}
-if (knitr::is_latex_output())
-    knitr::opts_chunk$set(dev = "cairo_pdf")
+if (knitr::is_latex_output()) {
+  knitr::opts_chunk$set(dev = "cairo_pdf")
+}
 
 # grab your data
 
@@ -43,9 +44,7 @@ source <- "Bildungsplanung Kanton Zürich 2025"
 # Ausgangslage
 
 ```{r}
-
 # transform, analyse and present your data
-
 ```
 
 # Fazit

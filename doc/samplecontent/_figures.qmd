@@ -9,24 +9,31 @@ Möglichst immer nummerierte Abbildungen mit Datenangabe verwenden (@sec-abb-bm)
 ```{r}
 #| label: plot generation
 #| echo: false
-plot_1 <- ggplot(data = mpg,
-                 aes_string(x = 'class', fill = 'drv')) +
-    geom_bar(position = position_stack(reverse = TRUE)) +
-    scale_x_discrete(name = 'Klasse') +
-    coord_flip() +
-    scale_fill_manual(name = 'Antrieb', values = biplaR::getColourZH(n = 3, name = 'zh', with_zh_blue = F),
-                      guide = guide_legend(nrow = 1)) +
-    biplaR::getTheme(theme_name = c('no_grid_y', 'no_axis_title_x'))
+plot_1 <- ggplot(
+  data = mpg,
+  aes_string(x = "class", fill = "drv")
+) +
+  geom_bar(position = position_stack(reverse = TRUE)) +
+  scale_x_discrete(name = "Klasse") +
+  coord_flip() +
+  scale_fill_manual(
+    name = "Antrieb", values = biplaR::getColourZH(n = 3, name = "zh", with_zh_blue = F),
+    guide = guide_legend(nrow = 1)
+  ) +
+  biplaR::getTheme(theme_name = c("no_grid_y", "no_axis_title_x"))
 
-plot_2 <- ggplot(data = mpg %>% mutate_at('cyl', factor),
-                 aes_string(x = 'hwy', y = 'displ', colour = 'cyl')) +
-    geom_jitter() +
-    scale_y_continuous('Displacement') +
-    scale_x_continuous('Highway miles per gallon') +
-    scale_colour_manual('Number of cylinders', 
-                        values = biplaR::getColorZH(n = 6, name = 'zh', with_zh_blue = F)[c(3,2,5,6)],
-                        guide = guide_legend(nrow = 1)) +
-    biplaR::getTheme()
+plot_2 <- ggplot(
+  data = mpg %>% mutate_at("cyl", factor),
+  aes_string(x = "hwy", y = "displ", colour = "cyl")
+) +
+  geom_jitter() +
+  scale_y_continuous("Displacement") +
+  scale_x_continuous("Highway miles per gallon") +
+  scale_colour_manual("Number of cylinders",
+    values = biplaR::getColorZH(n = 6, name = "zh", with_zh_blue = F)[c(3, 2, 5, 6)],
+    guide = guide_legend(nrow = 1)
+  ) +
+  biplaR::getTheme()
 ```
 
 ## Standard-Abbildung BM {#sec-abb-bm}

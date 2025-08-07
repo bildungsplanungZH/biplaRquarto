@@ -76,9 +76,9 @@ Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die 
 #| fig-cap: "Irgendeine Beispielgrafik"
 
 plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
-    geom_point() +
-    biplaR::getTheme() +
-    theme(legend.position = "right")
+  geom_point() +
+  biplaR::getTheme() +
+  theme(legend.position = "right")
 
 plot
 ```
