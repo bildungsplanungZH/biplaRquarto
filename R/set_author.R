@@ -13,8 +13,10 @@
 #' @export
 #'
 #' @examples \dontrun{
-#' set_author("Firstname", "Lastname", "first.last@zh.ch",
-#'   "Lieblingsdirektion", "Bestes Amt")
+#' set_author(
+#'   "Firstname", "Lastname", "first.last@zh.ch",
+#'   "Lieblingsdirektion", "Bestes Amt"
+#' )
 #' }
 set_author <- function(vorname, nachname, email, dir, org1, org2 = NA,
                        path = Sys.getenv("R_USER")) {
@@ -35,6 +37,7 @@ set_author <- function(vorname, nachname, email, dir, org1, org2 = NA,
 
   # in YAML-Datei unter R_USER schreiben
   yaml::write_yaml(user_info,
-                   file.path(path, ".profile.yml"),
-                   fileEncoding = "UTF-8", indent = 4)
+    file.path(path, ".profile.yml"),
+    fileEncoding = "UTF-8", indent = 4
+  )
 }
