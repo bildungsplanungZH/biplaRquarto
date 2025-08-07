@@ -10,8 +10,10 @@
 #' }
 get_author <- function(path = Sys.getenv("R_USER")) {
   if (!file.exists(file.path(path, ".profile.yml"))) {
-    stop("Keine Profilinformationen gefunden unter ",
-         path, ".\nBitte mit set_author() einrichten.")
+    stop(
+      "Keine Profilinformationen gefunden unter ",
+      path, ".\nBitte mit set_author() einrichten."
+    )
   }
 
   yml <- yaml::read_yaml(file.path(path, ".profile.yml"))
