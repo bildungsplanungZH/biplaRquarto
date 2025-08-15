@@ -38,7 +38,9 @@ Informationen zu Autor:in und Organisation in .profile.yml schreiben
 }
 \examples{
 \dontrun{
-set_author("Firstname", "Lastname", "first.last@zh.ch",
-  "Lieblingsdirektion", "Bestes Amt")
+set_author(
+  "Firstname", "Lastname", "first.last@zh.ch",
+  "Lieblingsdirektion", "Bestes Amt"
+)
 }
 }

@@ -4,8 +4,10 @@
 #'   default ist report
 #' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs,
 #'   biplaR-pdf, biplaR-docx oder biplaR-typst)
-#' @param author_path Dateipfad zu .profile.yml mit Name und Organisation
-#'
+#' @param author_path Dateipfad zu .profile.yml mit Name und Organisation,
+#'   default ist Sys.getenv("R_USER)
+#' @param bg_image Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
+#'   default ist _extensions/ biplaR-revealjs/images/panorama.png
 #' @returns NULL
 #' @export
 #'
@@ -13,7 +15,8 @@
 #' use_quarto("bericht", "biplaR-html")
 #' }
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
-                       author_path = Sys.getenv("R_USER")) {
+                       author_path = Sys.getenv("R_USER"),
+                       bg_image = NA) {
   if (is.null(file_name)) {
     stop("You must provide a valid file_name")
   }
@@ -83,6 +86,20 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
       replacement = author_info$org$dir, x = _
     ) |>
     writeLines(con = paste0(file_name, ".qmd"))
+
+  if (!is.na(bg_image) & ext_name == "biplaR-revealjs") {
+
+      if (!file.exists(bg_image)) {
+          paste("Background image not found at", bg_image)
+      }
+
+      readLines(paste0(file_name, ".qmd", collapse = "")) |>
+          gsub(
+              pattern = "_extensions/biplaR-revealjs/images/panorama.png",
+              replacement = bg_image, x = _
+          ) |>
+          writeLines(con = paste0(file_name, ".qmd"))
+  }
 
   # open the new file in the editor
   utils::file.edit(paste0(file_name, ".qmd", collapse = ""))

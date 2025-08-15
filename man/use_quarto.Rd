@@ -7,7 +7,8 @@
 use_quarto(
   file_name = "report",
   ext_name = "biplaR-html",
-  author_path = Sys.getenv("R_USER")
+  author_path = Sys.getenv("R_USER"),
+  bg_image = NA
 )
 }
 \arguments{
@@ -17,7 +18,11 @@ default ist report}
 \item{ext_name}{gewünschte Vorlage (biplaR-html, biplaR-revealjs,
 biplaR-pdf, biplaR-docx oder biplaR-typst)}
 
-\item{author_path}{Dateipfad zu .profile.yml mit Name und Organisation}
+\item{author_path}{Dateipfad zu .profile.yml mit Name und Organisation,
+default ist Sys.getenv("R_USER)}
+
+\item{bg_image}{Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
+default ist _extensions/ biplaR-revealjs/images/panorama.png}
 }
 \description{
 Quarto-Vorlage in diesem Repository verwenden
