@@ -112,24 +112,32 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
       writeLines(con = paste0(file_name, ".qmd"))
 
     if (ext_name %in% c("biplaR-html", "biplaR-revealjs")) {
-      readLines(paste0("_extensions/", ext_name,
-                       "/partials/include-header.html")) |>
+      readLines(paste0(
+        "_extensions/", ext_name,
+        "/partials/include-header.html"
+      )) |>
         gsub(
           pattern = "_extensions",
           replacement = paste0(path_prefix, "_extensions"), x = _
         ) |>
-        writeLines(con = paste0("_extensions/", ext_name,
-                                "/partials/include-header.html"))
+        writeLines(con = paste0(
+          "_extensions/", ext_name,
+          "/partials/include-header.html"
+        ))
 
       if (ext_name == "biplaR-revealjs") {
-        readLines(paste0("_extensions/", ext_name,
-                         "/partials/title-slide.html")) |>
+        readLines(paste0(
+          "_extensions/", ext_name,
+          "/partials/title-slide.html"
+        )) |>
           gsub(
             pattern = "_extensions",
             replacement = paste0(path_prefix, "_extensions"), x = _
           ) |>
-          writeLines(con = paste0("_extensions/", ext_name,
-                                  "/partials/title-slide.html"))
+          writeLines(con = paste0(
+            "_extensions/", ext_name,
+            "/partials/title-slide.html"
+          ))
       }
     }
   }
