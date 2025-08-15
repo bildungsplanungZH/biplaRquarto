@@ -88,17 +88,16 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
     writeLines(con = paste0(file_name, ".qmd"))
 
   if (!is.na(bg_image) & ext_name == "biplaR-revealjs") {
+    if (!file.exists(bg_image)) {
+      paste("Background image not found at", bg_image)
+    }
 
-      if (!file.exists(bg_image)) {
-          paste("Background image not found at", bg_image)
-      }
-
-      readLines(paste0(file_name, ".qmd", collapse = "")) |>
-          gsub(
-              pattern = "_extensions/biplaR-revealjs/images/panorama.png",
-              replacement = bg_image, x = _
-          ) |>
-          writeLines(con = paste0(file_name, ".qmd"))
+    readLines(paste0(file_name, ".qmd", collapse = "")) |>
+      gsub(
+        pattern = "_extensions/biplaR-revealjs/images/panorama.png",
+        replacement = bg_image, x = _
+      ) |>
+      writeLines(con = paste0(file_name, ".qmd"))
   }
 
   # open the new file in the editor
