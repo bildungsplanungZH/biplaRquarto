@@ -4,8 +4,8 @@ test_that("error if filename is NULL", {
 
 test_that("directory _extensions and test.qmd created", {
   set_author("Testlauf", "Autorin", "testlauf.autorin@dir.zh.ch",
-             "Direktion", "Amt", "Abteilung",
-             path = test_path(), overwrite = TRUE
+    "Direktion", "Amt", "Abteilung",
+    path = test_path(), overwrite = TRUE
   )
   use_quarto(file.path(test_path(), "test"), author_path = test_path())
   expect_true(dir.exists("_extensions"))
@@ -17,11 +17,13 @@ test_that("directory _extensions and test.qmd created", {
 
 test_that("arguments written to qmd", {
   set_author("Testlauf", "Autorin", "testlauf.autorin@dir.zh.ch",
-               "Direktion", "Amt", "Abteilung",
-               path = test_path(), overwrite = TRUE
-    )
-  use_quarto(file.path(test_path(), "test"), classification = "Geheim",
-             author_path = test_path())
+    "Direktion", "Amt", "Abteilung",
+    path = test_path(), overwrite = TRUE
+  )
+  use_quarto(file.path(test_path(), "test"),
+    classification = "Geheim",
+    author_path = test_path()
+  )
 
   expect_true(any(grepl(
     x = readLines(file.path(test_path(), "test.qmd")),
