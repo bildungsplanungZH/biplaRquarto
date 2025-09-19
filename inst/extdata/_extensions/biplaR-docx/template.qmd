@@ -11,7 +11,7 @@ date: last-modified
 date-format: "DD.MM.YYYY"
 published-title: "Datum"
 abstract-title: "Klassifikation"
-abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+abstract: "Intern"
 affiliation-title: "Organisationseinheit"
 
 format: 

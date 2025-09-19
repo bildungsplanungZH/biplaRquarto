@@ -6,6 +6,8 @@
 #'   biplaR-pdf, biplaR-docx oder biplaR-typst)
 #' @param author_path Dateipfad zu .profile.yml mit Name und Organisation,
 #'   default ist Sys.getenv("R_USER)
+#' @param classification Klassifikationsstufe (Öffentlich, Intern,
+#'   Vertraulich oder Geheim), default ist Intern
 #' @param bg_image Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
 #'   default ist _extensions/ biplaR-revealjs/images/panorama.png
 #' @returns NULL
@@ -16,9 +18,18 @@
 #' }
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
                        author_path = Sys.getenv("R_USER"),
+                       classification = "Intern",
                        bg_image = NA) {
   if (is.null(file_name)) {
     stop("You must provide a valid file_name")
+  }
+
+  if (!classification %in% c(
+    "\u00D6ffentlich", "Intern", "Vertraulich",
+    "Geheim"
+  )) {
+    stop("Argument classification must be one of the following:
+         \u00D6ffentlich, Intern, Vertraulich, Geheim")
   }
 
   # check for available extensions
@@ -84,6 +95,10 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
     gsub(
       pattern = "Direktion",
       replacement = author_info$org$dir, x = _
+    ) |>
+    gsub(
+      pattern = "Intern",
+      replacement = classification, x = _
     ) |>
     writeLines(con = paste0(file_name, ".qmd"))
 

@@ -8,6 +8,7 @@ use_quarto(
   file_name = "report",
   ext_name = "biplaR-html",
   author_path = Sys.getenv("R_USER"),
+  classification = "Intern",
   bg_image = NA
 )
 }
@@ -20,6 +21,9 @@ biplaR-pdf, biplaR-docx oder biplaR-typst)}
 
 \item{author_path}{Dateipfad zu .profile.yml mit Name und Organisation,
 default ist Sys.getenv("R_USER)}
+
+\item{classification}{Klassifikationsstufe (Öffentlich, Intern,
+Vertraulich oder Geheim), default ist Intern}
 
 \item{bg_image}{Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
 default ist _extensions/ biplaR-revealjs/images/panorama.png}

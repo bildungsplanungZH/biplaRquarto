@@ -8,7 +8,7 @@ author:
 lang: de
 affiliation-title: "Organisationseinheit"
 abstract-title: "Klassifikation"
-abstract: "Öffentlich" "Intern" "Vertraulich" "Geheim" # Unzutreffendes löschen
+abstract: "Intern"
 
 format:
     revealjs:
