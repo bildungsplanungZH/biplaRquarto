@@ -8,6 +8,8 @@
 #' @param org2 Organisationseinheit 2, default ist NA
 #' @param path Pfad zum Schreiben der YAML-Datei,
 #'   default ist Sys.getenv("R_USER")
+#' @param overwrite boolean zur Angabe, ob ein existierendes profile.yml
+#'   überschrieben werden soll (T) oder nicht, default ist FALSE
 #'
 #' @returns list Liste mit Angaben zu Autor:in und Organisation
 #' @export
@@ -19,8 +21,18 @@
 #' )
 #' }
 set_author <- function(vorname, nachname, email, dir, org1, org2 = NA,
-                       path = Sys.getenv("R_USER")) {
+                       path = Sys.getenv("R_USER"), overwrite = FALSE) {
   assertthat::assert_that(dir.exists(path))
+
+  if (file.exists(file.path(path, ".profile.yml")) && !overwrite) {
+    stop(paste(
+      "File profile.yml exists at location",
+      path,
+      "and will not be overwritten.
+             To overwrite use set_author(overwrite = TRUE)."
+    ))
+  }
+
   # Liste mit relevanter Information zusammenstellen
   user_info <- list(
     "r_user" = list(

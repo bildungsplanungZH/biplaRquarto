@@ -11,7 +11,8 @@ set_author(
   dir,
   org1,
   org2 = NA,
-  path = Sys.getenv("R_USER")
+  path = Sys.getenv("R_USER"),
+  overwrite = FALSE
 )
 }
 \arguments{
@@ -29,6 +30,9 @@ set_author(
 
 \item{path}{Pfad zum Schreiben der YAML-Datei,
 default ist Sys.getenv("R_USER")}
+
+\item{overwrite}{boolean zur Angabe, ob ein existierendes profile.yml
+überschrieben werden soll (T) oder nicht, default ist FALSE}
 }
 \value{
 list Liste mit Angaben zu Autor:in und Organisation
