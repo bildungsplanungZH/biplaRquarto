@@ -17,7 +17,6 @@ format:
     html:
         # Themeing
         theme: _extensions/biplaR-html/style/bipla.scss
-        include-in-header: _extensions/biplaR-html/partials/include-header.html
         title-block-banner: "#0076BD"
         css: _extensions/biplaR-html/style/logo.css
         # Figures
