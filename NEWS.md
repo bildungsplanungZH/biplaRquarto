@@ -1,4 +1,4 @@
-# biplaRquarto (development version)
+# biplaRquarto 1.1.0
 
 * Name und Organisation werden automatisch in Vorlagen eingefügt, falls in `.profile.yml` hinterlegt:
     - mit `set_author()` können die Informationen hinterlegt werden, falls kein R-Profil der Bildungsplanung vorhanden ist. Ist ein Profile vorhanden, wird es nicht überschrieben.
