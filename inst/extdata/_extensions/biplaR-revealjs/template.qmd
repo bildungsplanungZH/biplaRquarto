@@ -49,7 +49,11 @@ execute:
   warning: false
 ---
 
-```{r}
+```{r setup}
+# adapt font size in plots with showtext
+showtext::showtext_opts(dpi = 200)
+
+# grab your data
 ```
 
 ## Ausgangslage
