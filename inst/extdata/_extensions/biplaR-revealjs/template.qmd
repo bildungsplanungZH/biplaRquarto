@@ -25,7 +25,6 @@ format:
             data-background-position: left
             #ohne Hintergrundbild zwingend notwendig
             data-background-color: white
-        include-in-header: _extensions/biplaR-revealjs/partials/include-header.html
         embed-resources: true
         fig-cap-location: top
         logo: _extensions/biplaR-revealjs/images/logo.png
