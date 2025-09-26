@@ -6,6 +6,8 @@
 * Wird das Quarto-File in einem Unterordner erzeugt, werden die Pfade in den Vorlagen entsprechend angepasst.
 * Klassifikation ist standardmässig "Intern", kann jedoch über das Argument `classification` angepasst werden. 
 * Schriftgrösse in Abbildungen wird in `biplaR-html` und `biplaR-revealjs` neu im Setup-Chunk definiert (bugfix).
+* Schriftintegration ohne include-in-header.
+* Diverse kleine style-Anpassungen im Zusammenhang mit Observable Chunks.
 * Automatisierte Tests hinzugefügt.
 * Automatisiertes Styling und Linting eingerichtet.
 * Vorbereitung für öffentliches Repository.
