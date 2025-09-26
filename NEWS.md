@@ -1,10 +1,14 @@
 # biplaRquarto (development version)
 
-* Name und Organisation werden automatisch in Vorlagen eigefügt, falls in `.profile.yml` hinterlegt (#18):
-    - mit `set_author()` können die Informationen hinterlegt werden.
+* Name und Organisation werden automatisch in Vorlagen eingefügt, falls in `.profile.yml` hinterlegt:
+    - mit `set_author()` können die Informationen hinterlegt werden, falls kein R-Profil der Bildungsplanung vorhanden ist. Ist ein Profile vorhanden, wird es nicht überschrieben.
     - mit `get_author()` werden die hinterlegten Information aufgerufen.
-* Schriftgrösse in Abbildungen wird in `biplaR-html` neu im Setup-Chunk definiert (#20).
+* Wird das Quarto-File in einem Unterordner erzeugt, werden die Pfade in den Vorlagen entsprechend angepasst.
+* Klassifikation ist standardmässig "Intern", kann jedoch über das Argument `classification` angepasst werden. 
+* Schriftgrösse in Abbildungen wird in `biplaR-html` und `biplaR-revealjs` neu im Setup-Chunk definiert (bugfix).
 * Automatisierte Tests hinzugefügt.
+* Automatisiertes Styling und Linting eingerichtet.
+* Vorbereitung für öffentliches Repository.
 
 # biplaRquarto 1.0
 
