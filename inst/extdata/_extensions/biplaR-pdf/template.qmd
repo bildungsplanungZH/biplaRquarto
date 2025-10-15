@@ -19,7 +19,12 @@ format:
         fig-pos: "H"
         # fig-align: "left"
         # fig-height: 3
-
+        latex-input-paths:
+            - _extensions/biplaR-pdf/tex/xelatex/biplaRartcl
+            - _extensions/biplaR-pdf/tex/xelatex/biplaRartcl/assets
+            - _extensions/biplaR-pdf/tex/xelatex/biplaRartcl/img
+            - _extensions/biplaR-pdf/tex/xelatex/acronyms
+            
 cap-location: top
 # crossref: 
 #     subref-labels: none
