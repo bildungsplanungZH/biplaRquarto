@@ -58,7 +58,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
   # logic check to make sure extension files were moved
   n_files <- length(dir(paste0("_extensions/", ext_name)))
 
-  if (n_files >= 2) {
+  if (n_files >= 1) {
     message(paste(
       ext_name,
       "was installed to _extensions folder
