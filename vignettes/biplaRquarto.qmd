@@ -1,0 +1,89 @@
+---
+title: "Nutzung der Templates"
+vignette: >
+  %\VignetteIndexEntry{Nutzung der Templates}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(biplaRquarto)
+
+```
+
+
+## Package installieren
+
+`biplaRquarto` kann aus dem öffentlichen GitHub-Repository installiert werden:
+
+``` {r install, eval = FALSE}
+devtools::install_github("bildungsplanungZH/biplaRquarto", 
+                         build_vignettes = TRUE)
+
+```
+
+Das Argument `build_vignettes = TRUE` ist notwendig, damit die Vignetten erstellt werden
+
+
+## Namen und Organisation hinterlegen
+
+Mit `set_author()` können Namen und Orgnisation in einer Date `.profile.yml` hinterlegt werden. 
+Diese liegt per default unter `Sys.getenv("R_USER")`.
+Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argument `overwrite = TRUE` gesetzt wird.
+
+
+```{r, eval = FALSE}
+set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit")
+```
+
+`get_author()` liefert die hinterlegten Informationen zur Überprüfung.
+
+```{r, eval = FALSE}
+get_author()
+```
+
+## Namen der verfügbaren Vorlagen anzeigen
+
+Die Funktion `get_names()` liefert die Namen der verfügbaren Vorlagen.
+
+```{r}
+get_names()
+```
+
+## Quarto-Dokument gemäss Vorlage erstellen  
+
+Per default wird mit `use_quarto` die Vorlage für HTML-Berichte mit der Klassifikation "Intern" verwendet und eine Quarto-Datei auf der obersten Ebene des aktuellen Projekts erzeugt.
+
+```{r, eval=FALSE}
+use_quarto("dokumentation")
+
+```
+
+Man kann auch ein Dokument in einem Unterordner und/oder mit einer anderen Klassifikaktionsstufe erzeugen.
+
+```{r, eval=FALSE}
+use_quarto(
+  file_name = "reporting/bericht", classification = "Vertraulich"
+)
+
+```
+
+Für andere Output-Formate muss das Argument `ext_name` explizit gesetzt werden:
+
+```{r, eval=FALSE}
+use_quarto(file_name = "reporting/docx", ext_name = "biplaR-docx")
+
+use_quarto(file_name = "reporting/pdf", ext_name = "biplaR-pdf")
+
+use_quarto(
+  file_name = "presentation/inputreferat",
+  ext_name = "biplaR-revealjs",
+  classification = "Öffentlich"
+)
+
+```

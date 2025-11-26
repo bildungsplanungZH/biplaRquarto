@@ -10,8 +10,10 @@ Description: Das Package stellt ZHWeb- bzw CD-inspirierte Vorlagen für mit Quar
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Suggests: 
+    knitr,
+    quarto,
     testthat (>= 3.0.0),
     vctrs,
     yaml
@@ -20,3 +22,4 @@ Imports:
     assertthat
 URL: https://github.com/bildungsplanungZH/quarto_templates
 BugReports: https://github.com/bildungsplanungZH/quarto_templates/issues
+VignetteBuilder: quarto

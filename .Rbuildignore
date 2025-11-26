@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^\.github$
+^vignettes/\.quarto$
+^vignettes/*_files$
