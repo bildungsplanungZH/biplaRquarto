@@ -1,7 +1,12 @@
-#' Quarto-Vorlage in diesem Repository verwenden
+#' Quarto-Vorlage verwenden
 #'
-#' @param file_name Dateiname (ohne Erweiterung) der neuen Unterlage,
-#'   default ist report
+#' Die Funktion erstellt ein Quarto-Dokument am mit `file_name` gewünschten
+#' Ort. Wird nur der Dateiname mitgegeben, liegt das neue Dokument auf oberster
+#' Ebene im Projekt. Wird ein Dateipfad genutzt, wird das Dokument an diesem
+#' Ort erstellt, sofern der Pfad gültig ist.
+#'
+#' @param file_name Dateiname oder Dateipfad (ohne Erweiterung) der neuen
+#' Unterlage, default ist report
 #' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs,
 #'   biplaR-pdf, biplaR-docx oder biplaR-typst)
 #' @param author_path Dateipfad zu .profile.yml mit Name und Organisation,
@@ -15,6 +20,7 @@
 #'
 #' @examples \dontrun{
 #' use_quarto("bericht", "biplaR-html")
+#' use_quarto(file_name = "reporting/bericht")
 #' }
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
                        author_path = Sys.getenv("R_USER"),

@@ -2,7 +2,7 @@
 % Please edit documentation in R/use_quarto.R
 \name{use_quarto}
 \alias{use_quarto}
-\title{Quarto-Vorlage in diesem Repository verwenden}
+\title{Quarto-Vorlage verwenden}
 \usage{
 use_quarto(
   file_name = "report",
@@ -13,8 +13,8 @@ use_quarto(
 )
 }
 \arguments{
-\item{file_name}{Dateiname (ohne Erweiterung) der neuen Unterlage,
-default ist report}
+\item{file_name}{Dateiname oder Dateipfad (ohne Erweiterung) der neuen
+Unterlage, default ist report}
 
 \item{ext_name}{gewünschte Vorlage (biplaR-html, biplaR-revealjs,
 biplaR-pdf, biplaR-docx oder biplaR-typst)}
@@ -29,10 +29,14 @@ Vertraulich oder Geheim), default ist Intern}
 default ist _extensions/ biplaR-revealjs/images/panorama.png}
 }
 \description{
-Quarto-Vorlage in diesem Repository verwenden
+Die Funktion erstellt ein Quarto-Dokument am mit \code{file_name} gewünschten
+Ort. Wird nur der Dateiname mitgegeben, liegt das neue Dokument auf oberster
+Ebene im Projekt. Wird ein Dateipfad genutzt, wird das Dokument an diesem
+Ort erstellt, sofern der Pfad gültig ist.
 }
 \examples{
 \dontrun{
 use_quarto("bericht", "biplaR-html")
+use_quarto(file_name = "reporting/bericht")
 }
 }
