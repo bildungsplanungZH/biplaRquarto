@@ -49,8 +49,8 @@ execute:
 ---
 
 ```{r setup}
-# adapt font size in plots with showtext
-showtext::showtext_opts(dpi = 200)
+# adapt font size in plots in revealjs-output with showtext
+if (!interactive()) showtext::showtext_opts(dpi = 200)
 
 # grab your data
 ```
