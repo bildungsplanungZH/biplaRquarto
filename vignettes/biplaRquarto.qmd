@@ -13,7 +13,6 @@ knitr:
 ```{r}
 #| label: setup
 library(biplaRquarto)
-
 ```
 
 
@@ -22,9 +21,9 @@ library(biplaRquarto)
 `biplaRquarto` kann aus dem öffentlichen GitHub-Repository installiert werden:
 
 ``` {r install, eval = FALSE}
-devtools::install_github("bildungsplanungZH/biplaRquarto", 
-                         build_vignettes = TRUE)
-
+devtools::install_github("bildungsplanungZH/biplaRquarto",
+  build_vignettes = TRUE
+)
 ```
 
 Das Argument `build_vignettes = TRUE` ist notwendig, damit die Vignetten erstellt werden
@@ -61,7 +60,6 @@ Per default wird mit `use_quarto` die Vorlage für HTML-Berichte mit der Klassif
 
 ```{r, eval=FALSE}
 use_quarto("dokumentation")
-
 ```
 
 Man kann auch ein Dokument in einem Unterordner und/oder mit einer anderen Klassifikaktionsstufe erzeugen.
@@ -70,7 +68,6 @@ Man kann auch ein Dokument in einem Unterordner und/oder mit einer anderen Klass
 use_quarto(
   file_name = "reporting/bericht", classification = "Vertraulich"
 )
-
 ```
 
 Für andere Output-Formate muss das Argument `ext_name` explizit gesetzt werden:
@@ -85,5 +82,4 @@ use_quarto(
   ext_name = "biplaR-revealjs",
   classification = "Öffentlich"
 )
-
 ```
