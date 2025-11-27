@@ -21,5 +21,4 @@ get_author <- function(path = Sys.getenv("R_USER")) {
     "user" = yml$r_user, "org" = yml$r_organisation,
     "bg_image" = yml$bg_image
   )
-
 }
