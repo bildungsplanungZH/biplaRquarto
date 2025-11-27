@@ -120,11 +120,11 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
       ) |>
       writeLines(con = paste0(file_name, ".qmd"))
   } else if (!is.na(author_info$bg_image)) {
-      readLines(paste0(file_name, ".qmd", collapse = "")) |>
-        gsub(
-            pattern = "_extensions/biplaR-revealjs/images/panorama.png",
-            replacement = author_info$bg_image, x = _
-        ) |>
+    readLines(paste0(file_name, ".qmd", collapse = "")) |>
+      gsub(
+        pattern = "_extensions/biplaR-revealjs/images/panorama.png",
+        replacement = author_info$bg_image, x = _
+      ) |>
       writeLines(con = paste0(file_name, ".qmd"))
   }
 
