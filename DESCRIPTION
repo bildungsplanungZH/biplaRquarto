@@ -19,7 +19,8 @@ Suggests:
     yaml
 Config/testthat/edition: 3
 Imports: 
-    assertthat
+    assertthat,
+    cli
 URL: https://github.com/bildungsplanungZH/quarto_templates
 BugReports: https://github.com/bildungsplanungZH/quarto_templates/issues
 VignetteBuilder: quarto

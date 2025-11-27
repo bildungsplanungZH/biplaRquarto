@@ -1,6 +1,8 @@
 #' Öffnet die Datei .profile.yml im User-Verzeichnis (default)
 #' oder unter dem angegebenen Dateipfad
 #'
+#' @param path Dateipfad, wo .profile.yml liegt
+#' default ist Sys.getenv("R_USER")
 #' @returns invisible(path)
 #' @export
 #'
