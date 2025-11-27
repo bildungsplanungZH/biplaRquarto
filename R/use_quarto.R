@@ -1,7 +1,12 @@
-#' Quarto-Vorlage in diesem Repository verwenden
+#' Quarto-Vorlage verwenden
 #'
-#' @param file_name Dateiname (ohne Erweiterung) der neuen Unterlage,
-#'   default ist report
+#' Die Funktion erstellt ein Quarto-Dokument am mit `file_name` gewünschten
+#' Ort. Wird nur der Dateiname mitgegeben, liegt das neue Dokument auf oberster
+#' Ebene im Projekt. Wird ein Dateipfad genutzt, wird das Dokument an diesem
+#' Ort erstellt, sofern der Pfad gültig ist.
+#'
+#' @param file_name Dateiname oder Dateipfad (ohne Erweiterung) der neuen
+#' Unterlage, default ist report
 #' @param ext_name gewünschte Vorlage (biplaR-html, biplaR-revealjs,
 #'   biplaR-pdf, biplaR-docx oder biplaR-typst)
 #' @param author_path Dateipfad zu .profile.yml mit Name und Organisation,
@@ -9,12 +14,13 @@
 #' @param classification Klassifikationsstufe (Öffentlich, Intern,
 #'   Vertraulich oder Geheim), default ist Intern
 #' @param bg_image Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
-#'   default ist _extensions/ biplaR-revealjs/images/panorama.png
+#'   default ist _extensions/biplaR-revealjs/images/panorama.png
 #' @returns NULL
 #' @export
 #'
 #' @examples \dontrun{
 #' use_quarto("bericht", "biplaR-html")
+#' use_quarto(file_name = "reporting/bericht")
 #' }
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
                        author_path = Sys.getenv("R_USER"),
@@ -104,7 +110,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
 
   if (!is.na(bg_image) && ext_name == "biplaR-revealjs") {
     if (!file.exists(bg_image)) {
-      paste("Background image not found at", bg_image)
+      message("Background image not found at ", bg_image)
     }
 
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
@@ -113,7 +119,15 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
         replacement = bg_image, x = _
       ) |>
       writeLines(con = paste0(file_name, ".qmd"))
+  } else if (!is.na(author_info$bg_image)) {
+    readLines(paste0(file_name, ".qmd", collapse = "")) |>
+      gsub(
+        pattern = "_extensions/biplaR-revealjs/images/panorama.png",
+        replacement = author_info$bg_image, x = _
+      ) |>
+      writeLines(con = paste0(file_name, ".qmd"))
   }
+
 
   depth <- lengths(regmatches(file_name, gregexpr("\\/", file_name)))
   path_prefix <- paste0(rep("../", depth), collapse = "")
