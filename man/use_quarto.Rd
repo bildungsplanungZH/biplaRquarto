@@ -26,7 +26,7 @@ default ist Sys.getenv("R_USER)}
 Vertraulich oder Geheim), default ist Intern}
 
 \item{bg_image}{Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
-default ist _extensions/ biplaR-revealjs/images/panorama.png}
+default ist _extensions/biplaR-revealjs/images/panorama.png}
 }
 \description{
 Die Funktion erstellt ein Quarto-Dokument am mit \code{file_name} gewünschten

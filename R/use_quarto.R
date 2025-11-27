@@ -14,7 +14,7 @@
 #' @param classification Klassifikationsstufe (Öffentlich, Intern,
 #'   Vertraulich oder Geheim), default ist Intern
 #' @param bg_image Dateipfad zu gewünschtem Hintergrundbild für Titelfolie,
-#'   default ist _extensions/ biplaR-revealjs/images/panorama.png
+#'   default ist _extensions/biplaR-revealjs/images/panorama.png
 #' @returns NULL
 #' @export
 #'
@@ -119,7 +119,15 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
         replacement = bg_image, x = _
       ) |>
       writeLines(con = paste0(file_name, ".qmd"))
+  } else if (!is.na(author_info$bg_image)) {
+      readLines(paste0(file_name, ".qmd", collapse = "")) |>
+        gsub(
+            pattern = "_extensions/biplaR-revealjs/images/panorama.png",
+            replacement = author_info$bg_image, x = _
+        ) |>
+      writeLines(con = paste0(file_name, ".qmd"))
   }
+
 
   depth <- lengths(regmatches(file_name, gregexpr("\\/", file_name)))
   path_prefix <- paste0(rep("../", depth), collapse = "")
