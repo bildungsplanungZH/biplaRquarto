@@ -22,4 +22,5 @@ get_author <- function(path = Sys.getenv("R_USER")) {
     "bg_image" = yml$bg_image
   )
 
+  author
 }

@@ -110,7 +110,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
 
   if (!is.na(bg_image) && ext_name == "biplaR-revealjs") {
     if (!file.exists(bg_image)) {
-      paste("Background image not found at", bg_image)
+      message("Background image not found at ", bg_image)
     }
 
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
