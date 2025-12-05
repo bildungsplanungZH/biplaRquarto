@@ -185,16 +185,6 @@
 \csuse{def_lists}
 
 %%%%%%
-%% Acronyms
-%%%%%%
-\RequirePackage{acro}
-
-\newtoggle{acrolist} % defaults to false
-\AtEndPreamble{%
-    \input{acrocode}
-    \input{acrodef}}
-
-%%%%%%
 %% Reference macros
 %%%%%%
 \def\refAbb#1{%
