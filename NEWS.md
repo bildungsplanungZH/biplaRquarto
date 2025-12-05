@@ -1,3 +1,5 @@
+# biplaRquarto 1.2.0
+
 * Neue Funktion `edit_author_profile()` zum interaktiven Bearbeiten der Profilangaben 
 * biplaR-hmtl: 
   - Schriftgrösse in Abbildungen wird nur im Output angepasst, interaktiv nicht
