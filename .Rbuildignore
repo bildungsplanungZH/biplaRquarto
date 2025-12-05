@@ -1,6 +1,7 @@
-^quarto_templates\.Rproj$
+^biplaRquarto\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^\.github$
 ^vignettes/\.quarto$
 ^vignettes/*_files$
+^doc$

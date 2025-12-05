@@ -29,7 +29,7 @@ Mittelfristig sollte auch Folgendes erstellt werden:
 
 ### Nutzung der Templates
 
-* Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRquarto")`,  
+* Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRquarto", build_vignettes = TRUE)`,  
 * mit der Funktion `get_names()` die Namen der verfügbaren Vorlagen abfragen,  
 * (nur BP-Externe) mit `set_author()` eigenen Namen und Organisation hinterlegen
 * mit der Funktion `use_quarto(file_name = "Bericht", ext_name = "biplaR-html")` ein Quarto-Dokument mit dem entsprechenden Beigemüse erstellen.
