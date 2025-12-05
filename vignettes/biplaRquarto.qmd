@@ -40,10 +40,24 @@ Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argu
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit")
 ```
 
+Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hiterlegt werden, welche per default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
+
+```{r, eval = FALSE}
+set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit",
+           bg_image = "K:/Organisationseinheit/Hintergrundbilder/Lieblingsbild.png")
+```
+
 `get_author()` liefert die hinterlegten Informationen zur Überprüfung.
 
 ```{r, eval = FALSE}
 get_author()
+```
+
+Sind die hinterlegten Informationen nicht mehr aktuell oder sollten ergänzt werden, können sie mit `edit_author_profile()` interaktiv bearbeitet werden. Damit die Anpassungen wirksam werden, muss R anschliessend neu gestartet werden (mit Ctrl-Shift-F10).
+
+```{r, eval = FALSE}
+edit_author_profile()
+
 ```
 
 ## Namen der verfügbaren Vorlagen anzeigen
