@@ -44,7 +44,8 @@ Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hiterlegt werd
 
 ```{r, eval = FALSE}
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit",
-           bg_image = "K:/Organisationseinheit/Hintergrundbilder/Lieblingsbild.png")
+  bg_image = "K:/Organisationseinheit/Hintergrundbilder/Lieblingsbild.png"
+)
 ```
 
 `get_author()` liefert die hinterlegten Informationen zur Überprüfung.
@@ -57,7 +58,6 @@ Sind die hinterlegten Informationen nicht mehr aktuell oder sollten ergänzt wer
 
 ```{r, eval = FALSE}
 edit_author_profile()
-
 ```
 
 ## Namen der verfügbaren Vorlagen anzeigen
