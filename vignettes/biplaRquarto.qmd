@@ -43,15 +43,9 @@ set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit")
 Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hiterlegt werden, welche per default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
 
 ```{r, eval = FALSE}
-<<<<<<< HEAD
-set_author("Vorname", "Nachname", "Email",
-           "Direktion", "Organisationseinheit",
-           bg_image = "K:/Organisationseinheit/Hintergrund/Lieblingsbild.png")
-=======
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit",
-  bg_image = "K:/Organisationseinheit/Hintergrundbilder/Lieblingsbild.png"
+  bg_image = "K:/Organisationseinheit/Hintergrund/Lieblingsbild.png"
 )
->>>>>>> 9feea4f40206ce3798c7039cae2f2b7b48d00e52
 ```
 
 `get_author()` liefert die hinterlegten Informationen zur Überprüfung.
