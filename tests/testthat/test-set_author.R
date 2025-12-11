@@ -20,3 +20,13 @@ test_that("writes .profil.yml to path specified", {
 
   file.remove(file.path(test_path(), ".profile.yml"))
 })
+
+test_that("throws error if background image doesn't exist", {
+  expect_error(
+    set_author("Rufname", "Nachname", "rufname.nachname@dir.zh.ch",
+      "Lieblingsdirektion", "Bestes Amt", "Tolle Abteilung",
+      bg_image = "blabla",
+      path = test_path(), overwrite = TRUE
+    )
+  )
+})

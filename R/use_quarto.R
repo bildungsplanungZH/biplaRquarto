@@ -25,7 +25,8 @@
 use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
                        author_path = Sys.getenv("R_USER"),
                        classification = "Intern",
-                       bg_image = NA) {
+                       bg_image =
+                         "_extensions/biplaR-revealjs/images/panorama.png") {
   if (is.null(file_name)) {
     stop("You must provide a valid file_name")
   }
@@ -38,6 +39,12 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
          \u00D6ffentlich, Intern, Vertraulich, Geheim")
   }
 
+  if (ext_name == "biplaR-revealjs" &&
+        bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
+    if (!file.exists(bg_image)) {
+      stop("Background image not found at ", bg_image)
+    }
+  }
   # check for available extensions
   stopifnot("Extension not in package" = ext_name %in% get_names())
 
@@ -108,18 +115,15 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
     ) |>
     writeLines(con = paste0(file_name, ".qmd"))
 
-  if (!is.na(bg_image) && ext_name == "biplaR-revealjs") {
-    if (!file.exists(bg_image)) {
-      message("Background image not found at ", bg_image)
-    }
-
+  if (ext_name == "biplaR-revealjs" &&
+        bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
       gsub(
         pattern = "_extensions/biplaR-revealjs/images/panorama.png",
         replacement = bg_image, x = _
       ) |>
       writeLines(con = paste0(file_name, ".qmd"))
-  } else if (!is.na(author_info$bg_image)) {
+  } else if (ext_name == "biplaR-revealjs" && !is.null(author_info$bg_image)) {
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
       gsub(
         pattern = "_extensions/biplaR-revealjs/images/panorama.png",

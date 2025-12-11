@@ -9,7 +9,7 @@ use_quarto(
   ext_name = "biplaR-html",
   author_path = Sys.getenv("R_USER"),
   classification = "Intern",
-  bg_image = NA
+  bg_image = "_extensions/biplaR-revealjs/images/panorama.png"
 )
 }
 \arguments{

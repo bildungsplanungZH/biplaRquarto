@@ -25,15 +25,16 @@ test_that("reveal using custom background works", {
     "Direktion", "Amt", "Abteilung",
     path = test_path(), overwrite = TRUE
   )
+
   use_quarto(file.path(test_path(), "test_reveal"),
     ext_name = "biplaR-revealjs",
     author_path = test_path(),
-    bg_image = "_extensions/biplaR-revealjs/images/panorama.png"
+    bg_image = file.path(test_path(), "test_img.png")
   )
 
   expect_true(any(grepl(
     x = readLines(file.path(test_path(), "test_reveal.qmd")),
-    pattern = "panorama.png"
+    pattern = "test_img.png"
   )))
 
   unlink(file.path(test_path(), "test.qmd"))
@@ -46,7 +47,7 @@ test_that("reveal using personal background works", {
   set_author("Testlauf", "Autorin", "testlauf.autorin@dir.zh.ch",
     "Direktion", "Amt", "Abteilung",
     path = test_path(), overwrite = TRUE,
-    bg_image = "_extensions/biplaR-revealjs/images/panorama.png"
+    bg_image = file.path(test_path(), "test_img.png")
   )
   use_quarto(file.path(test_path(), "test_reveal"),
     ext_name = "biplaR-revealjs",
@@ -55,7 +56,7 @@ test_that("reveal using personal background works", {
 
   expect_true(any(grepl(
     x = readLines(file.path(test_path(), "test_reveal.qmd")),
-    pattern = "panorama.png"
+    pattern = "test_img.png"
   )))
 
   unlink(file.path(test_path(), "test.qmd"))
@@ -68,7 +69,7 @@ test_that("reveal using invalid background generates message", {
     "Direktion", "Amt", "Abteilung",
     path = test_path(), overwrite = TRUE
   )
-  expect_message(use_quarto(file.path(test_path(), "test_reveal"),
+  expect_error(use_quarto(file.path(test_path(), "test_reveal"),
     ext_name = "biplaR-revealjs",
     author_path = test_path(),
     bg_image = "blabla"

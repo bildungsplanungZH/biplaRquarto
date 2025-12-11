@@ -35,6 +35,14 @@ set_author <- function(vorname, nachname, email, dir, org1, org2 = NA,
     ))
   }
 
+  if (!is.na(bg_image) && !file.exists(bg_image)) {
+    stop(paste(
+      "Background image at",
+      bg_image,
+      "doesn't exist. Please specify correct path."
+    ))
+  }
+
   # Liste mit relevanter Information zusammenstellen
   user_info <- list(
     "r_user" = list(
