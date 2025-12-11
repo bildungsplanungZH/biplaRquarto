@@ -23,8 +23,7 @@ format:
             - _extensions/biplaR-pdf/tex/biplaRartcl
             - _extensions/biplaR-pdf/tex/biplaRartcl/assets
             - _extensions/biplaR-pdf/tex/biplaRartcl/img
-            - _extensions/biplaR-pdf/tex/acronyms
-            
+
 cap-location: top
 # crossref: 
 #     subref-labels: none
