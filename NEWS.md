@@ -1,3 +1,19 @@
+# biplaRquarto 1.2.0
+
+* Neue Funktion `edit_author_profile()` zum interaktiven Bearbeiten der Profilangaben 
+* biplaR-hmtl: 
+  - Schriftgrösse in Abbildungen wird nur im Output angepasst, interaktiv nicht
+* biplaR-revealjs:
+  - Bugfix in Titelfolie (Logo und Spikel in Vorschau korrekt dargestellt)
+  - default Hintergrund für Titelfolie im Profil hinterlegbar, Argument in set_author() hinzugefügt
+  - Schriftgrösse in Abbildungen wird nur im Output angepasst, interaktiv nicht
+* biplaR-pdf: 
+  - latex-input-paths zur Verwendung mit TinyTeX
+  - \pandocbounded für pandoc 3.2.1 definiert
+  - Abkürzungsfunktionalität entfernt
+* Vignette basierend auf Material vom R-Austausch hinzugefügt und Dokumentation ergänzt
+* Testabdeckung verbessert
+
 # biplaRquarto 1.1.0
 
 * Name und Organisation werden automatisch in Vorlagen eingefügt, falls in `.profile.yml` hinterlegt:

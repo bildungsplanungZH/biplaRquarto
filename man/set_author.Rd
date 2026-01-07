@@ -12,7 +12,8 @@ set_author(
   org1,
   org2 = NA,
   path = Sys.getenv("R_USER"),
-  overwrite = FALSE
+  overwrite = FALSE,
+  bg_image = NA
 )
 }
 \arguments{
@@ -33,6 +34,8 @@ default ist Sys.getenv("R_USER")}
 
 \item{overwrite}{boolean zur Angabe, ob ein existierendes profile.yml
 überschrieben werden soll (T) oder nicht, default ist FALSE}
+
+\item{bg_image}{Pfad zu default Hintergrundbild in Präsentationen}
 }
 \value{
 list Liste mit Angaben zu Autor:in und Organisation

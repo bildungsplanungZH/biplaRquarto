@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 *.pdf
+inst/doc
+**/.quarto/

@@ -3,5 +3,3 @@ set_author("Testlauf", "Autorin", "testlauf.autorin@dir.zh.ch",
   "Direktion", "Amt", "Abteilung",
   path = test_path(), overwrite = TRUE
 )
-
-use_quarto("report", "biplaR-html", author_path = test_path())

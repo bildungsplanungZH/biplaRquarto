@@ -74,7 +74,8 @@ $endif$
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function(e) {
+  //"workaround to move title logo and spikel to the background layer"
+  window.addEventListener('load', function(e) {
     let titleLogo = document.querySelector("#title-logo");
     let spikel = document.querySelector("#spikel");
     let newParent = document.getElementsByClassName("slide-background center")[0];

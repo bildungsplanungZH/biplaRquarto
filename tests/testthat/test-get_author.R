@@ -2,7 +2,7 @@ test_that("returns a list with elements named user and org", {
   expect_equal(class(get_author(path = test_path())), "list")
   expect_named(
     get_author(path = test_path()),
-    c("user", "org")
+    c("user", "org", "bg_image")
   )
 })
 
