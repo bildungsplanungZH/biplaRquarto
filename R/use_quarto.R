@@ -39,8 +39,8 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
          \u00D6ffentlich, Intern, Vertraulich, Geheim")
   }
 
-  if (ext_name == "biplaR-revealjs" && 
-        bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
+  if (ext_name == "biplaR-revealjs" &&
+    bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
     if (!file.exists(bg_image)) {
       stop("Background image not found at ", bg_image)
     }
@@ -116,7 +116,7 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
     writeLines(con = paste0(file_name, ".qmd"))
 
   if (ext_name == "biplaR-revealjs" &&
-        bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
+    bg_image != "_extensions/biplaR-revealjs/images/panorama.png") {
     readLines(paste0(file_name, ".qmd", collapse = "")) |>
       gsub(
         pattern = "_extensions/biplaR-revealjs/images/panorama.png",
