@@ -11,7 +11,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-Depends:
+Imports: 
+    assertthat,
+    cli,
     quarto
 Suggests: 
     knitr,
@@ -19,9 +21,6 @@ Suggests:
     vctrs,
     yaml
 Config/testthat/edition: 3
-Imports: 
-    assertthat,
-    cli
 URL: https://github.com/bildungsplanungZH/biplaRquarto
 BugReports: https://github.com/bildungsplanungZH/biplaRquarto/issues
 VignetteBuilder: quarto
