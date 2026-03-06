@@ -1,17 +1,20 @@
 ---
 title: "Nutzung der Templates"
+output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Nutzung der Templates}
-  %\VignetteEngine{quarto::html}
+  %\VignetteIndexEntry{biplaRquarto}
+  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
-knitr:
-  opts_chunk:
-    collapse: true
-    comment: '#>'
 ---
 
-```{r}
-#| label: setup
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
 library(biplaRquarto)
 ```
 
@@ -31,7 +34,7 @@ Das Argument `build_vignettes = TRUE` ist notwendig, damit die Vignetten erstell
 
 ## Namen und Organisation hinterlegen
 
-Mit `set_author()` können Namen und Orgnisation in einer Date `.profile.yml` hinterlegt werden. 
+Mit `set_author()` können Namen und Orgnisation in einer Datei `.profile.yml` hinterlegt werden. 
 Diese liegt per default unter `Sys.getenv("R_USER")`.
 Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argument `overwrite = TRUE` gesetzt wird.
 
@@ -40,7 +43,7 @@ Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argu
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit")
 ```
 
-Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hiterlegt werden, welche per default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
+Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hinterlegt werden, welche per default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
 
 ```{r, eval = FALSE}
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit",

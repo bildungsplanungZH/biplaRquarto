@@ -1,11 +1,7 @@
 # Vorlagen für halbwegs CD-konforme Dokumente mit Quarto
 
-06.08.2025  
-
 Kontakt:  
-Sarah Gerhard <sarah.gerhard@bi.zh>  
-Res Marti <res.marti@bi.zh.ch>  
-Flavian Imlig <flavian.imlig@bi.zh>  
+Sarah Gerhard <sarah.gerhard@bi.zh.ch>  
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/bildungsplanungZH/biplaRquarto/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bildungsplanungZH/quarto_templates/actions/workflows/R-CMD-check.yaml)
@@ -34,35 +30,10 @@ Mittelfristig sollte auch Folgendes erstellt werden:
 * (nur BP-Externe) mit `set_author()` eigenen Namen und Organisation hinterlegen
 * mit der Funktion `use_quarto(file_name = "Bericht", ext_name = "biplaR-html")` ein Quarto-Dokument mit dem entsprechenden Beigemüse erstellen.
 
-### biplaR-pdf mit MikTeX nutzen
 
-Die Vorlage biplaR-pdf funktioniert mit MikTeX. Mit TinyTeX wurde sie nicht getestet. MikTeX kann über das AFI-ServicePortal bestellt werden.
+### Dokumentation
 
-Nach der Installation muss der Pfad zum Verzeichnis `biplaR-pdf` in MikTeX zu den TEXMF-Wurzelverzeichnissen hinzugefügt werden:  
-*Einstellungen -> Verzeichnisse -> hinzufügen via Plus-Zeichen*
+Aktuell enthält das Package zwei Vignetten zu folgenden Themen:
 
-Der Warnhinweis (kein TDS-konformes Wurzelverzeichnis) kann ignoriert werden
-
-
-**Empfohlene Einstellungen in der *MiKTeX Console*:**
-
-|               |               | Option                                      | Wert                                | Bemerkung                                         |
-|---------------|---------------|---------------|---------------|---------------|
-| Einstellungen | Allgemein     | Pakete werden bezogen von                   | `https://mirrors.rit.edu`           |                                                   |
-|               |               | Pakete automatisch (on-the-fly) installiert | `Immer`                             |                                                   |
-|               |               | Proxy                                       | `proxy.kt.ktzh.ch:8080` - [DAP deprecated]            | Authentifizierung nicht aktivieren                |
-|               | Verzeichnisse | TEXMF-Wurzelverzeichnisse                   | `<Pfad zu biplaRquarto/inst/extdata/_extensions/biplaR-pdf>` [hinzufügen] |  |
-
-Troubleshooting:
-
--   *MiKTeX Console*, **Aufgaben**, **Dateinamendatenbank aktualisieren**
-    -   nach jeder Änderung an den Directories-Einstellungen
-    -   bei Änderungen innerhalb der aufgeführten Directories (va. bei neuen Files)
-    -   bei allen Fehlermeldungen mit `not found`
--   *MiKTeX Console*, **Pakete**
-    -   zur Installation neuer Packages
--   *MiKTeX Console*, **Aufgaben**, **Nach Updates suchen** und **Jetzt updaten**
-    -   bei Fehlermeldungen aus einzelnen Packages
--   *MiKTeX Console*, **Pakete**, Package **dehyph-exptl** installieren, anschliessend **Aufgaben**, **Dateinamendatenbank aktualisieren**
-    -   behebt Fehler `Unknown pattern 'ngerman-x-latest'.`, verursacht durch `\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}` in Dokumentenklasse `biplaRartcl`
-
+* Nutzung der Templates (`vignette("biplaRquarto")`)
+* `biplaR-pdf` mit MikTeX (`vignette("biplaR-pdf")`)
