@@ -12,6 +12,7 @@ lang: de
 
 format:
     pdf:
+        pdf-engine: lualatex
         include-in-header:
         - _extensions/biplaR-pdf/preamble.tex
         template: _extensions/biplaR-pdf/tmplt.tex
