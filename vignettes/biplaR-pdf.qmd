@@ -1,0 +1,48 @@
+---
+title: "biplaR-pdf mit MikTeX nutzen"
+vignette: >
+  %\VignetteIndexEntry{biplaR-pdf}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(biplaRquarto)
+```
+
+
+Die Vorlage biplaR-pdf funktioniert mit MikTeX. Mit TinyTeX wurde sie nicht getestet. MikTeX kann über das AFI-ServicePortal bestellt werden.
+
+Nach der Installation muss der Pfad zum Verzeichnis `biplaR-pdf` in MikTeX zu den TEXMF-Wurzelverzeichnissen hinzugefügt werden:  
+*Einstellungen -> Verzeichnisse -> hinzufügen via Plus-Zeichen*
+
+Der Warnhinweis (kein TDS-konformes Wurzelverzeichnis) kann ignoriert werden
+
+
+**Empfohlene Einstellungen in der *MiKTeX Console*:**
+
+|               |               | Option                                      | Wert                                | Bemerkung                                         |
+|---------------|---------------|---------------|---------------|---------------|
+| Einstellungen | Allgemein     | Pakete werden bezogen von                   | `https://mirrors.rit.edu`           |                                                   |
+|               |               | Pakete automatisch (on-the-fly) installiert | `Immer`                             |                                                   |
+|               |               | Proxy                                       | `proxy.kt.ktzh.ch:8080` - [DAP deprecated]            | Authentifizierung nicht aktivieren                |
+|               | Verzeichnisse | TEXMF-Wurzelverzeichnisse                   | `<Pfad zu biplaRquarto/inst/extdata/_extensions/biplaR-pdf>` [hinzufügen] |  |
+
+Troubleshooting:
+
+-   *MiKTeX Console*, **Aufgaben**, **Dateinamendatenbank aktualisieren**
+    -   nach jeder Änderung an den Directories-Einstellungen
+    -   bei Änderungen innerhalb der aufgeführten Directories (va. bei neuen Files)
+    -   bei allen Fehlermeldungen mit `not found`
+-   *MiKTeX Console*, **Pakete**
+    -   zur Installation neuer Packages
+-   *MiKTeX Console*, **Aufgaben**, **Nach Updates suchen** und **Jetzt updaten**
+    -   bei Fehlermeldungen aus einzelnen Packages
+-   *MiKTeX Console*, **Pakete**, Package **dehyph-exptl** installieren, anschliessend **Aufgaben**, **Dateinamendatenbank aktualisieren**
+    -   behebt Fehler `Unknown pattern 'ngerman-x-latest'.`, verursacht durch `\RequirePackage[ngerman=ngerman-x-latest]{hyphsubst}` in Dokumentenklasse `biplaRartcl`
+
