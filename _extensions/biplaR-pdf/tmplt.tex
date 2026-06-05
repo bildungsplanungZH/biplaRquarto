@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% tmplt.tex
+% document template for Bildungsmonitoring reports generation from rmarkdown to pdf_document
+%
+% use with documentclass biplaRartcl >= 2.0
+% copy to report directory, do not edit
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 24.06.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%
+% Options for packages loaded elsewhere
+%%%%%%
+\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+%%%%%%
+% Documentclass
+%%%%%%
+\documentclass[
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+]{$documentclass$}
+
+%%%%%
+% Language settings
+%%%%%
+\usepackage[german, ngerman, main=german]{babel}
+\useshorthands*{"}
+%\usepackage[babelshorthands]{polyglossia}
+%\setmainlanguage{german}
+
+%%%%%%
+% Includes from yaml header
+%%%%%%
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+%%%%%%
+% Prepare titling
+%%%%%%
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(author)$
+\author{$for(author)$$author$$sep$\aand $endfor$}
+$endif$
+\date{$date$}
+
+%%%%%%
+% Heading numbers
+%%%%%%
+\setcounter{secnumdepth}{\subsectionnumdepth}
+\setcounter{tocdepth}{\subsectiontocdepth}
+
+%%%%%%
+% Begin document
+%%%%%%
+\begin{document}
+
+%%%%%%
+% Titling
+%%%%%%
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\maketitle
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$endif$
+
+%%%%%%
+% Includes-before from yaml header
+%%%%%%
+$for(include-before)$
+$include-before$
+$endfor$
+
+%%%%%%
+% TOC etc.
+%%%%%%
+\tableofcontents
+$if(lot)$
+\listoftables
+$endif$
+$if(lof)$
+\listoffigures
+$endif$
+\cleardoubleoddpage
+
+%%%%%%
+% Document body
+%%%%%%%
+$body$
+
+%%%%%%
+% Backmatter
+%%%%%%
+$if(has-frontmatter)$
+\backmatter
+$endif$
+
+%%%%%%
+% Includes-after from yaml header
+%%%%%%
+$for(include-after)$
+$include-after$
+$endfor$
+
+%%%%%%
+% End document
+%%%%%%
+\end{document}

@@ -1,0 +1,24 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% biplaRartcl_hyphenation.tex
+% advanced hyphenation
+%
+% use with documentclass biplaRartcl >= 1.7
+%
+% Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
+% Date: 19.03.2021
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\csdef{hyph_version}{ngerman}
+%\csdef{hyph_version}{ngerman-x-latest} % error
+%\csdef{hyph_version}{ngerman-x-20080601} % error
+
+% set hyphenation
+\csdef{set_hyphenation}{%
+    \RequirePackage[ngerman=\csuse{hyph_version}]{hyphsubst}
+    }
+
+% log hyphenation
+\csdef{log_hyphenation}{%
+    \typeout{Used hyphsubst:^^J% Ausgabe in Terminal und Log-Datei
+        version=\csuse{hyph_version}^^J}%
+    }

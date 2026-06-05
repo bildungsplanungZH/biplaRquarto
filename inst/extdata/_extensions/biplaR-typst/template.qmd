@@ -8,25 +8,28 @@ lang: de
 
 format: 
     typst:
-        # toc: true
-        # toc-title: Inhalt
-        # toc-depth: 1
         papersize: a4
         mainfont: Arial
-        fontsize: 10.5pt
+        fontsize: 11pt
+        logo: 
+            location: left-top
         cap-location: top
+        # toc: true
+        number-sections: true
+        keep-typ: true
+        # template: show.typ
 
 embed-resources: true
 
 ---
 
-```{=typst} 
+```{=typst}
 
 #set page(
     margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
-    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)
-                        #text("Kanton Zürich")]
+    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%) #text("Kanton Zürich\nBildungsdirektion\nBildungsplanung")]
 )
+
 
 ```
 
@@ -77,7 +80,7 @@ Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die 
 
 plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
   geom_point() +
-  biplaR::getTheme() +
+  biplaRplot::theme_biplar() +
   theme(legend.position = "right")
 
 plot
