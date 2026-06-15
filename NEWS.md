@@ -2,12 +2,9 @@
 
 * 🐛 Bugfix bei Installation: quarto-Vignetten benötigen quarto-Import
 * 🐛 Bugfix in biplaR-revealjs: Gültiges Qmd, auch ohne Angabe eines Titelbilds im Profil 
+* Sprache für alle Vorlagen auf Deutsch (Schweiz) bzw. `de-CH` angepasst
 * biplaRpdf: Anpassungen zur Nutzung mit TinyTex: lualatex engine und Miktex-Troubleshooting aus Readme in Vignette verschoben
-
-WIP:
-* updated defaults in YAML for language (closes
-* set default language in all templates to de-CH #61) and self contained HTML (biplaR-html: remove option standalone from YAML-Header #63 )
-
+* biplaR-html: Option `standalone` entfernt, da deprecated
 
 # biplaRquarto 1.2.0
 
