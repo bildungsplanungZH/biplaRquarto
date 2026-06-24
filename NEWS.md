@@ -1,4 +1,4 @@
-# biplaRquarto (development version)
+# biplaRquarto 1.2.1
 
 * 🐛 Bugfix bei Installation: quarto-Vignetten benötigen quarto-Import
 * 🐛 Bugfix in biplaR-revealjs: Gültiges Qmd, auch ohne Angabe eines Titelbilds im Profil 
