@@ -7,11 +7,12 @@ author:
     affiliation: "Organisationsname"
 date: last-modified
 date-format: "DD.MM.YYYY"
-lang: de
+lang: de-CH
 # Klassifikation in Präambel definieren
 
 format:
     pdf:
+        pdf-engine: lualatex
         include-in-header:
         - _extensions/biplaR-pdf/preamble.tex
         template: _extensions/biplaR-pdf/tmplt.tex

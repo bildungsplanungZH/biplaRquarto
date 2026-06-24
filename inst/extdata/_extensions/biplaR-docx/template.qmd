@@ -6,7 +6,7 @@ author:
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
     affiliation: "Organisationsname"
-lang: de
+lang: de-CH
 date: last-modified
 date-format: "DD.MM.YYYY"
 published-title: "Datum"

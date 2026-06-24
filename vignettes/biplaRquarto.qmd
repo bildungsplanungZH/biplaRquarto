@@ -31,8 +31,8 @@ Das Argument `build_vignettes = TRUE` ist notwendig, damit die Vignetten erstell
 
 ## Namen und Organisation hinterlegen
 
-Mit `set_author()` können Namen und Orgnisation in einer Date `.profile.yml` hinterlegt werden. 
-Diese liegt per default unter `Sys.getenv("R_USER")`.
+Mit `set_author()` können Namen und Organisation in einer Datei `.profile.yml` hinterlegt werden. 
+Diese liegt per Default unter `Sys.getenv("R_USER")`.
 Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argument `overwrite = TRUE` gesetzt wird.
 
 
@@ -40,7 +40,7 @@ Ist bereits ein Profil vorhanden, wird dieses nur überschrieben, falls das Argu
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit")
 ```
 
-Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hiterlegt werden, welche per default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
+Falls gewünscht, kann auch der Pfad zu einer Bilddatei im Profil hinterlegt werden, welche per Default als Hintergrund für die Titelfolie in Präsentationen verwendet werden soll. Dafür wird das Argument `bg_image = "absoluter_Dateipfad"` genutzt.
 
 ```{r, eval = FALSE}
 set_author("Vorname", "Nachname", "Email", "Direktion", "Organisationseinheit",
@@ -70,13 +70,13 @@ get_names()
 
 ## Quarto-Dokument gemäss Vorlage erstellen  
 
-Per default wird mit `use_quarto` die Vorlage für HTML-Berichte mit der Klassifikation "Intern" verwendet und eine Quarto-Datei auf der obersten Ebene des aktuellen Projekts erzeugt.
+Per Default wird mit `use_quarto` die Vorlage für HTML-Berichte mit der Klassifikation "Intern" verwendet und eine Quarto-Datei auf der obersten Ebene des aktuellen Projekts erzeugt.
 
 ```{r, eval=FALSE}
 use_quarto("dokumentation")
 ```
 
-Man kann auch ein Dokument in einem Unterordner und/oder mit einer anderen Klassifikaktionsstufe erzeugen.
+Man kann auch ein Dokument in einem Unterordner und/oder mit einer anderen Klassifikationsstufe erzeugen.
 
 ```{r, eval=FALSE}
 use_quarto(
