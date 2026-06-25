@@ -11,7 +11,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/bildungsplanungZH/biplaRquarto/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/bildungsplanungZH/biplaRquarto/blob/v1.2.1/DESCRIPTION)
 
 Gerhard S, Marti R, Imlig F (2026). *biplaRquarto: Das Package stellt
 ZHWeb- bzw CD-inspirierte Vorlagen für mit Quarto produzierte Dokumente
