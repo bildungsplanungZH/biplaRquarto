@@ -1,9 +1,0 @@
-logo:
-    medium: inst/extdata/_extensions/images/logo_ktzh_flag_71x71.png
-
-typography:
-  fonts:
-    - family: Arial
-      source: google
-  base: Arial
-  headings: Arial Black

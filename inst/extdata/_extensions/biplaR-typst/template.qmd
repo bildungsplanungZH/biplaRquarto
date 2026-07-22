@@ -1,6 +1,6 @@
 ---
 title: "Titel hinzufügen"
-subtitle: "Möglicherweise auch einen Untertitel"
+subtitle: "Möglicherweise auch ein Untertitel"
 author: "Vorname Nachname"
 date: last-modified
 date-format: long
@@ -8,30 +8,15 @@ lang: de
 
 format: 
     typst:
-        papersize: a4
-        mainfont: Arial
-        fontsize: 11pt
-        logo: 
-            location: left-top
-        cap-location: top
-        # toc: true
-        number-sections: true
-        keep-typ: true
-        # template: show.typ
+        toc: true
+        template-partials: 
+           - typst-show.typ
+           - typst-template.typ
 
+cap-location: top
 embed-resources: true
 
 ---
-
-```{=typst}
-
-#set page(
-    margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
-    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%) #text("Kanton Zürich\nBildungsdirektion\nBildungsplanung")]
-)
-
-
-```
 
 # Ausgangslage
 
@@ -62,7 +47,7 @@ https://typst.app/docs/guides/page-setup-guide/
 
 ## Inhaltsverzeichnis
 
-Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktiviert werden. Mit `toc-title: Inhalt` kann der Titel angepasst werden. `tod-depth` steuert, wie viele Ebenen im Verzeichnis angezeigt werden. 
+Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktiviert werden. Mit `toc-title: Inhalt` kann der Titel angepasst werden. `toc-depth` steuert, wie viele Ebenen im Verzeichnis angezeigt werden. 
 
 
 ## Position der Abbildungen
