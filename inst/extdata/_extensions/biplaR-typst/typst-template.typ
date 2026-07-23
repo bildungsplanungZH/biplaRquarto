@@ -3,6 +3,7 @@
   subtitle: none,
   date: none,
   author: none,
+  abstract: none,
   content,
 ) = {
   set page(
@@ -12,11 +13,11 @@
     background: context {
       if counter(page).get().first() < 2 [
         #polygon(
-          fill: rgb("#0070B4"),
-          stroke: rgb("#0070B4"),
-            (0cm, 7.5cm),
-            (21cm, 28.5cm),
-            (0cm,  28.5cm)),
+          fill: rgb("#009EE0"),
+          stroke: rgb("#009EE0"),
+            (0.1cm, 8.5cm),
+            (21.1cm, 29.5cm),
+            (0.1cm,  29.5cm))
       ]
     },
 
@@ -38,13 +39,23 @@
                 title,
                 font: "Arial",
                 fill: black,
-                )],
-            )
-  ])
-  )
+                )
+                #linebreak()
+                #counter(page).display(
+  "1/1",
+  both: true,
+)],
+                )
+      ]))
+  ] else [
+    #grid(
+      columns: (20%, 80%),
+      align(left + horizon)[#image("images/logo_leu.svg", width: 2.25cm)],
+      align(left + horizon)[#text("Kanton Zürich\nLieblingsdirektion\nBeispielamt"
+      )])
   ]})
 
-
+  set par(justify: true)
 
   set text(
     lang: "de",
@@ -52,6 +63,8 @@
     font: "Arial",
     size: 11pt,
   )
+
+  set list(marker: [--])
 
   set heading(numbering: "1.")
 
@@ -72,15 +85,6 @@
     )
     align(left)[#it]
   }
-
-
-grid(
-  columns: (20%, 80%),
-  align(left)[
-  #image("images/logo_leu.svg", width: 2.25cm)
-  ],
-  align(left + horizon)[
-  #text("Kanton Zürich\nLieblingsdirektion\nBeispielamt")])
 
 
 
@@ -104,6 +108,12 @@ text(
 
   date
   author
+  linebreak()
+
+ text(
+   "Klassifikation: "
+ )
+  abstract
   pagebreak()
 
   outline()

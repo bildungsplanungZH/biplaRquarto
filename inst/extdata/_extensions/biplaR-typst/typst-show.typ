@@ -3,5 +3,6 @@
   subtitle: [$subtitle$],
   date: [$date$],
   author: [$author$],
+  abstract: [$abstract$],
   body,
 )

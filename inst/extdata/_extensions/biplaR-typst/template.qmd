@@ -1,14 +1,13 @@
 ---
 title: "Titel hinzufügen"
 subtitle: "Möglicherweise auch ein Untertitel"
-author: "Vorname Nachname"
 date: last-modified
 date-format: long
-lang: de
+lang: de-CH
+abstract: "Intern"
 
 format: 
     typst:
-        toc: true
         template-partials: 
            - typst-show.typ
            - typst-template.typ
@@ -24,13 +23,15 @@ Das Rendern von PDF-Dokumenten mit Quarto und der aktuellen LaTeX-Vorlage der Bi
 
 # Dokumentation
 
-Dokumentation zu Quarto und typst findet sich hier:  
+Es gibt verschiedene hilfreiche Unterlagen zur Entwicklung eines Typst-Templates zur Verwendung mit Quarto:
+
+- Dokumentation zu Quarto und typst findet sich hier:\
 https://quarto.org/docs/output-formats/typst.html
 
-Das Tutorial zu typst selbst ist hier zu finden:  
+- Das Tutorial zu typst selbst ist hier zu finden:\
 https://typst.app/docs/tutorial/
 
-Tipps zum Seitenlayout gibt es hier  
+- Tipps zum Seitenlayout gibt es hier:\
 https://typst.app/docs/guides/page-setup-guide/
 
 
