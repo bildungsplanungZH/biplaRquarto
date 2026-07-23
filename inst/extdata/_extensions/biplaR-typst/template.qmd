@@ -1,6 +1,7 @@
 ---
 title: "Titel hinzufügen"
 subtitle: "Möglicherweise auch ein Untertitel"
+author: "Vorname Nachname"
 date: last-modified
 date-format: long
 lang: de-CH

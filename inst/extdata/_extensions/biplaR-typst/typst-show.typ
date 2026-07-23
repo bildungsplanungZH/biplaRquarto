@@ -4,5 +4,9 @@
   date: [$date$],
   author: [$author$],
   abstract: [$abstract$],
+  $if(toc)$
+  toc: $toc$,
+  $endif$
+
   body,
 )

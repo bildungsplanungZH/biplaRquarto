@@ -39,20 +39,31 @@
                 title,
                 font: "Arial",
                 fill: black,
+                size: 8pt,
                 )
                 #linebreak()
-                #counter(page).display(
-  "1/1",
-  both: true,
-)],
+                #text(counter(page).display(
+                  "1/1",
+                  both: true,
+                  ),
+                  size: 8pt)],
                 )
       ]))
   ] else [
     #grid(
-      columns: (20%, 80%),
+      columns: (18%, 82%),
       align(left + horizon)[#image("images/logo_leu.svg", width: 2.25cm)],
-      align(left + horizon)[#text("Kanton Zürich\nLieblingsdirektion\nBeispielamt"
-      )])
+      align(left + horizon)[#text("Kanton Zürich",
+                            size: 8pt,)
+                            #linebreak()
+                            #text("Lieblingsdirektion",
+                            size: 8pt,
+                            weight: "black",)
+                            #linebreak()
+                            #text("Beispielamt",
+                            size: 8pt,)
+
+                        ])
   ]})
 
   set par(justify: true)
@@ -86,34 +97,33 @@
     align(left)[#it]
   }
 
+grid(
+      columns: (18%, 82%),
+      align(left + horizon)[],
+      align(left + horizon)[
 
-
-text(
+#text(
   title,
   font: "Arial",
   size: 24pt,
   fill: black,
   weight: "black",
-)
-
-linebreak()
-
-text(
+) \
+#text(
   subtitle,
   font: "Arial",
   size: 16pt,
   fill: black,
   weight: "black",
 )
-
-  date
-  author
-  linebreak()
-
- text(
+  #date \
+  #author
+  #linebreak()
+ #text(
    "Klassifikation: "
  )
-  abstract
+  #abstract
+])
   pagebreak()
 
   outline()
