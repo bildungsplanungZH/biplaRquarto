@@ -5,7 +5,7 @@ author:
   - name: "Vorname Nachname"
     email: "vorname.nachname@bi.zh.ch"
     affiliation: "Organisationsname"
-lang: de
+lang: de-CH
 affiliation-title: "Organisationseinheit"
 abstract-title: "Klassifikation"
 abstract: "Intern"

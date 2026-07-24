@@ -2,8 +2,8 @@
 #
 # see https://github.com/bildungsmonitoringZH/biplaRconfig
 #
-# Author: Flavian Imlig <flavian.imlig@bi.zh.ch>
-# Date: 16.04.2025
+# Author: Sarah Gerhard <sarah.gerhard@bi.zh.ch>
+# Date: 05.06.2026
 ###############################################################################
 
 # Startup function

@@ -1,3 +1,11 @@
+# biplaRquarto 1.2.1
+
+* 🐛 Bugfix bei Installation: quarto-Vignetten benötigen quarto-Import
+* 🐛 Bugfix in biplaR-revealjs: Gültiges Qmd, auch ohne Angabe eines Titelbilds im Profil 
+* Sprache für alle Vorlagen auf Deutsch (Schweiz) bzw. `de-CH` angepasst
+* biplaRpdf: Anpassungen zur Nutzung mit TinyTex: lualatex engine und Miktex-Troubleshooting aus Readme in Vignette verschoben
+* biplaR-html: Option `standalone` entfernt, da deprecated
+
 # biplaRquarto 1.2.0
 
 * Neue Funktion `edit_author_profile()` zum interaktiven Bearbeiten der Profilangaben 

@@ -5,4 +5,7 @@
 ^vignettes/\.quarto$
 ^vignettes/*_files$
 ^doc$
-.Rprofile
+
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

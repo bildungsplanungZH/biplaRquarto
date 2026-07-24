@@ -1,11 +1,10 @@
 # Vorlagen für halbwegs CD-konforme Dokumente mit Quarto
 
-06.08.2025  
+15.06.2026  
 
 Kontakt:  
 Sarah Gerhard <sarah.gerhard@bi.zh>  
 Res Marti <res.marti@bi.zh.ch>  
-Flavian Imlig <flavian.imlig@bi.zh>  
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/bildungsplanungZH/biplaRquarto/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bildungsplanungZH/biplaRquarto/actions/workflows/R-CMD-check.yaml)
@@ -31,7 +30,7 @@ Mittelfristig sollte auch Folgendes erstellt werden:
 
 * Package installieren mit `devtools::install_github("bildungsplanungZH/biplaRquarto", build_vignettes = TRUE)`,  
 * mit der Funktion `get_names()` die Namen der verfügbaren Vorlagen abfragen,  
-* (nur BP-Externe) mit `set_author()` eigenen Namen und Organisation hinterlegen
+* mit `set_author()` eigenen Namen und Organisation hinterlegen (nur BP-Externe) 
 * mit der Funktion `use_quarto(file_name = "Bericht", ext_name = "biplaR-html")` ein Quarto-Dokument mit dem entsprechenden Beigemüse erstellen.
 
 

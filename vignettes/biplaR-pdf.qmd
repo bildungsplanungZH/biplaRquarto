@@ -16,7 +16,7 @@ library(biplaRquarto)
 ```
 
 
-Die Vorlage biplaR-pdf funktioniert mit MikTeX. Mit TinyTeX wurde sie nicht getestet. MikTeX kann über das AFI-ServicePortal bestellt werden.
+Die Vorlage biplaR-pdf funktioniert mit MikTeX. Mit TinyTeX wurde sie nicht ausführlich getestet. MikTeX kann über das AFI-ServicePortal bestellt werden.
 
 Nach der Installation muss der Pfad zum Verzeichnis `biplaR-pdf` in MikTeX zu den TEXMF-Wurzelverzeichnissen hinzugefügt werden:  
 *Einstellungen -> Verzeichnisse -> hinzufügen via Plus-Zeichen*
