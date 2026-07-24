@@ -1,34 +1,22 @@
 ---
 title: "Titel hinzufügen"
-subtitle: "Möglicherweise auch einen Untertitel"
+subtitle: "Möglicherweise auch ein Untertitel"
 author: "Vorname Nachname"
 date: last-modified
 date-format: long
 lang: de-CH
+abstract: "Intern"
 
 format: 
     typst:
-        # toc: true
-        # toc-title: Inhalt
-        # toc-depth: 1
-        papersize: a4
-        mainfont: Arial
-        fontsize: 10.5pt
-        cap-location: top
+        template-partials: 
+           - typst-show.typ
+           - typst-template.typ
 
+cap-location: top
 embed-resources: true
 
 ---
-
-```{=typst} 
-
-#set page(
-    margin: (inside: 2.5cm, outside: 3.5cm, top: 5.4cm, bottom: 3cm),
-    header: align(left)[#image("images/logo_ktzh_flag_71x71.png", height: 20%)
-                        #text("Kanton Zürich")]
-)
-
-```
 
 # Ausgangslage
 
@@ -36,13 +24,15 @@ Das Rendern von PDF-Dokumenten mit Quarto und der aktuellen LaTeX-Vorlage der Bi
 
 # Dokumentation
 
-Dokumentation zu Quarto und typst findet sich hier:  
+Es gibt verschiedene hilfreiche Unterlagen zur Entwicklung eines Typst-Templates zur Verwendung mit Quarto:
+
+- Dokumentation zu Quarto und typst findet sich hier:\
 https://quarto.org/docs/output-formats/typst.html
 
-Das Tutorial zu typst selbst ist hier zu finden:  
+- Das Tutorial zu typst selbst ist hier zu finden:\
 https://typst.app/docs/tutorial/
 
-Tipps zum Seitenlayout gibt es hier  
+- Tipps zum Seitenlayout gibt es hier:\
 https://typst.app/docs/guides/page-setup-guide/
 
 
@@ -59,7 +49,7 @@ https://typst.app/docs/guides/page-setup-guide/
 
 ## Inhaltsverzeichnis
 
-Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktiviert werden. Mit `toc-title: Inhalt` kann der Titel angepasst werden. `tod-depth` steuert, wie viele Ebenen im Verzeichnis angezeigt werden. 
+Das Inhaltsverzeichnis kann im YAML-Header über die Option `toc: true` aktiviert werden. Mit `toc-title: Inhalt` kann der Titel angepasst werden. `toc-depth` steuert, wie viele Ebenen im Verzeichnis angezeigt werden. 
 
 
 ## Position der Abbildungen
@@ -77,7 +67,7 @@ Die Abbildungen werden direkt aus dem Chunk generiert. Der Titel kann über die 
 
 plot <- ggplot(diamonds, aes(x = price, y = carat, colour = color)) +
   geom_point() +
-  biplaR::getTheme() +
+  biplaRplot::theme_biplar() +
   theme(legend.position = "right")
 
 plot
