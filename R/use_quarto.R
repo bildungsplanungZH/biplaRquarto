@@ -158,6 +158,31 @@ use_quarto <- function(file_name = "report", ext_name = "biplaR-html",
           "/partials/title-slide.html"
         ))
     }
+
+    if (ext_name %in% c("biplaR-typst")) {
+          readLines(paste0(
+              "_extensions/", ext_name,
+              "/typst-template.typ"
+          )) |>
+              gsub(
+                  pattern = "_extensions",
+                  replacement = paste0(path_prefix, "_extensions"), x = _
+              ) |>
+            gsub(
+                pattern = "Direktion",
+                replacement = paste(author_info$org$dir), x = _
+            ) |>
+            gsub(
+                pattern = "Organisationsname",
+                replacement = stringr::str_remove(author_info$org$org1,
+                                                  " Kanton Zürich"),
+                                                  x = _
+            ) |>
+              writeLines(con = paste0(
+                  "_extensions/", ext_name,
+                  "/typst-template.typ"
+              ))
+      }
   }
 
   # open the new file in the editor

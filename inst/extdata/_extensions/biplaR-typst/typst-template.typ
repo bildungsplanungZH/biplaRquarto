@@ -31,7 +31,7 @@
             #grid(
             columns: (69.3%, 1.7%, 29%),
             align(right + horizon)[
-                #image("images/logo_ktzh_flag_71x71.png",
+                #image("_extensions/biplaR-typst/images/logo_ktzh_flag_71x71.png",
                 height: 6mm)],
             align(center)[],
             align(left + horizon)[
@@ -52,15 +52,15 @@
   ] else [
     #grid(
       columns: (18%, 82%),
-      align(left + horizon)[#image("images/logo_leu.svg", width: 2.25cm)],
+      align(left + horizon)[#image("_extensions/biplaR-typst/images/logo_leu.svg", width: 2.25cm)],
       align(left + horizon)[#text("Kanton Zürich",
                             size: 8pt,)
                             #linebreak()
-                            #text("Lieblingsdirektion",
+                            #text("Direktion",
                             size: 8pt,
                             weight: "black",)
                             #linebreak()
-                            #text("Beispielamt",
+                            #text("Organisationsname",
                             size: 8pt,)
 
                         ])
