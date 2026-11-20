@@ -186,11 +186,13 @@ section .footer {
 
 .presentation-title-logo-text {
     font-family: InterBlack,"Arial Black",Helvetica,sans-serif;
+    font-size: font-size: min(3vw, 40px);
     color: $white;
 }
 
 .presentation-title-logo-text-black {
     font-family: InterBlack,"Arial Black",Helvetica,sans-serif;
+    font-size: font-size: min(3vw, 40px);
     color: $black;
 }
 
